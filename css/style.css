@@ -1,0 +1,164 @@
+
+/* Inizio CSS *****************************************************************/
+
+@import url("fonts.css"); /* CSS Fonts */
+
+/* Generale *****************************************************************/
+
+html, body
+{
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	margin: 0;
+	overflow: hidden;
+}
+
+body { font-size: 16px; }
+
+#container
+{
+	margin: 1em;
+	width: calc(100% - 2em);
+	height: calc(100% - 2em);
+	min-height: calc(100% - 2em);
+}
+
+h7 { display: none; }
+
+.deseleziona
+{
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+	user-select: none;
+}
+
+/* Links *****************************************************************/
+
+a { text-decoration: none; }
+
+/* Home *****************************************************************/
+
+/* Carousel */
+
+#home_carousel
+{
+	width: 100%;
+	height: calc(100% - 375px);
+	min-height: calc(100% - 375px);
+	background-color: #ccc;
+}
+
+#home_slides { max-height: 100%; }
+
+.container_claim
+{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: auto;
+	top: 30%;
+	margin: 0 auto;
+	width: 24%;
+	text-align: center;
+}
+
+.headline
+{
+	text-align: center;
+	color: #fff;
+	font-size: 2rem;
+	font-weight: 100;
+	font-family: 'FuturaMed', sans-serif;
+	text-shadow: 0px 0px 7px #000;
+	letter-spacing: 2px;
+}
+
+.prenota
+{
+	font-size: .7rem;
+	font-weight: 100;
+	font-family: 'FuturaMed', sans-serif;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	background-color: #C89648;
+	padding: 1em 22px;
+	margin: 0 auto;
+	display: inline-block;
+	-webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
+}
+
+.foto_home.carousel { background-image: url("../img/home_slide_1920.png"); }
+
+.foto_home
+{
+	background-size: cover;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 100%;
+}
+
+/* Box */
+
+.box_home.news { background-image: url("../img/news_home_1920.png"); }
+
+.box_home.calendario { background-image: url("../img/calendario_home_1920.png"); }
+
+.box_home.mostre { background-image: url("../img/mostre_home_1920.png"); }
+
+.box_home
+{
+	width: 33.33%;
+	height: 23.44em;
+	background-color: #eee;
+	display: inline-block;
+	float: left;
+	background-size: cover;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	min-height: 23.44em;
+}
+
+.overlay
+{
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: calc(100% - 4em);
+	min-height: calc(100% - 4em);
+	background-color: #000;
+	opacity: .7;
+}
+
+#header_news
+{
+	position: relative;
+	height: 4em;
+	background-color: #fff;
+	top: 0;
+	bottom: auto;
+}
+
+#header_news h2
+{
+	font-size: 1.2rem;
+	font-weight: 100;
+	font-family: 'FuturaMed', sans-serif;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 1em 32px;
+}
+
+
+
+
+/* Fine CSS *****************************************************************/
