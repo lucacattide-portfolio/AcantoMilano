@@ -1,0 +1,12 @@
+/* Webfont: JosefinSans-BoldItalic */@font-face {
+    font-family: 'JosefinSans';
+    src: url('JosefinSans-BoldItalic.eot'); /* IE9 Compat Modes */
+    src: url('JosefinSans-BoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('JosefinSans-BoldItalic.woff') format('woff'), /* Modern Browsers */
+         url('JosefinSans-BoldItalic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('JosefinSans-BoldItalic.svg#JosefinSans-BoldItalic') format('svg'); /* Legacy iOS */
+    font-style: italic;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+
