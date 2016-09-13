@@ -2,7 +2,7 @@
 
 <!--Inizio Carousel-->
 
-<section id="home_carousel">
+<section id="home_carousel" rel="home">
 
 	<h7> <!--Titolo-->
     
@@ -22,7 +22,7 @@
         
             <li>
         
-               <div class="container_claim">
+               <div class="container_claim claim_ridotto">
                
                  <h1 class="headline"> <!--Headline-->
                     
@@ -48,7 +48,7 @@
             
             <li>
         
-               <div class="container_claim">
+               <div class="container_claim claim_ridotto">
                
                  <h1 class="headline"> <!--Headline-->
                     
@@ -123,7 +123,7 @@
                  
                  	<!--Inizio Anteprima -->
                  
-                   <p class="anteprima_news"> 
+                   <p class="anteprima_news anteprima_ridotta"> 
                       
                         <span class="titolo_anteprima"> <!--Titolo-->
                         
@@ -174,7 +174,7 @@
                  <div class="container_news">
                  
                  
-                   <p class="anteprima_news"> 
+                   <p class="anteprima_news anteprima_ridotta"> 
                       
                         <span class="titolo_anteprima"> 
                         

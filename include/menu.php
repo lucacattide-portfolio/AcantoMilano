@@ -52,7 +52,7 @@
             
             <ul>
             
-            	<a href="index.php?lang=ita">
+            	<a href="index.php?lang=ita" title="Italiano">
                 
                     <li class="lingua_attiva">
                     
@@ -65,7 +65,7 @@
                     </li>
                 
                 </a>
-                <a href="http://www.acantomilano.com">
+                <a href="http://www.acantomilano.com" title="Inglese">
                 
                     <li>
                     
@@ -95,7 +95,7 @@
     
     <ul id="menu_voci">
     
-    	<a href="index.php" title="">
+    	<a href="#" title="Home" rel="home">
         
             <li>
             
@@ -104,16 +104,49 @@
             </li>
             
         </a>
-        <a href="index.php" title="">
+        <a href="#" class="menu_livello_2" title="Chi Siamo" rel="chi-siamo">
         
             <li>
             
                 CHI SIAMO
                 
-            </li>
-            
-        </a>
-        <a href="index.php" title="">
+       		</li>
+           
+        </a>        
+        
+        <span class="container_menu_livello_2">
+        
+          <a class="voce_livello_2" href="#" title="L'accento sull'arte" rel="accento-su-arte">
+    
+              <li>
+          
+                  L'accento sull'arte
+              
+              </li>
+          
+          </a>
+          <a class="voce_livello_2" href="#" title="Carlotta" rel="carlotta">
+    
+              <li>
+          
+                  Carlotta
+              
+              </li>
+          
+          </a>
+          <a class="voce_livello_2" href="#" title="Emanuela" rel="emanuela">
+    
+              <li>
+          
+                  Emanuela
+              
+              </li>
+          
+          </a>
+        
+        </span>
+        
+        <a href="#" title="Visite Guidate" rel="visite-guidate">
         
             <li>
             
@@ -122,7 +155,7 @@
             </li>
             
         </a>
-        <a href="index.php" title="">
+        <a href="#" title="Calendario" rel="calendario">
         
             <li>
             
@@ -131,7 +164,7 @@
             </li>
             
         </a>
-        <a href="index.php" title="">
+        <a href="#" title="News" rel="news">
         
             <li>
             
@@ -140,7 +173,7 @@
             </li>
             
         </a>
-        <a href="index.php" title="">
+        <a href="#" title="Mostre" rel="mostre">
         
             <li>
             
@@ -149,7 +182,7 @@
             </li>
             
         </a>
-        <a href="index.php" title="">
+        <a href="#" title="I Viaggi di Acanto" rel="i-viaggi-di-acanto">
         
             <li>
             
@@ -158,7 +191,7 @@
             </li>
             
         </a>
-        <a href="index.php" title="">
+        <a href="#" title="Idee per una visita" rel="idee-per-una-visita">
         
             <li>
             
@@ -167,7 +200,7 @@
             </li>
             
         </a>
-        <a href="index.php" title="">
+        <a href="#" title="Speciale Cenacolo" rel="speciale-cenacolo">
         
             <li>
             
@@ -176,7 +209,7 @@
             </li>
             
         </a>
-        <a href="index.php" title="">
+        <a href="#" title="Per le scuole" rel="per-le-scuole">
         
             <li>
             
@@ -185,7 +218,7 @@
             </li>
             
         </a>
-        <a href="index.php" title="">
+        <a href="#" title="Per le aziende" rel="per-le-aziende">
         
             <li>
             
@@ -194,7 +227,7 @@
             </li>
             
         </a>
-        <a href="index.php" title="">
+        <a href="#" title="Contatti" rel="contatti">
         
             <li>
             
@@ -218,7 +251,7 @@
         
         	<a href="" title="" target="new">
             
-            	<img src="img/facebook.svg" alt="" />
+            	<img src="img/facebook.svg" alt="Segui Acanto Milano su Facebook" />
                 
             </a>
         
@@ -227,7 +260,7 @@
         
         	<a href="" title="" target="new">
             
-            	<img src="img/tripadvisor.svg" alt="" />
+            	<img src="img/tripadvisor.svg" alt="Segui Acanto Milano su TripAdvisor" />
                 
             </a>
         
@@ -236,7 +269,7 @@
         
         	<a href="" title="" target="new">
             
-            	<img src="img/instagram.svg" alt="" />
+            	<img src="img/instagram.svg" alt="Segui Acanto Milano su Instagram" />
                 
             </a>
         
@@ -246,7 +279,7 @@
         
         <div class="links dominio"> <!--Versione Inglese-->
         
-        	<a href="www.acantomilano.com" title="">
+        	<a href="www.acantomilano.com" title="Acanto Milano">
             
             	www.acantomilano.com
                 
@@ -255,7 +288,7 @@
         </div>
         <div class="links newsletter"> <!--Newsletter-->
         
-        	<a href="" title="">
+        	<a href="" title="Iscriviti alla newsletter">
             
             	ISCRIVITI ALLA NEWSLETTER
                 

@@ -23,6 +23,8 @@ body
 	padding: 1em;
 }
 
+/* Containers */
+
 #container_menu
 {
 	display: inline-block;
@@ -30,8 +32,11 @@ body
 	height: 100%;
 	min-height: 100%;
 	background-color: #fff;
-	float:left;
+	float: left;
+	overflow: hidden;
 }
+
+.container_chiuso { width: 0 !important; }
 
 #container
 {
@@ -40,7 +45,33 @@ body
 	height: calc(100% - 2em);
 	min-height: calc(100% - 2em);
 	display: inline-block;
+	overflow: hidden;
 }
+
+#container_contenuti
+{
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	max-height: 100%;
+	overflow: auto;
+	background-color: #fafafa;
+}
+
+.container_full { width: calc(100% - 2em) !important; }
+
+#separatore_menu
+{
+	width: 1px;
+	height: 100%;
+	min-height: 100%;
+	position: absolute;
+	left: 246px;
+	top: 0;
+	border-right: 1px solid rgba(200, 150, 72, .3);
+}
+
+.separatore_out { left: -1px !important; }
 
 h7 { display: none; }
 
@@ -55,6 +86,10 @@ h7 { display: none; }
 /* Links *****************************************************************/
 
 a { text-decoration: none; }
+
+.links a:link, .links a:active, .links a:visited { color: #000; }
+
+.links a:hover, .links a:focus { color: #C89648; }
 
 /* Home *****************************************************************/
 
@@ -103,6 +138,8 @@ a { text-decoration: none; }
 	width: 24%;
 	text-align: center;
 }
+
+.claim_ridotto { margin: 0 31% !important; }
 
 .headline
 {
@@ -270,6 +307,8 @@ a { text-decoration: none; }
 	font-family: 'JosefinSans3', sans-serif;
 }
 
+.anteprima_ridotta { width: 23% !important; }
+
 .titolo_anteprima
 { /*clear: right; */
 	display: block;
@@ -356,28 +395,20 @@ a { text-decoration: none; }
 	background-position: center;
 }
 
-.pulsante_attivo { left: 0 !important; }
+.pulsante_attivo { left: 16px !important; }
 
-#menu_principale
-{
-	border-right: 1px solid rgba(200, 150, 72, .3);
-/*	padding-top: 1em;
+#menu_principale { border-right: 1px solid rgba(200, 150, 72, .3);/*	padding-top: 1em;
 	padding-left: 1em;
-*/}
+*/ }
 
-.cbp-spmenu { background: #fff; }
-
-.cbp-spmenu-vertical { width: 223px; }
-
-.cbp-spmenu a
+/*.menu_attivo { margin: 1em 1em 1em 0 !important; }
+*/
+.freccia_attiva
 {
-	padding: 0;
-	border-bottom: none;
+	-webkit-transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	transform: rotate(-180deg);
 }
-
-.cbp-spmenu a:hover { background-color: transparent; }
-
-.menu_attivo { margin: 1em 1em 1em 0 !important; }
 
 /* Header */
 
@@ -390,13 +421,14 @@ a { text-decoration: none; }
 #logo
 {
 	background-image: url("../img/logo.svg");
-	background-size: 60%;
+	background-size: 68%;
 	background-attachment: scroll;
 	background-repeat: no-repeat;
 	background-position: 0 0;
-	width: calc(100% - 37px);
+	width: calc(100% - 53px);
 	height: 2em;
 	display: inline-block;
+	margin-left: 16px;
 }
 
 #menu_lingua
@@ -450,6 +482,7 @@ a { text-decoration: none; }
 	position: absolute;
 	width: /*100%*/ 248px;
 	left: 0;
+	overflow: hidden;
 }
 
 #menu_voci a
@@ -459,9 +492,11 @@ a { text-decoration: none; }
 	color: #000;
 	display: block;
 	width: 100%;
-	padding: 1.2em 16px 1em;
+	padding: 1em 16px .8em;
 	border-bottom: 1px solid rgba(200, 150, 72, .3);
 }
+
+#menu_voci a:first-child { border-top: 1px solid rgba(200, 150, 72, .3); }
 
 #menu_voci a:hover, #menu_voci a:focus
 {
@@ -469,17 +504,35 @@ a { text-decoration: none; }
 	color: #fff;
 }
 
+.voce_attiva
+{
+	background-color: #C89648 !important;
+	color: #fff !important;
+}
+
+#menu_voci li { margin-left: 16px; }
+
+.container_menu_livello_2 { display: none; }
+
+.voce_livello_2 { border-bottom: 1px solid #d1d1d1 !important; }
+
+.voce_livello_2:hover, .voce_livello_2:focus, .voce_livello_2_attiva
+{
+	background-color: #d1d1d1 !important;
+	color: #fff !important;
+}
+
 /* Links */
 
 #links_outbound
 {
-	width: 250px/*100%*/;
+	width: 248px/*100%*/;
 	height: 6em;
 	position: absolute;
-	margin-bottom: 1em;
 	bottom: 1em;
 	left: 0;
 	border-bottom: 1px solid rgba(200, 150, 72, .3);
+	overflow: hidden;
 }
 
 .links
@@ -533,6 +586,69 @@ a { text-decoration: none; }
 	padding: .2em 0;
 }
 
+/* Chi Siamo *****************************************************************/
+
+#chi_siamo
+{
+	width: 100%;
+	height: auto;
+}
+
+.titolo_summary
+{
+	margin: 3em auto 1em;
+	text-transform: uppercase;
+	font-size: 2rem;
+	font-family: 'JosefinSans3', sans-serif;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.corpo_summary
+{
+	font-size: .9rem;
+	font-family: 'JosefinSans3', sans-serif;
+	word-wrap: break-word;
+	line-height: 1.1rem;
+	width: 60%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.separatore_chi_siamo
+{
+	width: 100%;
+	height: 7em;
+	text-align: center;
+	margin-top: 4em;
+	display: block;
+	position: relative;
+}
+
+.dingbat
+{
+	border-bottom: 1px solid #dedede;
+	position: absolute;
+	width: 100%;
+	display: block;
+	top: 50%;
+}
+
+.separatore_chi_siamo img
+{
+	width: 112px;
+	height: 7em;
+	position: relative;
+	z-index: 1000;
+	border-radius: 50%;
+}
+
+#carlotta_summary .titolo_summary { margin: 2em auto 1em; }
+
+#emanuela_summary .titolo_summary { margin: 2em auto 1em; }
+
+#emanuela_summary .corpo_summary { margin-bottom: 5em; }
+
 /* Transizioni *****************************************************************/
 
 #home_carousel .slides-pagination a { transition: all .3s ease-in-out; }
@@ -545,11 +661,37 @@ a { text-decoration: none; }
 
 .pulsante_box { transition: all .3s ease-in-out; }
 
+#pulsante_menu { transition: all .3s ease-in-out; }
+
 #freccia_menu { transition: all .3s ease-in-out; }
 
 #container { transition: margin .3s ease-in-out; }
 
 #menu_lingua li { transition: all .3s ease-in-out; }
 
+#menu_voci { transition: all .3s ease-in-out; }
+
 #menu_voci a { transition: all .3s ease-in-out; }
+
+.links a { transition: all .3s ease-in-out; }
+
+#container_menu { transition: all .3s ease-in-out; }
+
+#menu_voci { transition: all .3s ease-in-out; }
+
+#links_outbound { transition: all .3s ease-in-out; }
+
+#separatore_menu { transition: all .3s ease-in-out; }
+
+.anteprima_news { transition: all .3s ease-in-out; }
+
+.container_claim { transition: all .3s ease-in-out; }
+
+/* inizio Mobile *****************************************************************/
+
+@media all and (max-width: 600px) {
+
+body { font-size: 12px; }
+}
+
 /* Fine CSS *****************************************************************/

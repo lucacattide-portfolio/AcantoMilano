@@ -68,13 +68,26 @@
     <!--Inizio Body-->
 
 	<body>
-    
-        <!--Inizio Container-->
-    
-        <div id="container">
         
+        <!--Inizio Containers-->
+    
+    	<div id="container_menu"> <!--Menu-->
+        
+        	<?php
+			
+				include "include/menu.php"; // Inclusione Menu Principale
+				
+			?>
+            
+            <div id="separatore_menu"> <!--Separatore-->
+            </div>
+        
+        </div>
+    
+        <div id="container"> <!--Contenuti-->
+                
             <?php 
-                             
+			
               /*-- BODY -------------------------------------------------------------------*/
       
                switch($pag):
