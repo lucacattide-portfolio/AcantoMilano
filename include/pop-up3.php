@@ -1,0 +1,313 @@
+<?php 
+
+	include("../admin/php/connessione_sql.php"); // Connessione DB 
+
+	 // data setting
+	  @date_default_timezone_set('Europe/Rome');
+	  @setlocale(LC_ALL, 'it_IT');
+	  @setlocale(LC_TIME, 'ita', 'it_IT.utf8');
+
+?>
+
+
+	<h7> <!--Titolo-->
+    
+    	Popup
+        
+    </h7>
+    
+    <div class="logo_popup_1"> <!--Logo-->
+    </div>
+    
+    <div class="chiudi_popup chiudi"> <!--Chiudi-->
+    
+    	<span> <!--Icona-->
+        </span>
+    
+    </div>
+    
+    <!--Inizio Contaniner Popup-->
+    
+    <div class="container_popup_verticale">
+    
+    	<?php
+		   $paginaId = $_GET["id"];
+		   $siteurl_base = "http://www.acantomilano.it/beta/";
+		   $sqlArticolo = "SELECT * FROM `articolo` WHERE articolo_id = ".$paginaId." ";
+		   $rArt = $mysqli->query($sqlArticolo);
+		   $countArticolo =  $rArt->num_rows;
+		
+			if( $countArticolo >= 1 ):
+			   
+				while ($articolo = $rArt->fetch_array()): 
+				
+				$sqlImg = "SELECT * FROM `immagine` WHERE immagine_articolo_id = ".$articolo["articolo_id"]." AND immagine_tipo NOT LIKE 'application/pdf' ";
+				$rImg = $mysqli->query($sqlImg);
+				$countImg =  $rImg->num_rows;
+				
+				
+				 
+				 // ARTICOLO CON IMMAGINE
+		 ?>
+    
+    	<article>
+        
+        	<!--Inizio Header-->
+            
+          <?php if( $countImg == 1): ?>
+                 
+                 
+                 
+                <?php 
+				
+				  while ($immagine = $rImg->fetch_array()):
+				  
+				  $immagine2 =  $immagine["immagine_label"];
+				
+				?>
+                
+                <header class="header_popup" style="background-image:url('<?php echo $siteurl_base; ?>img/<?php echo $immagine2;  ?>')">
+            	</header>
+                
+                <!-- single img --> 
+                
+                <?php endwhile; ?>
+                <?php elseif( $countImg > 1):   ?>
+                
+                  <header id="popup_slides" class="header_popup">	
+				  
+                   <!--Inizio Container Slideshow-->
+    
+                  <ul class="slides-container">
+				  
+				  <?php  while ($immagine = $rImg->fetch_array()):
+				  
+				  $immagine2 =  $immagine["immagine_label"];
+				
+				?>
+                  <!-- loop gallery --> 
+                  
+                 
+                  
+                      <!--Inizio Elemento-->
+                     
+                    <li>
+                  
+                         <div class="foto_home carousel" style="background-image:url('<?php echo $siteurl_base; ?>img/<?php echo $immagine2;  ?>')"> <!--Foto-->
+                         </div>
+                          
+                      </li>
+
+                    <!--Fine Elemento-->
+                  
+                 
+                  
+                <?php endwhile; ?>
+                
+                 </ul>
+                  
+                  <!--Fine Container Slideshow-->  
+                
+                 </header>
+                 
+                <!-- inset gallery close -->
+                
+                <?php endif; ?>		
+            
+            
+        
+        	<!--Inizio Titoli-->
+        
+        	<hgroup>
+        
+                <h7> <!--Sezione-->
+                
+                    Summary
+                    
+                </h7>
+                <h2 class="titolo_summary_2"> <!--Contenuti-->
+                
+                    <?php echo $articolo["articolo_titolo"]; ?>
+                    
+                </h2>
+        
+        	</hgroup>
+            
+            <!--Fine Titoli-->
+             <?php  $articolo["articolo_sottotitolo"]; ?>
+            <!--Inizio Corpo-->
+            
+            <div class="corpo_summary" data-mcs-theme="rounded-dark">
+            
+            	<?php echo $articolo["articolo_testo"]; ?>
+
+          </div>
+            
+            <!--Fine Corpo-->
+            
+            
+            <!--Inizio Date-->
+            
+            <!--Inizio Container-->
+            
+            <div class="elenco_date_dettaglio"> 
+            
+            	<center>
+            
+                    <!--Inizio Dettagli-->
+                
+                    <div class="data_dettaglio">
+                    
+                        <!--Inizio Data-->
+                    
+                        <span class="giorno_dettaglio">
+                        
+                            <span class="numero"> <!--Numero-->
+                                
+                                <?php echo date("d", strtotime($articolo["articolo_data_modifica"])); ?>
+                            
+                            </span>
+                            <span class="mese"> <!--Mese-->
+                            
+                               <?php echo strftime("%b", strtotime($articolo["articolo_data_modifica"])); ?>
+                               
+                            
+                            </span>
+                            <span class="anno"> <!--Anno-->
+                            
+                                 <?php echo date("Y", strtotime($articolo["articolo_data_modifica"])); ?>
+                            
+                            </span>
+                        
+                        </span>
+                        
+                        <!--Fine Data-->
+                        
+                        <span class="ora_dettaglio"> <!--Ora-->
+                        
+                             <?php echo date("H:i", strtotime($articolo["articolo_data_modifica"])); ?>
+                            
+                        </span>
+                        
+                        <!--Inizio Prenotazione-->
+                       
+                        <a class="prenota_interno deseleziona" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p">
+                   
+                            Prenota Ora
+                   
+                        </a>
+                     
+                        <!--Fine Prenotazione-->    
+                       
+                        <!--Inizio Disponibilità-->
+                            
+                        <div class="disponibilita">
+                        
+                            <span class="dispo_icona <?php if ($articolo["articolo_img_id"] == 1): echo "disponibile_ico"; endif; ?>"> <!--Icona-->
+                            </span>
+                            <span class="dispo_label <?php if ($articolo["articolo_img_id"] == 1): echo "disponibile"; endif; ?>"> <!--Etichetta-->
+                            
+                                Esaurito
+                            
+                            </span>
+                        
+                        </div>
+                        
+                        <!--Fine Disponibilità--> 
+                    
+                    </div>	
+                    
+                    <!--Fine Dettagli-->
+                
+                </center>
+            
+            </div>
+            
+            <!--Fine Container-->
+            
+            <!--Fine Date-->
+            
+            
+            <!--Inizio Prenotazione-->
+            
+            <center> 
+           
+           		<a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p">
+           
+              		Prenota Ora
+           
+           		</a>
+                
+           </center>
+         
+           <!--Fine Prenotazione-->    
+           
+           <!--Inizio PDF-->
+           
+           <center>
+           
+           		<?php
+					
+					$sqlImg2 = "SELECT * FROM `immagine` WHERE immagine_articolo_id = ".$articolo["articolo_id"]." AND immagine_tipo LIKE 'application/pdf' LIMIT 0,1 ";
+					$rImg2 = $mysqli->query($sqlImg2);
+					$countImg2 =  $rImg2->num_rows;
+					
+					if ($countImg2 >= 1): 
+					
+						while ($immagine2 = $rImg2->fetch_array()):
+					  
+							$immagine3 =  $immagine2["immagine_label"];
+					
+				?>
+           
+           	   <a class="pulsante_pdf" href="<?php echo $siteurl_base."img/".$immagine3; ?>" target="_blank"  title="<?php echo $articolo["articolo_titolo"]; ?>">
+           
+                   <div class="pdf_popup deseleziona">
+                   
+                        <span class="pdf_icona"> <!--Icona-->
+                        </span>
+                        <span class="pdf_label"> <!--Label-->
+                        
+                            Scarica il PDF del tour guidato
+                            
+                        </span>
+                   
+                   
+                   </div>
+               
+               </a>
+               
+               <?php
+			   
+			   			endwhile;
+						
+					endif;
+			   
+			   ?>
+           
+           </center>
+           
+           <!--Fine PDF-->
+            
+          <div style="clear:both;">
+            </div>
+        
+        </article>
+        
+        <?php
+		
+				
+					
+  				endwhile;
+				
+ 			endif;
+ 
+ 		?>
+        
+	</div>
+        
+        <!--Fine Elenco-->
+    
+    </div>
+    
+    <!--Fine Contaniner Popup-->

@@ -1,5 +1,11 @@
 <?php 
 
+	/* Configurazioni */
+	
+	include("admin/php/connessione_sql.php"); // Connessione DB
+	
+	// Altre configurazioni...
+
 	/* Navigazione */
 
 	if (isset($_GET["pag"])) { // Se il parametro pagina è settato
@@ -12,29 +18,86 @@
 		
 	}
 	
+	
+	if (isset($_GET["art"])) { // Se il parametro art è settato
+	
+		$art = $_GET["art"]; // Allora inizializzalo
+		
+	} else {  // Altrimenti inizializzazione default
+		
+		$art = "";  
+		
+	}
+	
+	if (isset($_GET["box"])) { // Se il parametro art è settato
+	
+		$box = $_GET["box"]; // Allora inizializzalo
+		
+	} else {  // Altrimenti inizializzazione default
+		
+		$box = "";  
+		
+	}
+	
 	// Impostazione Timezone e Codifica Caratteri
 
 	@date_default_timezone_set('Europe/Rome');
 	@setlocale(LC_ALL, 'it_IT');
 	@setlocale(LC_TIME, 'ita', 'it_IT.utf8');
 	
-	// Impostazioni HTACCESS
-	
-	//variabili per htaccess
+	//------- SESSIONE -------------
 
-	if( $pag == "prodotto" ) { // Se la pagina è
-  
-  		$siteurl = "http://localhost/acanto/"; // Allora inizializza l'url
-  
-	} else { // Altrimenti inizializza default
+	session_start(); // Avvia sessione
+	
+	if ( empty($_SESSION['code']) ){
+
+          $_SESSION["code"] = session_id();
+          
+          $_SESSION['vista'] = '0';
+     
+     }else{
+          
+          $_SESSION['vista'] = '1'; 
+     } 
+	
+	include("include/config/function.php"); // Inclusione Funzioni Popolamento Pagina
+	
+	// Impostazioni URL  - Script / Links
+	
+	if ($countPagina >= 1) { // Se esiste almeno un record	
+	
+		while ($rowPaginaHt = $rPagina->fetch_array()): // Finchè sono presenti pagine
+			
+				if ($rowPaginaHt["pagina_dipendenza_id"] == "accordion") { // Se la pagina è un accordion
+				
+					$sqlArticolo = "SELECT * FROM `articolo` WHERE `articolo_pagina_id` = '".$rowPaginaHt["pagina_id"]."' "; // Estrae gli articoli "pagine" dalla tabella
+					$rArticolo = $mysqli->query($sqlArticolo); // Assegna la query
+					$countArticolo =  $rArticolo->num_rows; // Conteggio records
+					
+					if ($countArticolo >= 1): // Se esiste almeno un record
+					
+						while ($rowArticolo = $rArticolo->fetch_array()): // Allora finchè esistono pagine
+					
+							$siteurl = "http://www.acantomilano.it/beta/"; // Allora inizializza l'url	
+							
+						endwhile;
+						
+					endif;
+					
+				} else { // Altrimenti default 
+					
+					$siteurl = "";	
+					
+				}
+				
+		endwhile;
+	
+	}
+	  
+ 	// Impostazioni URL  - Immagini
  
-  		$siteurl = "";
- 
-	} 
-  
- 	// Menu htaccess 
- 
- 	$siteurl_base = "http://localhost/acanto/"; // Inizializzazione URL base
+ 	//$siteurl_base = "http://www.blancdesir.eu/"; // Inizializzazione URL base
+	$siteurl_base = "http://www.acantomilano.it/beta/";
 
 ?>
 
@@ -50,80 +113,82 @@
 
 		<?php 
 		
-			include ("include/meta.php"); // Inclusione Meta Tags
+			include ("include/config/meta.php"); // Inclusione Meta Tags
 			
 		?>
-                
-		<!--Inizio Inclusione CSS-->
 
-		<link rel="stylesheet" type="text/css" href="<?php echo $siteurl; ?>css/style.css"> <!--CSS Main-->
-        <link rel="icon" type="image/png" href="favicon.png" /> <!--FavIcon-->
-	
-    	<!--Fine Inclusione CSS-->
-	
-    </head>
+		<!--Inclusione CSS-->
+
+		<!--Inizio CSS-->
+        
+        <link rel="icon" href="favicon.png" type="image/png" /> <!--FavIcon-->
+        <link rel="stylesheet" href="css/style.css"> <!--CSS Main-->
+        
+	</head>
     
     <!--Fine Head-->
     
     <!--Inizio Body-->
 
 	<body>
-        
-        <!--Inizio Containers-->
     
-    	<div id="container_menu"> <!--Menu-->
-        
-        	<?php
-			
-				include "include/menu.php"; // Inclusione Menu Principale
-				
-			?>
-            
-            <div id="separatore_menu"> <!--Separatore-->
-            </div>
-        
+    	<div class="second circle"> <!--Preloader-->
+        	
+            <strong>100<i>%</i></strong>
+    	
         </div>
-    
-        <div id="container"> <!--Contenuti-->
-                
-            <?php 
-			
-              /*-- BODY -------------------------------------------------------------------*/
+
+	  <?php 
+	  
+      	include ("include/config/banner_cookies.php"); // Inclusione Banner Cookies
+        include ("include/config/header.php"); // Inclusione Header
       
-               switch($pag):
-               
-                 case "":
-                 
-                  include("include/home.php");
-                
-                  break;
-                                       
-                  case "home":
-                 
-                  include("include/home.php");
-                  
-                  break;
-                                      
-               endswitch;
-              
-              /*-- END BODY ------------------------------------------------------------------*/
-                       
-            ?>
-            
-        </div>
-    
-        <!--Fine Container-->
-                        
+      	/*-- BODY -------------------------------------------------------------------*/
+
+
+        if( $pag == "" ): // PAGINA DEFAULT "INDEX.PHP"
+		
+		  include "include/home.php";
+		  
+	    elseif($pag != ""): // CICLO PAGINE	   
+		
+		  $sqlPaginaLoop = "SELECT * FROM `pagina`"; 
+		 
+		  $rPaginaL = $mysqli->query($sqlPaginaLoop);
+		
+	     while ($rowPag = $rPaginaL->fetch_array()): 
+		   
+		   if( $pag == $rowPag['pagina_id'] ):
+		   
+		  		 include "include/".$rowPag['pagina_riferimento']."";   
+				 
+		    endif;		 
+		    
+		 endwhile;
+		
+		endif;
+		
+
+        /*-- END BODY ------------------------------------------------------------------*/
+		
+		include ("include/config/footer.php"); // Inclusione Footer
+         
+      ?>
+      
     </body>
     
     <!--Fine Body -->
+
+    <!--Inizio Footer-->
     
     <?php 
-		  
-     	include ("include/scripts.php"); // Inclusione JavaScript
+	
+     	/************   FOOTER JS   ******************/
+	  
+     	include ("include/config/scripts.php"); // Inclusione JavaScript
 		
     ?>
     
-</html>
+    <!--Fine Footer-->
 
-<!--Fine HTML-->
+</html>
