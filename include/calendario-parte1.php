@@ -31,7 +31,7 @@
 					   $GiorniRicerca = date("Y-m-d", strtotime("".date("Y")."-".date("m")."-".$i.""));
 					   
 				       
-					   $sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) = '".$GiorniRicerca."' AND articolo_id != 22 ";
+					   $sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) = '".$GiorniRicerca."' AND articolo_id != 22 AND articolo_visibile = 1  ";
 					   $rArt2 = $mysqli->query($sqlArticolo2);
 					   $countArticolo2 =  $rArt2->num_rows;
 					   if( $countArticolo2 >= 1 ):
@@ -289,7 +289,7 @@
            <div class="lista-blocco">
              
              <?php
-               $sqlArticolo5 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) >= '".$dataNow."' AND articolo_id != 22 ORDER BY articolo_data_modifica ASC LIMIT 0,1 ";
+               $sqlArticolo5 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) >= '".$dataNow."' AND articolo_id != 22 AND articolo_visibile = 1  ORDER BY articolo_data_modifica ASC LIMIT 0,1 ";
 					   $rArt5 = $mysqli->query($sqlArticolo5);
 					   $countArticolo5 =  $rArt5->num_rows;
 					   if( $countArticolo5 >= 1 ):
@@ -317,7 +317,7 @@
          </section>
          <section class="box-calendario ajax3">
          <?php
-               $sqlArticolo6 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) >= '".$dataNow."' AND articolo_id != 22 ORDER BY articolo_data_modifica ASC LIMIT 0,1 ";
+               $sqlArticolo6 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) >= '".$dataNow."' AND articolo_id != 22 AND articolo_visibile = 1  ORDER BY articolo_data_modifica ASC LIMIT 0,1 ";
 					   $rArt6 = $mysqli->query($sqlArticolo6);
 					   $countArticolo6 =  $rArt6->num_rows;
 					   if( $countArticolo6 >= 1 ):

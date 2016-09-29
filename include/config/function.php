@@ -36,13 +36,15 @@
 
 		$paginaMetaTitle = $seo["pagina_meta_title"]; // pagina meta tag
 		
+		$paginaUrl = $seo["pagina_url"]; // URL pagina
+		
 		 if ($art == ""): // Default
 	
-			$sqlArticolo = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId.""; // Assegnazione Query Pagina DB
+			$sqlArticolo = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1  "; // Assegnazione Query Pagina DB
 			
 		  else: // Altrimenti singole pagine
 		  
-			$sqlArticolo = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_id = ".$art."";
+			$sqlArticolo = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_id = ".$art." AND articolo_visibile = 1  ";
 			
 		  endif;  
 		
@@ -54,13 +56,7 @@
     $countArticolo =  $rArt->num_rows;
 	
 	
-	
-	/* ASSOCIAZIONE ARTICOLO BRAND */
-	/* $sqlArtBrand = "SELECT * FROM `articolo` LEFT JOIN `categoria` ON `articolo`.`articolo_categoria_id` = `categoria`.`categoria_id` WHERE `articolo`.articolo_pagina_id = ".$paginaId." ORDER BY articolo_titolo ASC ";
-					  
-	$rArtBrand = $mysqli->query($sqlArtBrand); // Pagina 
-			  
-	$countArtBrand = $rArtBrand->num_rows; // Conteggio Record Pagina */
+
 	
 	
 	

@@ -1,4 +1,85 @@
 
+/* CHI SIAMO *************************************************/
+
+.contenuto-globale
+{
+	min-height: 200px;
+	height: auto;
+	background: rgba(255,255,255,1.00);
+	margin-bottom: 20px;
+	margin-top: 10px;
+	clear: both;
+	display: block;
+	position: relative;
+}
+
+.contenuto-globale .image
+{
+	width: 25%;
+	min-height: 200px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	float: left;
+	overflow: hidden;
+	display: block;
+}
+
+.contenuto-globale .testo-blocco
+{
+	width: 75%;
+	float: left;
+	min-height: 200px;
+	overflow: hidden;
+	display: block;
+}
+
+.contenuto-globale .testo-blocco h2
+{
+	width: calc(100% -20px);
+	overflow: hidden;
+	clear: both;
+	margin: 0px;
+/*	padding-left: 10px;
+	padding-right: 10px;*/
+	padding: .7em;
+	color: #C89648;
+}
+
+.contenuto-globale .testo-blocco h2 p
+{
+	font-size: 1rem;
+	text-align: left;
+	text-transform: uppercase;
+	color: #C89648;
+	font-family: "JosefinSans3", sans-serif;
+	margin: 0px;
+	margin-top: 1em;
+	padding: 1em;
+}
+
+.contenuto-globale .testo-blocco .testo
+{
+	width: calc(100% -20px);
+	overflow: hidden;
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.contenuto-globale .testo-blocco .testo p
+{
+	font-size: 0.9rem;
+	text-align: left;
+	font-family: "JosefinSans3", sans-serif;
+	margin: 0px;
+	margin-bottom: 1em;
+	margin-top: 1em;
+	line-height: 1.1rem;
+}
+
 /* CONTATTI *************************************************/
 
 .titolo-contatti
@@ -27,6 +108,7 @@
 	width: 33%;
 	display: inline-block;
 	overflow: hidden;
+	float: left;
 }
 
 .infoContainer .boxInfo h2 p
@@ -245,7 +327,7 @@
 	display: block;
 	overflow: hidden;
 	clear: both;
-	margin: 0 auto;
+	margin: 2em auto;
 	max-width: 970px;
 	width: 100%;
 	min-height: 100px;
@@ -834,6 +916,31 @@
 	color: #C89648;
 }
 
+@media all and (max-width: 1529px) {
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box .ore
+{
+	display: block;
+	clear: both;
+	float: right;
+	margin-right: 20px;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box a
+{
+	padding: .6em 12px;
+	display: block;
+	clear: both;
+	text-align: center;
+	margin-top: 15px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	max-width: 120px;
+	float: right;
+	width: 60%;
+}
+}
+
 @media all and (max-width: 1440px) {
 
 .sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box
@@ -865,6 +972,28 @@
 {
 	margin: 0 1% 0 1%;
 	padding-top: 2.2em;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box .ore
+{
+	display: block;
+	clear: both;
+	float: right;
+	margin-right: 20px;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box a
+{
+	padding: .6em 12px;
+	display: block;
+	clear: both;
+	text-align: center;
+	margin-top: -5px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	max-width: 140px;
+	margin-left: 0px;
+	float: right;
 }
 }
 
@@ -904,7 +1033,11 @@
 	margin-bottom: 0;
 }
 
-.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box a { padding: .6em 16px; }
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box a
+{
+	padding: .6em 16px;
+	margin-top: 15px;
+}
 
 .sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box
 {
@@ -939,13 +1072,18 @@
 
 /* MOSTRE */
 
+.mostre
+{
+	overflow: auto;
+	padding-bottom: 20px;
+}
+
 .mostre-grid
 {
 	width: calc( 100% - 40px );
 	max-width: 980px;
 	height: auto;
 	min-height: 100%;
-	overflow: hidden;
 	clear: both;
 	display: block;
 	position: relative;
@@ -954,27 +1092,44 @@
 }
 }
 
+@media all and (max-width: 820px) {
+
+.mostre-grid
+{
+	width: calc( 100% - 40px );
+	max-width: 980px;
+	height: auto;
+	min-height: 100%;
+	clear: both;
+	display: block;
+	position: relative;
+	margin: 0px 0px;
+	padding-bottom: 30px;
+}
+}
+
 @media all and (max-width: 620px) {
 
 .griglia-sezione { margin-top: 4em; }
-.griglia-sezione a.newsletter {
-    width: 100%;
-    margin-top: 2em;
+
+.griglia-sezione a.newsletter
+{
+	width: 100%;
+	margin-top: 2em;
 }
-.griglia-sezione a.prenota_interno {
-    margin: 2em auto 0;
+
+.griglia-sezione a.prenota_interno
+{
+	margin: 2em auto 0;
 	width: 96%;
 }
-.pulsanti_interni {
-    width: 98%;
-}
-}
 
-@media all and (max-width: 620px) {
+.pulsanti_interni { width: 98%; }
 
+/* mostre */
 .mostre-grid .itemContainer
 {
-	width: 96%;
+	width: 100%;
 	clear: both;
 	background: rgba(255,255,255,1.00);
 	position: relative;
@@ -1042,7 +1197,62 @@
 
 @media all and (max-width: 450px) {
 
+/* chi siamo */
+
+.contenuto-globale .image
+{
+	width: 100%;
+	min-height: 250px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	float: left;
+	overflow: hidden;
+	display: block;
+}
+
+.contenuto-globale .testo-blocco
+{
+	width: 100%;
+	float: left;
+	min-height: 200px;
+	overflow: hidden;
+	display: block;
+}
+
+/* calendario */
 .sezione-calendario1 .box-calendario { width: 100%; }
+
+/* mostre */
+
+.mostre-grid
+{
+	width: calc( 100% - 40px );
+	max-width: 980px;
+	height: auto;
+	min-height: 100%;
+	clear: both;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	padding-bottom: 30px;
+}
+
+.mostre-grid .itemContainer
+{
+	width: 100%;
+	clear: both;
+	background: rgba(255,255,255,1.00);
+	position: relative;
+	display: block;
+	overflow: hidden;
+	min-height: 50px;
+	height: auto;
+	transition: all 0.3s ease-in;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 2em;
+}
 
 .mostre-grid .itemContainer .ImgContent
 {

@@ -29,7 +29,33 @@
 		 // ARTICOLO CON IMMAGINE
 		 ?>
          
-    <article class="align_bio">
+         <article class="contenuto-globale sezione-grid <?php $articolo_out = str_replace("<p>", "", $articolo["articolo_titolo"]);  $articolo_out = str_replace("</p>", "", $articolo_out); echo $articolo_out; ?>">
+          
+             <div class="image" style="background-image:url(<?php echo $siteurl_base;  ?>img/<?php echo $immagine2; ?>)">
+             </div>
+             
+             <div class="testo-blocco">
+                <h2><?php echo $articolo["articolo_titolo"]; ?></h2>
+                
+                <div class="testo">
+                 <?php echo $articolo["articolo_testo"]; ?>
+                </div> 
+             </div>
+             
+             <div class="clear"></div>
+       
+          </article>
+          
+          <div class="clear" style="margin: 20px 0;"></div>
+         
+         
+         
+         <?php
+	
+		 /*
+		 ?>
+         
+   <article class="align_bio">
     
     		<!--Inizio Immagini-->
     
@@ -86,12 +112,30 @@
 	
     
     <?php	 
+		 */ 
 		 
+		 $i++;
 		 endwhile;
 		 
 		else:
 		
-   ?> 
+		?>
+        <article class="sezione-grid">
+          
+          <h2 class="intestazione"><?php echo $articolo["articolo_titolo"]; ?></h2>
+          
+          <div class="testoIntestazione"><?php echo $articolo["articolo_testo"]; ?></div>
+        
+        </article>
+        
+        
+        
+        
+        
+        <?php
+		
+		/*
+   ?>   
         <article>
         
         	<!--Inizio Titoli-->
@@ -128,6 +172,7 @@
         
         </article>
 <?php 
+    */
    endif; 
   endwhile;
  endif; 

@@ -28,8 +28,8 @@
 		 $rPaginaLoop = $mysqli->query( $sqlPaginaLoop );
 		 $countPaginaLoop =  $rPaginaLoop->num_rows;
 		 if($countPaginaLoop >= 1):
-		 while ($PaginaLoop = $rPaginaLoop->fetch_array()): ?>
-        
+		 while ($PaginaLoop = $rPaginaLoop->fetch_array()): $paginaUrl = $PaginaLoop["pagina_url"]; ?>
+        	
         	<?php echo $PaginaLoop["pagina_meta_title"]; ?>
 		  	
 		<?php endwhile; endif; ?>	
@@ -53,7 +53,7 @@
         
         	<!--Inizio Articolo-->
             <?php 
-			  $sqlArticolo3 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." ";
+			  $sqlArticolo3 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1  ";
 			  $rArt3 = $mysqli->query($sqlArticolo3);
 			  $countArticolo3 =  $rArt3->num_rows;
 			  if($countArticolo3  >= 1):
@@ -127,6 +127,22 @@
                     
                     <div class="corpo_summary corpo_eventi">
                     
+                    	<!--Inizio Facebook Widget-->
+                    
+                        <div class="fb-share-button" data-href="<?php echo "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.acantomilano.it%2F".$paginaUrl;
+                        
+                        /*"http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].$_SERVER['QUERY_STRING'];*/ ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                        
+                            <a class="fb-xfbml-parse-ignore social_share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo "http%3A%2F%2Fwww.acantomilano.it%2F".$paginaUrl; ?>&amp;src=sdkpreparse">
+                            
+                                Condividi
+                                
+                            </a>
+                            
+                        </div>
+                        
+                        <!--Fine Facebook Widget-->         
+                    
                         <?php echo $articolo3["articolo_testo"]; ?>
                         
                     </div>
@@ -189,7 +205,7 @@
                        
                    		<!--Fine PDF-->
 					   
-                       <a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p"> <!--Prenota-->
+                       <a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php echo $articolo["articolo_id"]; ?>"> <!--Prenota-->
                  
                           Prenota Ora
                  

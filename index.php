@@ -132,11 +132,37 @@
 
 	<body>
     
+        <!--Inizio Facebook Widget-->
+        
+        <div id="fb-root">
+        </div>
+        
+        <script>
+        
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v2.7";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        
+        </script>
+        
+        <!--Fine Facebook Widget-->
+    
     	<div class="second circle"> <!--Preloader-->
         	
             <strong>100<i>%</i></strong>
     	
         </div>
+        
+        <!--Inizio Prenota Popup-->
+
+        <aside id="prenota_popup" class="secondo_piano">
+        </aside>
+        
+        <!--Fine Prenota Popup-->
 
 	  <?php 
 	  
@@ -174,7 +200,7 @@
 		include ("include/config/footer.php"); // Inclusione Footer
          
       ?>
-      
+            
     </body>
     
     <!--Fine Body -->

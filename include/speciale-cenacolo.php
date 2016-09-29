@@ -18,7 +18,7 @@
 		$sqlImg = "SELECT * FROM `immagine` WHERE immagine_articolo_id = ".$articolo["articolo_id"]." LIMIT 0,1 ";
 	    $rImg = $mysqli->query($sqlImg);
 		$countImg =  $rImg->num_rows;
-		
+
 		if( $countImg >= 1):
 		
 		 while ($immagine = $rImg->fetch_array()):
@@ -27,6 +27,10 @@
 		 $i = 1;
 		 
 		 // ARTICOLO CON IMMAGINE 
+		  endwhile;
+						
+	     endif;
+		 
 		 ?>
          
    <article>
@@ -57,39 +61,65 @@
             
             <div class="corpo_summary">
             
+				<!--Inizio Facebook Widget-->
+                    
+                <div class="fb-share-button" data-href="<?php echo "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.acantomilano.it%2F".$paginaUrl;
+				
+				/*"http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].$_SERVER['QUERY_STRING'];*/ ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                
+                    <a class="fb-xfbml-parse-ignore social_share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo "http%3A%2F%2Fwww.acantomilano.it%2F".$paginaUrl; ?>&amp;src=sdkpreparse">
+                    
+                        Condividi
+                        
+                    </a>
+                    
+                </div>
+                
+                <!--Fine Facebook Widget-->          
+                  
             	<?php echo $articolo["articolo_testo"]; ?>
             
             </div>
+            
+            <center> 
+           
+           		<a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php echo $articolo["articolo_id"]; ?>">
+           
+              		Prenota Ora
+           
+           		</a>
+                
+           </center>
             
             <!--Fine Corpo-->
             
             <!--Inizio Date-->
             
-            <!--Inizio Container-->
+            <!--<!--Inizio Container--
             
             <div class="elenco_date_dettaglio"> 
             
             	<center>
             
-                    <!--Inizio Dettagli-->
+                    <!--Inizio Dettagli--
                 
                     <div class="data_dettaglio">
                     
-                        <!--Inizio Data-->
+                        <!--Inizio Data--
                     
                         <span class="giorno_dettaglio">
                         
-                            <span class="numero"> <!--Numero-->
+                            <span class="numero"> <!--Numero--
                                 
                                 14
                             
                             </span>
-                            <span class="mese"> <!--Mese-->
+                            <span class="mese"> <!--Mese--
                             
                                 Sett
                             
                             </span>
-                            <span class="anno"> <!--Anno-->
+                            <span class="anno"> <!--Anno--
                             
                                 2016
                             
@@ -97,31 +127,31 @@
                         
                         </span>
                         
-                        <!--Fine Data-->
+                        <!--Fine Data--
                         
-                        <span class="ora_dettaglio"> <!--Ora-->
+                        <span class="ora_dettaglio"> <!--Ora--
                         
                             15:30
                             
                         </span>
                         
-                        <!--Inizio Prenotazione-->
+                        <!--Inizio Prenotazione--
                        
-                        <a class="prenota_interno deseleziona" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p">
+                        <a class="prenota_interno deseleziona prenotazione" href="<?php //echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php //echo $articolo["articolo_id"]; ?>">
                    
                             Prenota Ora
                    
                         </a>
                      
-                        <!--Fine Prenotazione-->    
+                        <!--Fine Prenotazione--  
                        
-                        <!--Inizio Disponibilità-->
+                        <!--Inizio Disponibilità--
                             
                         <div class="disponibilita">
                         
-                            <span class="dispo_icona <?php if ($articolo3["articolo_img_id"] == 1): echo "disponibile_ico"; endif; ?>"> <!--Icona-->
+                            <span class="dispo_icona <?php //if ($articolo["articolo_img_id"] == 1): echo "disponibile_ico"; endif; ?>"> <!--Icona--
                             </span>
-                            <span class="dispo_label <?php if ($articolo3["articolo_img_id"] == 1): echo "disponibile"; endif; ?>"> <!--Etichetta-->
+                            <span class="dispo_label <?php //if ($articolo["articolo_img_id"] == 1): echo "disponibile"; endif; ?>"> <!--Etichetta--
                             
                                 Esaurito
                             
@@ -129,11 +159,11 @@
                         
                         </div>
                         
-                        <!--Fine Disponibilità--> 
+                        <!--Fine Disponibilità-- 
                     
                     </div>	
                     
-                    <!--Fine Dettagli-->
+                    <!--Fine Dettagli---->
                 
                 </center>
             
@@ -158,6 +188,9 @@
 						while ($immagine2 = $rImg2->fetch_array()):
 					  
 							$immagine3 =  $immagine2["immagine_label"];
+							
+							 endwhile;
+                       endif;		
 					
 				?>
            
@@ -180,15 +213,15 @@
                
                <?php
 			   
-			   			endwhile;
-						
-					endif;
+			   			
 			   
 			   ?>
            
            </center>
            
            <!--Fine PDF-->
+           
+           
             
              <div style="clear:both;">
             </div>
@@ -197,8 +230,7 @@
 		
         <?php	  
 		 
-		 endwhile;
-   endif; 
+ 
   endwhile;
  endif; 
 ?>       

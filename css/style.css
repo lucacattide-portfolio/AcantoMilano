@@ -429,6 +429,17 @@ a { text-decoration: none; }
 
 /* inizio Mobile *****************************************************************/
 
+@media all and (max-width: 2556px) { /* Desktop - Hi-Res */
+
+.container_claim .logo_carousel { width: 48%; }
+
+.evento_correlato
+{
+	height: 24em;
+	max-height: 24em;
+}
+}
+
 @media all and (max-width: 1440px) { /* Laptop - Hi-Res */
 
 .container_claim { width: 38%; }
@@ -582,6 +593,11 @@ a { text-decoration: none; }
 .align_bio { margin: 4em auto; }
 }
 
+@media all and (max-width: 1366px) and (max-height: 640px) {
+
+.headline { font-size: 2rem; }
+}
+
 @media all and (max-width: 1280px) { /* Laptop */
 
 .container_claim .logo_carousel { width: 94%; }
@@ -594,7 +610,7 @@ a { text-decoration: none; }
 	bottom: 16px;
 }
 
-.container_claim .logo_carousel { width: 90%; }
+.container_claim .logo_carousel { width: 72%; }
 
 .claim_ridotto
 {
@@ -625,7 +641,13 @@ a { text-decoration: none; }
 
 @media all and (max-width: 1024px) { /* Tablet */
 
-body { overflow: auto; }
+body
+{
+	overflow: auto;
+	width: calc(100% - 2em);
+	height: calc(100% - 2em);
+	min-height: calc(100% - 2em);
+}
 
 #container_menu
 {
@@ -649,7 +671,7 @@ body { overflow: auto; }
 
 #container
 {
-	width: calc(100% - 32px);
+	width: /*calc(100% - 32px)*/ 100%;
 	height: 100%;
 	min-height: 100%;
 	display: block;
@@ -818,6 +840,131 @@ body { overflow: auto; }
 .titolo-contatti { margin: 1.5em auto 1em; }
 
 #home_carousel { margin-top: 1em; }
+
+#pulsante_apertura_cal.pulsante_attivo { right: 6px !important; }
+}
+
+@media all and (max-width: 980px) {
+
+.container_claim .logo_carousel { width: 62%; }
+
+#titolo_dettagli hr { width: 84%; }
+}
+
+@media all and (max-width: 620px) {
+
+body { overflow-x: hidden; }
+
+#banner_cookies { font-size: .8rem; }
+
+#banner_cookies .chiudi_popup
+{
+	top: auto;
+	right: 16px;
+	bottom: 16px;
+}
+
+#banner_cookies { width: calc(100% - 32px); }
+
+#banner_cookies p { padding: 0 64px; }
+
+.leggi_anteprima { right: 48px; }
+
+.container_claim .logo_carousel { width: 94%; }
+
+.container_chiuso { width: calc(100% - 32px) !important; }
+
+#pulsante_menu { right: 0; }
+
+.griglia-sezione .boxBlock { max-width: none; }
+
+.evento_correlato { width: 100%; }
+
+.container_evento
+{
+	width: calc(100% - 48px);
+	min-height: 22em;
+}
+
+.data_evento_dettaglio { width: calc(100% - 2px); }
+
+.container_foto_evento_dettaglio
+{
+	width: 100%;
+	margin-top: 2em;
+}
+
+.titolo_evento_dettaglio { width: calc(100% - 140px); }
+
+.titolo_evento_dettaglio { min-height: 5em; }
+
+.orario_evento_dettaglio
+{
+	width: calc(100% - 2px);
+	margin-top: .5em;
+}
+
+.info_container { width: 100%; }
+
+.info_3 { width: 42%; }
+
+.info_4
+{
+	margin: 0 3% 0 3%;
+	padding-top: 2.7em;
+	width: 42%;
+}
+
+.info_5
+{
+	padding-top: 2em;
+	margin: 0;
+}
+
+.prenotazione_evento_dettaglio.cal { width: 100%; }
+
+.prenotazione_evento_dettaglio.cal .prenota_interno { width: 90%; }
+
+#titolo_dettagli hr { width: 72%; }
+
+.data_dettaglio
+{
+	max-width: none;
+	width: 79%;
+}
+
+.giorno_dettaglio { width: 42%; }
+
+.ora_dettaglio
+{
+	width: 44%;
+	padding: 2em 13px;
+}
+
+.elenco_date_dettaglio .prenota_interno { padding: 1em 176px; }
+
+#prenota_form { width: 90%; }
+
+#prenota_form .chiudi_popup
+{
+	right: 0;
+	top: -42px;
+}
+
+.mCSB_inside>.mCSB_container { margin-right: 0; }
+
+.data_evento
+{
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.azioni_evento
+{
+	display: block;
+	width: 100%;
+}
 }
 
 @media all and (max-width: 600px) {
@@ -828,7 +975,7 @@ body { font-size: 12px; }
 {
 	height: 5em !important;
 	min-height: 5em !important;
-	width: calc(100% - 25px) !important;
+	width: calc(100% - 24px) !important;
 }
 
 #logo { height: 3em; }
@@ -837,7 +984,7 @@ body { font-size: 12px; }
 
 #freccia_menu { height: 2.5em; }
 
-#container_menu { width: calc(100% - 25px); }
+#container_menu { width: calc(100% - 24px); }
 
 .dominio { padding: 0; }
 
@@ -853,6 +1000,7 @@ body { font-size: 12px; }
 	height: 3.5em;
 	min-height: 3.5em;
 	margin-top: 1.8em;
+	display: block;
 }
 
 .box_preview { width: 100%; }
@@ -887,19 +1035,11 @@ body { font-size: 12px; }
 
 .evento_correlato { width: 100%; }
 
-#pulsante_apertura_cal
+#banner_cookies
 {
-	width: 22px;
-	height: 22px;
+	font-size: .7rem;
+	width: calc(100% - 48px);
 }
-
-#apertura_titolo
-{
-	font-size: .5rem;
-	line-height: 1.7rem;
-}
-
-#banner_cookies { font-size: .7rem; }
 
 #banner_cookies .chiudi_popup
 {
@@ -913,7 +1053,7 @@ body { font-size: 12px; }
 
 .container_evento
 {
-	width: calc(100% - 48px);
+	width: calc(100% - 24px);
 	min-height: 26em;
 }
 
@@ -954,8 +1094,6 @@ body { font-size: 12px; }
 
 .prenotazione_evento_dettaglio.cal { width: 100%; }
 
-/*.data_dettaglio .prenota_interno { display: block; }
-*/
 #titolo_dettagli hr { width: 72%; }
 
 .data_dettaglio
@@ -981,25 +1119,152 @@ body { font-size: 12px; }
 	right: 0;
 	top: -42px;
 }
-.mCSB_inside>.mCSB_container {
-     margin-right: 0; 
+
+.mCSB_inside>.mCSB_container { margin-right: 0; }
+
+.data_evento
+{
+	display: block;
+	width: 100%;
+	text-align: center;
 }
-.data_evento {
-    display: block;
-    width: 100%;
-    text-align: center;
+
+.azioni_evento
+{
+	display: block;
+	width: 100%;
 }
-.azioni_evento {
-    display: block;
-    width: 100%;
+
+.griglia-sezione-esterna { width: 90%; }
+
+.griglia-sezione-esterna .boxBlock { max-width: none; }
+
+.container_claim .logo_carousel
+{
+	width: 98%;
+	height: 3.6em;
 }
-.griglia-sezione-esterna {
-    width: 90%;
+
+#home_slides .slides-pagination { top: 40%; }
+
+.anteprima_news { height: 8.44em; }
 }
-.griglia-sezione-esterna .boxBlock {
-    max-width: none;
-   
+
+@media all and (max-width: 480px) {
+
+.elenco_date_dettaglio .prenota_interno { padding: 1em 136px; }
+
+.giorno_dettaglio { width: 40%; }
+
+.ora_dettaglio { width: 43%; }
 }
+
+@media all and (max-width: 450px) {
+
+.pulsante_attivo { right: 0 !important; }
+
+.container_claim { width: 62%; }
+
+.container_claim .logo_carousel { width: 82%; }
+
+#banner_cookies .chiudi_popup { right: 12px; }
+
+.social { width: 33%; }
+
+#titolo_dettagli hr { width: 62%; }
+
+#apertura_titolo
+{
+	padding: 1em 4px;
+	height: 1.5em;
+	line-height: 1.5rem;
+}
+
+#banner_cookies { width: calc(100% - 24px); }
+
+.container_evento { width: calc(100% - 48px); }
+
+.elenco_date_dettaglio .prenota_interno { padding: 1em 126px; }
+
+.giorno_dettaglio { width: 40%; }
+
+.ora_dettaglio { width: 43%; }
+
+#prenota_form { top: 5%; }
+
+#prenota_form label[for="oggetto_prenota"]
+{
+	width: 100%;
+	display: block;
+}
+
+#prenota_form label[for="data_prenota"]
+{
+	width: 48%;
+	display: inline-block;
+	margin-left: 0;
+}
+
+#prenota_form label[for="ora_prenota"]
+{
+	width: 45%;
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.form-newsletter button
+{
+	float: none;
+	display: block;
+	width: 100%;
+	margin-top: 1em;
+}
+}
+
+@media all and (max-width: 420px) and (max-height: 700px) {
+
+#container_menu { width: calc(100% - 48px) !important; }
+
+.container_chiuso { width: calc(100% - 48px) !important; }
+
+#menu_voci { max-height: 40em; }
+}
+
+@media all and (max-width: 375px) {
+
+#apertura_titolo
+{
+	font-size: .8rem;
+	height: 1.7em;
+}
+
+.container_claim .logo_carousel { width: 100%; }
+
+.anteprima_news { width: 90%; }
+
+#links_outbound { bottom: 2em; }
+
+#banner_cookies { width: calc(100% - 48px); }
+
+#banner_cookies p { padding: 0 48px; }
+
+#banner_cookies .chiudi_popup { right: 8px; }
+
+#container_menu { width: calc(100% - 48px); }
+
+.container_chiuso { width: calc(100% - 48px) !important; }
+
+.pdf_cal { top: auto; bottom: 64px;}
+
+.giorno_dettaglio { width: 40%; }
+
+.ora_dettaglio { width: 40%; }
+
+.elenco_date_dettaglio .prenota_interno { padding: 1em 100px; }
+
+#prenota_form label { font-size: .6rem; }
+
+#prenota_form label[for="ora_prenota"] { width: 42%; }
 }
 
 /* Fine CSS *****************************************************************/

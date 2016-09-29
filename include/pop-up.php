@@ -28,7 +28,18 @@
 		 $rPaginaLoop = $mysqli->query( $sqlPaginaLoop );
 		 $countPaginaLoop =  $rPaginaLoop->num_rows;
 		 if($countPaginaLoop >= 1):
-		 while ($PaginaLoop = $rPaginaLoop->fetch_array()): ?>
+		 while ($PaginaLoop = $rPaginaLoop->fetch_array()):
+		 
+		  $sqlPaginaLoop = "SELECT * FROM `pagina` WHERE `pagina_id` = '".$articolo["articolo_pagina_id"]."' ";
+				 $rPaginaLoop = $mysqli->query( $sqlPaginaLoop );
+				 $countPaginaLoop =  $rPaginaLoop->num_rows;
+				 if($countPaginaLoop >= 1):
+				 while ($PaginaLoop = $rPaginaLoop->fetch_array()): $paginaUrl = $PaginaLoop["pagina_url"]; 
+				 endwhile;
+				 endif;
+		 
+		 
+		  ?>
         
         	<?php echo $PaginaLoop["pagina_meta_title"]; ?>
 		  	
@@ -99,6 +110,21 @@
                     <!--Inizio Corpo-->
                     
                     <div class="corpo_summary">
+                    
+                    	<!--Inizio Facebook Widget-->
+                    
+                    	<div class="fb-share-button" data-href="<?php echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].$_SERVER['QUERY_STRING']; ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                        
+                        	<a class="fb-xfbml-parse-ignore social_share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $urlSocial; ?>&amp;src=sdkpreparse">
+
+                            
+                            	Condividi
+                                
+                            </a>
+                            
+                        </div>
+                        
+                        <!--Fine Facebook Widget-->
                     
                         <?php echo $articolo3["articolo_testo"]; ?>
                         

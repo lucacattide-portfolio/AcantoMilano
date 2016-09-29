@@ -29,7 +29,7 @@
            <?php
 		    $dateCurrentMonth = date('Y-m', strtotime(strtotime($dateCurrentMonth)));
 		     
-			 $sqlArticoloAB = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) >= '".$dateCurrentMonth."' AND articolo_id != 22 ";
+			 $sqlArticoloAB = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) >= '".$dateCurrentMonth."' AND articolo_id != 22 AND articolo_visibile = 1  ";
 			 $rArtAB = $mysqli->query($sqlArticoloAB);
 			 $countArticoloAB =  $rArtAB->num_rows;
 			 if( $countArticoloAB >= 1 ):

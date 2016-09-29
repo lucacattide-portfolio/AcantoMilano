@@ -13,6 +13,28 @@ $(document).ready(function() {
 			
 			$(".sezione-calendario1 .numGiorni").empty();
 			$(".sezione-calendario1 .numGiorni").fadeIn(500).html( data );
+			
+			disponibile();
+	
+		});
+		
+		
+		$.post('http://www.acantomilano.it/beta/include/ajax-calendario4.php', { datarif: ""+ dataRiferimento +"", dataId: ""+ dataId +"" } ).done(function( data ){
+			
+			$("#dettagli_contenuti").empty();
+			$("#dettagli_contenuti").fadeIn(500).html( data );
+			
+			disponibile();
+	
+		});
+		
+		
+		$.post('http://www.acantomilano.it/beta/include/ajax-calendario5.php', { datarif: ""+ dataRiferimento +"", dataId: ""+ dataId +"" } ).done(function( data ){
+			
+			$("#titolo_dettagli").empty();
+			$("#titolo_dettagli").fadeIn(500).html( data );
+			
+			disponibile();
 	
 		});
 	
@@ -30,6 +52,8 @@ $(document).ready(function() {
 			
 			$(".sezione-calendario1 .numGiorni").empty();
 			$(".sezione-calendario1 .numGiorni").html( data );
+			
+			disponibile();
 	
 		});
 		
@@ -37,6 +61,8 @@ $(document).ready(function() {
 			
 			$(".sezione-calendario1 .lista-blocco").empty();
 			$(".sezione-calendario1 .lista-blocco").html( data );
+			
+			disponibile();
 	
 		});
 		
@@ -45,6 +71,8 @@ $(document).ready(function() {
 			
 			$(".sezione-calendario1 .ajax3").empty();
 			$(".sezione-calendario1 .ajax3").html( data );
+			
+			disponibile();
 	
 		});
 	
@@ -53,4 +81,32 @@ $(document).ready(function() {
 	
 	
     
+});
+
+
+$(window).on("load resize",function(){
+	 
+	 var heightBox = $(".itemContainer");
+	 
+	 $(".ImgContent").height(heightBox);
+	 
+	 
+	 if( $(window).width() > 980 ){
+	 
+		 $(".mostre-grid").mCustomScrollbar({
+			  
+				axis: "y",
+				autoHideScrollbar: true,
+				mouseWheel: { 
+				
+					enable: true,
+					axis: "y"	
+				},
+				theme: "rounded-dark"
+			  
+			});
+	
+	  }
+	 
+	
 });

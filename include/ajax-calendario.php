@@ -48,7 +48,7 @@
 					   $GiorniRicerca = date("Y-m-d H:i:s", strtotime("".date("Y",strtotime($_POST["datarif"]))."-".date("m",strtotime($_POST["datarif"]))."-".$i.""));
 					   
 				       
-					   $sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) = '".$GiorniRicerca."' AND articolo_id != 22 ";
+					   $sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) = '".$GiorniRicerca."' AND articolo_id != 22 AND articolo_visibile = 1 ";
 					   $rArt2 = $mysqli->query($sqlArticolo2);
 					   $countArticolo2 =  $rArt2->num_rows;
 					   if( $countArticolo2 >= 1 ):

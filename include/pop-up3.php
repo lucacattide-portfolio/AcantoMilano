@@ -33,13 +33,20 @@
     	<?php
 		   $paginaId = $_GET["id"];
 		   $siteurl_base = "http://www.acantomilano.it/beta/";
-		   $sqlArticolo = "SELECT * FROM `articolo` WHERE articolo_id = ".$paginaId." ";
+		   $sqlArticolo = "SELECT * FROM `articolo` WHERE articolo_id = ".$paginaId." AND articolo_visibile = 1 ";
 		   $rArt = $mysqli->query($sqlArticolo);
 		   $countArticolo =  $rArt->num_rows;
 		
 			if( $countArticolo >= 1 ):
 			   
 				while ($articolo = $rArt->fetch_array()): 
+				 $sqlPaginaLoop = "SELECT * FROM `pagina` WHERE `pagina_id` = '".$articolo["articolo_pagina_id"]."' ";
+				 $rPaginaLoop = $mysqli->query( $sqlPaginaLoop );
+				 $countPaginaLoop =  $rPaginaLoop->num_rows;
+				 if($countPaginaLoop >= 1):
+				 while ($PaginaLoop = $rPaginaLoop->fetch_array()): $paginaUrl = $PaginaLoop["pagina_url"]; 
+				 endwhile;
+				 endif;
 				
 				$sqlImg = "SELECT * FROM `immagine` WHERE immagine_articolo_id = ".$articolo["articolo_id"]." AND immagine_tipo NOT LIKE 'application/pdf' ";
 				$rImg = $mysqli->query($sqlImg);
@@ -139,73 +146,103 @@
             
             <div class="corpo_summary" data-mcs-theme="rounded-dark">
             
+				<!--Inizio Facebook Widget-->
+                    
+                <div class="fb-share-button" data-href="<?php echo "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.acantomilano.it%2F".$paginaUrl;
+                
+                /*"http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].$_SERVER['QUERY_STRING'];*/ ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                
+                    <a class="fb-xfbml-parse-ignore social_share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo "http%3A%2F%2Fwww.acantomilano.it%2F".$paginaUrl; ?>&amp;src=sdkpreparse">
+                    
+                        Condividi
+                        
+                    </a>
+                    
+                </div>
+                
+                <!--Fine Facebook Widget-->           
+                   
             	<?php echo $articolo["articolo_testo"]; ?>
 
           </div>
             
             <!--Fine Corpo-->
             
+             <!--Inizio Prenotazione-->
+            
+            <center> 
+           
+           		<a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php echo $articolo["articolo_id"]; ?>">
+           
+              		Prenota Ora
+           
+           		</a>
+                
+           </center>
+         
+           <!--Fine Prenotazione--> 
+            
             
             <!--Inizio Date-->
             
-            <!--Inizio Container-->
+            <!--<!--Inizio Container--
             
             <div class="elenco_date_dettaglio"> 
             
             	<center>
             
-                    <!--Inizio Dettagli-->
+                    <!--Inizio Dettagli--
                 
                     <div class="data_dettaglio">
                     
-                        <!--Inizio Data-->
+                        <!--Inizio Data--
                     
                         <span class="giorno_dettaglio">
                         
-                            <span class="numero"> <!--Numero-->
+                            <span class="numero"> <!--Numero--
                                 
-                                <?php echo date("d", strtotime($articolo["articolo_data_modifica"])); ?>
+                                <?php //echo date("d", strtotime($articolo["articolo_data_modifica"])); ?>
                             
                             </span>
-                            <span class="mese"> <!--Mese-->
+                            <span class="mese"> <!--Mese--
                             
-                               <?php echo strftime("%b", strtotime($articolo["articolo_data_modifica"])); ?>
+                               <?php //echo strftime("%b", strtotime($articolo["articolo_data_modifica"])); ?>
                                
                             
                             </span>
-                            <span class="anno"> <!--Anno-->
+                            <span class="anno"> <!--Anno--
                             
-                                 <?php echo date("Y", strtotime($articolo["articolo_data_modifica"])); ?>
+                                 <?php //echo date("Y", strtotime($articolo["articolo_data_modifica"])); ?>
                             
                             </span>
                         
                         </span>
                         
-                        <!--Fine Data-->
+                        <!--Fine Data--
                         
-                        <span class="ora_dettaglio"> <!--Ora-->
+                        <span class="ora_dettaglio"> <!--Ora--
                         
-                             <?php echo date("H:i", strtotime($articolo["articolo_data_modifica"])); ?>
+                             <?php //echo date("H:i", strtotime($articolo["articolo_data_modifica"])); ?>
                             
                         </span>
                         
-                        <!--Inizio Prenotazione-->
+                        <!--Inizio Prenotazione--
                        
-                        <a class="prenota_interno deseleziona" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p">
+                        <a class="prenota_interno deseleziona prenotazione" href="<?php //echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php //echo $articolo["articolo_id"]; ?>">
                    
                             Prenota Ora
                    
                         </a>
                      
-                        <!--Fine Prenotazione-->    
+                        <!--Fine Prenotazione--   
                        
-                        <!--Inizio Disponibilità-->
+                        <!--Inizio Disponibilità--
                             
                         <div class="disponibilita">
                         
-                            <span class="dispo_icona <?php if ($articolo["articolo_img_id"] == 1): echo "disponibile_ico"; endif; ?>"> <!--Icona-->
+                            <span class="dispo_icona <?php //if ($articolo["articolo_img_id"] == 1): echo "disponibile_ico"; endif; ?>"> <!--Icona--
                             </span>
-                            <span class="dispo_label <?php if ($articolo["articolo_img_id"] == 1): echo "disponibile"; endif; ?>"> <!--Etichetta-->
+                            <span class="dispo_label <?php //if ($articolo["articolo_img_id"] == 1): echo "disponibile"; endif; ?>"> <!--Etichetta--
                             
                                 Esaurito
                             
@@ -213,11 +250,11 @@
                         
                         </div>
                         
-                        <!--Fine Disponibilità--> 
+                        <!--Fine Disponibilità-- 
                     
                     </div>	
                     
-                    <!--Fine Dettagli-->
+                    <!--Fine Dettagli---->
                 
                 </center>
             
@@ -227,21 +264,6 @@
             
             <!--Fine Date-->
             
-            
-            <!--Inizio Prenotazione-->
-            
-            <center> 
-           
-           		<a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p">
-           
-              		Prenota Ora
-           
-           		</a>
-                
-           </center>
-         
-           <!--Fine Prenotazione-->    
-           
            <!--Inizio PDF-->
            
            <center>

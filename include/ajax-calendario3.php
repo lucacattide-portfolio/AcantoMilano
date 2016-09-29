@@ -15,7 +15,7 @@
 	  $datePrevMonth = date('Y-m', strtotime('-1 month', strtotime($dateCurrentMonth)));
 
 
-               $sqlArticolo6 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) = '".$dateCurrentMonth."' AND articolo_id != 22 ORDER BY articolo_data_modifica ASC LIMIT 0,1 ";
+               $sqlArticolo6 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) = '".$dateCurrentMonth."' AND articolo_id != 22 AND articolo_visibile = 1  ORDER BY articolo_data_modifica ASC LIMIT 0,1 ";
 					   $rArt6 = $mysqli->query($sqlArticolo6);
 					   $countArticolo6 =  $rArt6->num_rows;
 					   if( $countArticolo6 >= 1 ):

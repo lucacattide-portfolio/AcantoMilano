@@ -1,0 +1,71 @@
+.compass{
+	display:none;
+}
+.compass .back {
+  fill: #eee;
+  fill-opacity: .8;
+}
+
+.compass .fore {
+  stroke: #999;
+  stroke-width: 1.5px;
+}
+
+.compass rect.back.fore {
+  fill: #999;
+  fill-opacity: .3;
+  stroke: #eee;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+
+.compass .direction {
+  fill: none;
+}
+
+.compass .chevron {
+  fill: none;
+  stroke: #999;
+  stroke-width: 5px;
+}
+
+.compass .zoom .chevron {
+  stroke-width: 4px;
+}
+
+.compass .active .chevron, .compass .chevron.active {
+  stroke: #fff;
+}
+
+.compass.active .active .direction {
+  fill: #999;
+}
+
+
+.header-seperation{ background:rgba(205,205,205,1.00) !important; }
+
+.header-seperation a img{ margin-left:30px; margin-top:10px; }
+
+
+#main-menu-wrapper{ text-transform:uppercase !important; }
+
+
+/* pagina home  ****************************************/
+
+
+.itemBoxMenu{ 
+  background:rgba(205,205,205,1.0);
+  margin:2%;
+  padding-bottom:5px;
+ }
+ 
+ .itemBoxMenu .grid-title{
+	 text-transform:uppercase;
+	 padding-top:5px;
+}
+
+
+.itemBoxMenu a{ color:rgba(105,105,105,1.00); }
+
+.semi-bold{ text-transform:uppercase; }
+

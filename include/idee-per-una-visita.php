@@ -7,6 +7,9 @@
   <?php 
    if( $countArticolo >= 1 ):
 		while ($articolo = $rArt->fetch_array()): 
+		
+		$riferimento = $articolo["articolo_id"];
+		
   ?>		
   
      <!-- titolo -->
@@ -70,17 +73,24 @@
         
         <?php endwhile; endif; ?>
         
- 	 	<!--Inizio Prenotazione-->
-               
-       <a class="prenota_interno deseleziona" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p">
-       
-          Prenota Ora
-       
-       </a>
-     
-       <!--Fine Prenotazione-->    
-        
      </center>
+     
+     <center>
+     
+        <div class="clear">
+     	</div>
+     <!--Inizio Prenotazione-->
+               
+       <a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php echo $riferimento; ?>">
+           
+            Prenota Ora
+   
+        </a>
+
+       <!--Fine Prenotazione-->    
+       
+      </center>
+     
    </div>
  
   <!-- END griglia img -->

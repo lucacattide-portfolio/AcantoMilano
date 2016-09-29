@@ -7,6 +7,7 @@
   <?php 
    if( $countArticolo >= 1 ):
 		while ($articolo = $rArt->fetch_array()): 
+		$riferimento = $articolo["articolo_id"]; 
   ?>		
   
      <!-- titolo -->
@@ -65,11 +66,11 @@
            
            <!--Inizio Prenotazione-->
                      
-           <a class="prenota_interno news deseleziona" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p">
+           <a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php echo $riferimento; ?>">
            
               Prenota Ora
-           
-           </a>
+     
+          </a>
          
            <!--Fine Prenotazione-->  
        

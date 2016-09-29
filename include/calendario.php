@@ -31,7 +31,23 @@
             </h7>
             <h2 id="apertura_titolo"> 
                 
-                CLICCA SULLA FRECCIA ALLA DESTRA DELLO SCHERMO PER MOSTRARE TUTTI GLI EVENTI DEL MESE NEL CALENDARIO
+                <?php 
+				
+					 $sqlArticolo120 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1  ";
+					 $rArt120 = $mysqli->query($sqlArticolo120);
+					 $countArticolo120 =  $rArt120->num_rows;
+		 
+		 			 if( $countArticolo120 >= 1 ):
+		   
+		   				while ($articolo120 = $rArt120->fetch_array()): 
+		 			 
+					 		echo $articolo120["articolo_sottotitolo"]; 
+					 
+					 	endwhile;
+					 
+					 endif;
+					 
+				?>
                     
                 <!--Inizio Pulsante-->
                 
@@ -62,7 +78,7 @@
         
         <?php
 		
-		 $sqlArticolo20 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_gallery_id = 1 AND articolo_id != 22 ";
+		 $sqlArticolo20 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_gallery_id = 1 AND articolo_id != 22 AND articolo_visibile = 1  ";
 		 $rArt20 = $mysqli->query($sqlArticolo20);
 		 $countArticolo20 =  $rArt20->num_rows;
 		 if( $countArticolo20 >= 1 ):

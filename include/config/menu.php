@@ -83,7 +83,7 @@
            
            <!--Fine Voci-->
         
-        <nav>
+        </nav>
         
         <!--Fine Lingua-->
     
@@ -93,7 +93,7 @@
     
     <!--Inizio Voci-->
     
-    <ul id="menu_voci" class="<?php if( $_SESSION['vista'] == 0 ): if( $pag == 1 || $pag == ""  ):  ?>container_voci_chiuso<?php else: endif; endif; ?>">
+    <ul id="menu_voci" class="<?php if( $_SESSION['vista'] == 0 ): if( $pag == 1 || $pag == ""  ):  ?>container_voci_chiuso<?php else: endif; endif; ?> nascondi no_animazione">
     
        <?php while ($menu = $rMenu->fetch_array()): 
 	     
@@ -218,7 +218,7 @@
 			
 			elseif( $menu["pagina_dipendenza_id"]  == "articolo" ): 
                     
-				$sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$menu["pagina_id"].""; // Assegnazione Query Pagina DB
+				$sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$menu["pagina_id"]." AND articolo_visibile = 1 "; // Assegnazione Query Pagina DB
 				
 				$rArt2 = $mysqli->query($sqlArticolo2);
 				$countArticolo2 =  $rArt2->num_rows;
@@ -265,7 +265,7 @@
     
     <!--Inizio Links Outbound-->
     
-    <div id="links_outbound" class="<?php if( $_SESSION['vista'] == 0 ): if( $pag == 1 || $pag == ""   ):  ?>container_links_chiuso<?php else: endif; endif;?>">
+    <div id="links_outbound" class="<?php if( $_SESSION['vista'] == 0 ): if( $pag == 1 || $pag == ""   ):  ?>container_links_chiuso<?php else: endif; endif;?> nascondi no_animazione">
     
     	<!--Inizio Social-->
     

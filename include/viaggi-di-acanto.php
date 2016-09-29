@@ -5,7 +5,7 @@
   <section class="sezione-grid">
   
   <?php 
-    $sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." LIMIT 0,1 ";
+    $sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1  LIMIT 0,1 ";
 	$rArt2 = $mysqli->query($sqlArticolo2);
     $countArticolo2 =  $rArt2->num_rows;
    if( $countArticolo2 >= 1 ):
@@ -33,7 +33,7 @@
    <div class="griglia-sezione griglia_viaggi">
      <center>
         <?php 
-		  $sqlArticolo3 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." LIMIT 1,".$countArticolo."   ";
+		  $sqlArticolo3 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1  LIMIT 1,".$countArticolo."   ";
 	      $rArt3 = $mysqli->query($sqlArticolo3);
           $countArticolo3 =  $rArt3->num_rows;
 		 if($countArticolo3  >= 1):

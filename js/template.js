@@ -87,7 +87,7 @@ function inizializza() {
 		
 		if ($(window).width() <= 1024) { // Se siamo su mobile
 		
-			$("#menu_voci, #links_outbound, #separatore_menu").addClass("nascondi no_animazione"); // Disattiva la transizione
+			//$("#menu_voci, #links_outbound, #separatore_menu").removeClass("nascondi no_animazione"); // Disattiva la transizione
 			$("#pulsante_menu").addClass("pulsante_attivo"); // Allora anima l'ingresso del menu
 			$("#freccia_menu").addClass("freccia_attiva"); // Anima icona
 			$("#container_menu").addClass("container_chiuso"); // Nasconde Menu
@@ -110,7 +110,12 @@ function inizializza() {
 			
 			}
 			
-		}	
+		} else {
+			
+			$("#menu_voci, #links_outbound, #separatore_menu").removeClass("nascondi no_animazione"); // Disattiva la transizione
+		
+		}
+		 
 		
 	});
 	
@@ -185,16 +190,7 @@ function inizializza() {
 	
 	// Disponibilità
 	
-	if (($(".dispo_icona").hasClass("disponibile_ico")) && ($(".dispo_label").hasClass("disponibile"))) { // Se l'icona risulta attiva - L'evento è disponibile
-		
-		$(".dispo_label").html("Disponibile"); // Segna come disponibile
-		
-	} else { 
-	
-		$(".dispo_icona").removeClass("disponibile_ico"); // Allora rendila attiva
-		$(".dispo_label").html("Esaurito"); // Segna come disponibile
-	
-	}
+	disponibile(); 
 	
 	// PDF
 	
@@ -298,7 +294,7 @@ function transizioni() {
 	$(document).on("click tap", ".prenotazione", function(e) { // Al click su prenota
 	
 		var riferimento = $(this).attr("rel"); // Dichiarazione ed Inizializzazione Variabile Riferimento
-	
+		
 		e.preventDefault(); // Disabilita funzione standard pulsante
 
 		// Chiamata AJAX - Passaggio di parametro
@@ -515,30 +511,51 @@ function preloader() {
 		$('.second.circle strong').fadeOut(); // Nascondi il preloader
 		$('.second.circle').fadeOut(500, function() { // Anima l'ingresso dei contenuti
 		
-	   if (($("#home_carousel").length > 0) && (ingresso === true) && $(window).width() > 1024) { // Se siamo in Home su Desktop e non è stata ancora effettuata l'animazione di ingresso
-	
-		  setTimeout(function() { // Anima ingresso Menu
+			$("#container_menu, #container").removeClass("occulta");
+			$("#container, #container_contenuti").addClass("animated fadeIn");
+			
+		   if (($("#home_carousel").length > 0) && (ingresso === true) && $(window).width() > 1024) { // Se siamo in Home su Desktop e non è stata ancora effettuata l'animazione di ingresso
+		
+			  setTimeout(function() { // Anima ingresso Menu
+				  
+				  $("#pulsante_menu").removeClass("pulsante_attivo"); // Allora anima l'ingresso del menu
+				  $("#freccia_menu").removeClass("freccia_attiva"); // Anima icona
+				  $("#container_menu").removeClass("container_chiuso"); // Nasconde Menu
+				  $("#menu_voci").removeClass("container_voci_chiuso"); // Nasconde Voci
+				  $("#links_outbound").removeClass("container_links_chiuso"); // Nasconde Links Outbound
+				  $("#separatore_menu").removeClass("separatore_out"); // Nasconde Separatore
+				  $("#container").removeClass("container_full"); // Contenuto tutto schermo
+				  $(".anteprima_news").addClass("anteprima_ridotta"); // Contenuto tutto schermo
+				  $(".container_claim").addClass("claim_ridotto"); // Contenuto tutto schermo
+				  $(".griglia-sezione-esterna").addClass("griglia_centrata"); //Centra la griglia esterna delle sottosezioni 
+				  
+			  }, 2700);
 			  
-			  $("#pulsante_menu").removeClass("pulsante_attivo"); // Allora anima l'ingresso del menu
-			  $("#freccia_menu").removeClass("freccia_attiva"); // Anima icona
-			  $("#container_menu").removeClass("container_chiuso"); // Nasconde Menu
-			  $("#menu_voci").removeClass("container_voci_chiuso"); // Nasconde Voci
-			  $("#links_outbound").removeClass("container_links_chiuso"); // Nasconde Links Outbound
-			  $("#separatore_menu").removeClass("separatore_out"); // Nasconde Separatore
-			  $("#container").removeClass("container_full"); // Contenuto tutto schermo
-			  $(".anteprima_news").addClass("anteprima_ridotta"); // Contenuto tutto schermo
-			  $(".container_claim").addClass("claim_ridotto"); // Contenuto tutto schermo
-			  $(".griglia-sezione-esterna").addClass("griglia_centrata"); //Centra la griglia esterna delle sottosezioni 
+			  ingresso = false; // Disabilita animazione dopo l'esecuzione
 			  
-		  }, 2700);
-		  
-		  ingresso = false; // Disabilita animazione dopo l'esecuzione
-		  
-	  } 
+		  } 
 		
 	});
 	
 	});
+	
+}
+
+
+// Funzione Verifica Disponibilità 
+
+function disponibile() {
+	
+	if (($(".dispo_icona").hasClass("disponibile_ico")) && ($(".dispo_label").hasClass("disponibile"))) { // Se l'icona risulta attiva - L'evento è disponibile
+		
+		$(".dispo_label").html("Disponibile"); // Segna come disponibile
+		
+	} else { 
+	
+		$(".dispo_icona").removeClass("disponibile_ico"); // Allora rendila attiva
+		$(".dispo_label").html("Esaurito"); // Segna come disponibile
+	
+	}
 	
 }
 	

@@ -2,7 +2,7 @@
 
 	// Invio Form
 	
-	$email_proprietario = "luca@laboratorio-a.it"; // Dichiarazione ed Inizializzazione Variabile Destinatario
+	$email_proprietario = "curiosacanto@gmail.com"; // Dichiarazione ed Inizializzazione Variabile Destinatario
 	$oggetto = "Contatti - Acanto Milano"; // Dichiarazione ed Inizializzazione Variabile Oggetto
 	
 	// Controllo Input

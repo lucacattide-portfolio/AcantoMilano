@@ -155,7 +155,7 @@
 				   
 				      while ($PaginaNews = $rPaginaNews->fetch_array()):
 						
-					  $sqlArticolo3 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$PaginaNews["pagina_id"].""; // Assegnazione Query Pagina DB
+					  $sqlArticolo3 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$PaginaNews["pagina_id"]." AND articolo_visibile = 1  "; // Assegnazione Query Pagina DB
 					  $rArt3 = $mysqli->query($sqlArticolo3);
 					  $countArticolo3 =  $rArt3->num_rows;
 					  
