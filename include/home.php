@@ -22,7 +22,7 @@
     
     <!--Inizio Slideshow-->
     
-    <div id="home_slides" class="<?php if( $_SESSION['vista'] == 0 ): if( $pag == 1 || $pag == ""   ):  ?> animated fadeInDown <?php else:  endif; endif; ?>">
+    <div id="home_slides" class="<?php if( $_SESSION['vista'] == 0 ): if( $pag == 1 || $pag == ""   ):  /* ?> animated fadeInDown <?php */ else:  endif; endif; ?>">
     
     	<!--Inizio Container Slideshow-->
     
@@ -111,7 +111,7 @@
 
 <!--Inizio News-->
 
-<aside id="news_preview" class="box_home bg_news <?php if( $_SESSION['vista'] == 0 ): if( $pag == 1 || $pag == ""   ):  ?> animated fadeInUp <?php else:  endif; endif; ?>">
+<aside id="news_preview" class="box_home bg_news <?php if( $_SESSION['vista'] == 0 ): if( $pag == 1 || $pag == ""   ):  /* ?> animated fadeInUp <?php */ else:  endif; endif; ?>">
 
 	<h7> <!--Titolo-->
     
@@ -302,7 +302,7 @@
 	 
 ?> 
 
-<aside class="box_preview box_home deseleziona <?php if( $_SESSION['vista'] == 0 ): if( $pag == 1 || $pag == ""   ):  ?> animated fadeInUp<?php else:  endif; endif; ?>" style="background-image:url(<?php echo $siteurl_base;  ?>img/<?php echo $immagine; ?>)">
+<aside class="box_preview box_home deseleziona <?php if( $_SESSION['vista'] == 0 ): if( $pag == 1 || $pag == ""   ):  /* ?> animated fadeInUp <?php */ else:  endif; endif; ?>" style="background-image:url(<?php echo $siteurl_base;  ?>img/<?php echo $immagine; ?>)">
 
 	<h7> <!--Titolo-->
     

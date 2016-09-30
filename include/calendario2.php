@@ -1555,15 +1555,19 @@
 		
 		?>
     
-    	<div class="evento_correlato" style="background-image:url(<?php echo $siteurl_base;  ?>img/<?php echo $immagine2; ?>)">
+    	<a href="<?php echo $siteurl_base; ?>include/pop-up3.php" rel="<?php echo $articolo20["articolo_id"]; ?>" title="<?php echo $articolo20["articolo_titolo"]; ?>">
         
-        	<a class="pulsante_box" href="<?php echo $siteurl_base; ?>include/pop-up3.php" rel="<?php echo $articolo20["articolo_id"]; ?>" title="<?php echo $articolo20["articolo_titolo"]; ?>" >
+            <div class="evento_correlato" style="background-image:url(<?php echo $siteurl_base;  ?>img/<?php echo $immagine2; ?>)">
             
-            	<?php echo $articolo20["articolo_titolo"]; ?>
+                <span class="pulsante_box">
+                
+                    <?php echo $articolo20["articolo_titolo"]; ?>
+                
+                </span>
             
-            </a>
+            </div>
         
-        </div>
+        </a>
     
     	<?php
 		
@@ -1576,7 +1580,7 @@
 		?>
     
     </section>
-    
+        
     <!--Fine Correlati-->
     
     <!--Inizio Scarica PDF-->

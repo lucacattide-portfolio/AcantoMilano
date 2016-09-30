@@ -105,15 +105,19 @@
 		
 		?>
     
-    	<div class="evento_correlato" style="background-image:url(<?php echo $siteurl_base;  ?>img/<?php echo $immagine2; ?>)">
+    	<a href="<?php echo $siteurl_base; ?>include/pop-up3.php" rel="<?php echo $articolo20["articolo_id"]; ?>" title="<?php $etichetta = str_replace("<p>", "", $articolo20["articolo_titolo"]); $etichetta = str_replace("</p>", "", $etichetta); echo $etichetta; ?>">
         
-        	<a class="pulsante_box" href="<?php echo $siteurl_base; ?>include/pop-up3.php" rel="<?php echo $articolo20["articolo_id"]; ?>" title="<?php $etichetta = str_replace("<p>", "", $articolo20["articolo_titolo"]); $etichetta = str_replace("</p>", "", $etichetta); echo $etichetta; ?>" >
+            <div class="evento_correlato" style="background-image:url(<?php echo $siteurl_base;  ?>img/<?php echo $immagine2; ?>)">
             
-            	<?php echo $articolo20["articolo_url"];  ?>
+                <span class="pulsante_box">
+                
+                    <?php echo $articolo20["articolo_url"];  ?>
+                
+                </span>
             
-            </a>
+            </div>
         
-        </div>
+        </a>
     
     	<?php
 		
@@ -191,11 +195,3 @@
     
 </div>
 
-<!--Inizio Popup Verticale-->
-
-<aside class="popup_verticale secondo_piano">
-
-
-</aside>
-
-<!--Fine Popup Verticale-->

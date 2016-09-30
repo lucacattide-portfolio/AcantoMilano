@@ -257,60 +257,61 @@
                     <!--Fine Dettagli---->
                 
                 </center>
+                
+                 <!--Inizio PDF-->
+           
+                 <center>
+                 
+                      <?php
+                          
+                          $sqlImg2 = "SELECT * FROM `immagine` WHERE immagine_articolo_id = ".$articolo["articolo_id"]." AND immagine_tipo LIKE 'application/pdf' LIMIT 0,1 ";
+                          $rImg2 = $mysqli->query($sqlImg2);
+                          $countImg2 =  $rImg2->num_rows;
+                          
+                          if ($countImg2 >= 1): 
+                          
+                              while ($immagine2 = $rImg2->fetch_array()):
+                            
+                                  $immagine3 =  $immagine2["immagine_label"];
+                          
+                      ?>
+                 
+                     <a class="pulsante_pdf" href="<?php echo $siteurl_base."img/".$immagine3; ?>" target="_blank"  title="<?php echo $articolo["articolo_titolo"]; ?>">
+                 
+                         <div class="pdf_popup deseleziona">
+                         
+                              <span class="pdf_icona"> <!--Icona-->
+                              </span>
+                              <span class="pdf_label"> <!--Label-->
+                              
+                                  Scarica il PDF del tour guidato
+                                  
+                              </span>
+                         
+                         
+                         </div>
+                     
+                     </a>
+                     
+                     <?php
+                     
+                              endwhile;
+                              
+                          endif;
+                     
+                     ?>
+                 
+                 </center>
+                 
+                 <!--Fine PDF-->
+            
             
             </div>
             
             <!--Fine Container-->
             
             <!--Fine Date-->
-            
-           <!--Inizio PDF-->
-           
-           <center>
-           
-           		<?php
-					
-					$sqlImg2 = "SELECT * FROM `immagine` WHERE immagine_articolo_id = ".$articolo["articolo_id"]." AND immagine_tipo LIKE 'application/pdf' LIMIT 0,1 ";
-					$rImg2 = $mysqli->query($sqlImg2);
-					$countImg2 =  $rImg2->num_rows;
-					
-					if ($countImg2 >= 1): 
-					
-						while ($immagine2 = $rImg2->fetch_array()):
-					  
-							$immagine3 =  $immagine2["immagine_label"];
-					
-				?>
-           
-           	   <a class="pulsante_pdf" href="<?php echo $siteurl_base."img/".$immagine3; ?>" target="_blank"  title="<?php echo $articolo["articolo_titolo"]; ?>">
-           
-                   <div class="pdf_popup deseleziona">
-                   
-                        <span class="pdf_icona"> <!--Icona-->
-                        </span>
-                        <span class="pdf_label"> <!--Label-->
-                        
-                            Scarica il PDF del tour guidato
-                            
-                        </span>
-                   
-                   
-                   </div>
-               
-               </a>
-               
-               <?php
-			   
-			   			endwhile;
-						
-					endif;
-			   
-			   ?>
-           
-           </center>
-           
-           <!--Fine PDF-->
-            
+          
           <div style="clear:both;">
             </div>
         

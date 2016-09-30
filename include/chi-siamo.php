@@ -46,13 +46,13 @@
        
           </article>
           
-          <div class="clear" style="margin: 20px 0;"></div>
+         <!-- <div class="out_clear" ></div>-->
          
          
          
          <?php
 	
-		 /*
+		 /*style="margin: 20px 0;"
 		 ?>
          
    <article class="align_bio">

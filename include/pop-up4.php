@@ -17,7 +17,7 @@
     
     <!--Inizio Contaniner Popup-->
     
-    <div class="container_popup_verticale">
+    <div class="container_popup_verticale overHide">
     
     	<h2 class="titolo_popup"> <!--Titolo-->
         
@@ -234,6 +234,9 @@
         </div>
         
         <!--Fine Elenco-->
+        
+        <div class="out_clear">
+        </div>
      
     </div>
     

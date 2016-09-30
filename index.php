@@ -157,13 +157,6 @@
     	
         </div>
         
-        <!--Inizio Prenota Popup-->
-
-        <aside id="prenota_popup" class="secondo_piano">
-        </aside>
-        
-        <!--Fine Prenota Popup-->
-
 	  <?php 
 	  
       	include ("include/config/banner_cookies.php"); // Inclusione Banner Cookies
@@ -204,6 +197,20 @@
     </body>
     
     <!--Fine Body -->
+    
+    <!--Inizio Popup Verticale-->
+
+    <aside class="popup_verticale secondo_piano">
+    </aside>
+    
+    <!--Fine Popup Verticale-->
+    
+     <!--Inizio Prenota Popup-->
+
+    <aside id="prenota_popup" class="secondo_piano">
+    </aside>
+    
+    <!--Fine Prenota Popup-->
 
     <!--Inizio Footer-->
     

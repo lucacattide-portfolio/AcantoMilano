@@ -2,7 +2,7 @@
 
 <!--Inizio Pulsante-->
 
-<aside id="pulsante_menu" class="<?php if( $_SESSION['vista'] == 0 ): if( $pag == 1 || $pag == ""   ):  ?>pulsante_attivo<?php else:  endif; endif; ?>">
+<aside id="pulsante_menu" class="<?php if( $_SESSION['vista'] >= 0 ): if( $pag == 1 || $pag == ""   ):  ?>pulsante_attivo<?php  else:  endif; endif; ?>">
 
 	<h7> <!--Titolo-->
     
@@ -10,7 +10,7 @@
         
     </h7>
     
-    <div id="freccia_menu" class="<?php if( $_SESSION['vista'] == 0 ): if( $pag == 1 || $pag == ""  ):  ?>freccia_attiva<?php else:  endif; endif; ?>"> <!--Freccia--> 
+    <div id="freccia_menu" class="<?php if( $_SESSION['vista'] >= 0 ): if( $pag == 1 || $pag == ""  ):  ?>freccia_attiva<?php  else:  endif; endif; ?>"> <!--Freccia--> 
     </div>
 
 </aside>
@@ -93,7 +93,7 @@
     
     <!--Inizio Voci-->
     
-    <ul id="menu_voci" class="<?php if( $_SESSION['vista'] == 0 ): if( $pag == 1 || $pag == ""  ):  ?>container_voci_chiuso<?php else: endif; endif; ?> nascondi no_animazione">
+    <ul id="menu_voci" class="<?php if( $_SESSION['vista'] >= 0 ): if( $pag == 1 || $pag == ""  ):  ?>container_voci_chiuso<?php else: endif; endif; ?> nascondi no_animazione">
     
        <?php while ($menu = $rMenu->fetch_array()): 
 	     
@@ -149,7 +149,7 @@
 		 
 		 ?>
                    
-         <span class="popUpMenu container_menu_livello_2 <?php if( $box == $menu["pagina_id"] ): echo "voce_attiva2"; endif; ?>">
+       <!--  <span class="popUpMenu container_menu_livello_2 <?php if( $box == $menu["pagina_id"] ): echo "voce_attiva2"; endif; ?>">
                    
          <?php while ($menu2 = $rMenu2->fetch_array()): ?>
               
@@ -168,7 +168,7 @@
                  
          <?php endwhile; // CHIUSURA LIV 2 ?>
                    
-         </span>
+         </span> -->
                    
          <?php
                    
@@ -188,7 +188,7 @@
 		 
 		 ?>
                    
-         <span class="container_menu_livello_2 <?php if( $box == $menu["pagina_id"] ): echo "voce_attiva2"; endif; ?>">
+        <!-- <span class="container_menu_livello_2 <?php if( $box == $menu["pagina_id"] ): echo "voce_attiva2"; endif; ?>">
                    
          <?php while ($menu2 = $rMenu2->fetch_array()): ?>
               
@@ -205,7 +205,7 @@
                  
          <?php endwhile; // CHIUSURA LIV 2 ?>
                    
-         </span>
+         </span> -->
                    
          <?php
                    
@@ -227,7 +227,7 @@
 				   
 		?>
                    
-        <span class="container_menu_livello_2 <?php if( $pag == $menu["pagina_id"] ): echo "voce_attiva2"; endif; ?>">
+      <!--  <span class="container_menu_livello_2 <?php if( $pag == $menu["pagina_id"] ): echo "voce_attiva2"; endif; ?>">
        
        	<?php while ($articolo2 = $rArt2->fetch_array()): ?>
        
@@ -243,7 +243,7 @@
           
        <?php endwhile; ?>   
         
-       </span> 
+       </span>  -->
 
        <?php
        
@@ -265,7 +265,7 @@
     
     <!--Inizio Links Outbound-->
     
-    <div id="links_outbound" class="<?php if( $_SESSION['vista'] == 0 ): if( $pag == 1 || $pag == ""   ):  ?>container_links_chiuso<?php else: endif; endif;?> nascondi no_animazione">
+    <div id="links_outbound" class="<?php if( $_SESSION['vista'] >= 0 ): if( $pag == 1 || $pag == ""   ):  ?>container_links_chiuso<?php  else: endif; endif;?> nascondi no_animazione">
     
     	<!--Inizio Social-->
     
