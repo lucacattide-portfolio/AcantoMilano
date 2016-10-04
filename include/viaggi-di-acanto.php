@@ -40,7 +40,7 @@
 		 while ($articolo3 =  $rArt3->fetch_array()):
 		 		
 				//IMG BACKGROUND
-				$sqlImg = "SELECT * FROM `immagine` WHERE immagine_articolo_id = ".$articolo3["articolo_id"]." LIMIT 0,1 ";
+				$sqlImg = "SELECT * FROM `immagine` WHERE immagine_articolo_id = ".$articolo3["articolo_id"]." AND immagine_tipo NOT LIKE 'application/pdf' LIMIT 0,1 ";
 				$rImg = $mysqli->query($sqlImg);
 				$countImg = $rImg->num_rows;
 				if($countImg >= 1):

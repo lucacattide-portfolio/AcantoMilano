@@ -190,7 +190,7 @@
                             	
                                 <?php 
 								
-								$dataEv = utf8_encode( strftime("%d %B %Y", strtotime($articolo3["articolo_sottotitolo"])) );   
+								$dataEv = utf8_encode( strftime("%d %B %Y", strtotime($articolo3["articolo_data_modifica"])) );   
 								echo $dataEv;  
 								
 								?>
