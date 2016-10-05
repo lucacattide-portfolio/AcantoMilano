@@ -455,9 +455,10 @@ a { text-decoration: none; }
 
 @media all and (max-width: 1440px) { /* Laptop - Hi-Res */
 
-.evento_correlato {
-    height: 13.75em;
-    max-height: 9.5em;
+.evento_correlato
+{
+	height: 13.75em;
+	max-height: 9.5em;
 }
 
 #container_contenuti[rel="speciale-cenacolo"] .corpo_summary { width: 68%; }
@@ -530,6 +531,8 @@ a { text-decoration: none; }
 	background-size: 45%;
 	background-position: 45% 45%;
 }
+
+.box_home .pulsante_box { top: 40%; }
 
 .pulsante_box
 {
@@ -680,6 +683,8 @@ a { text-decoration: none; }
 }
 
 @media all and (max-width: 1024px) { /* Tablet */
+
+.box_home .pulsante_box { top: 50%; }
 
 .container_claim .logo_carousel { display: none; }
 

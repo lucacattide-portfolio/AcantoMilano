@@ -71,5 +71,25 @@
       </label>
       <button type="submit">Invia</button>
     </form>
+    
+    <!--Inizio Credits-->
+    
+    <div id="credits">
+    
+    	<small>
+        
+        	Credits by 
+        
+            <a href="http://www.laboratorio-a.it" title="laboratorio-a" target="new">
+            
+                laboratorio-a
+                
+            </a>
+            
+        </small>
+    
+    </div>
+    
+    <!--Fine Credits-->
 
 </div> <!--Fine Container contatti -->

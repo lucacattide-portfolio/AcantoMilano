@@ -52,7 +52,7 @@
             
             <ul>
             
-            	<a href="index.php?lang=ita" title="Italiano">
+            	<a href="http://www.acantomilano.it/beta" title="Italiano">
                 
                     <li class="lingua_attiva">
                     
@@ -65,9 +65,9 @@
                     </li>
                 
                 </a>
-                <a href="http://www.acantomilano.com" title="Inglese">
+                <a href="http://www.acantomilano.com/beta" title="Inglese">
                 
-                    <li>
+                    <li >
                     
                         <span>
                         

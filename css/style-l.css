@@ -515,7 +515,7 @@ a[data-rel="1"] { background-color: #626CB4; }
 	display: block;
 	position: relative;
 	clear: both;
-	margin: 0 auto 2em;
+	margin: 0 auto 10em;
 }
 
 #carlotta_summary .titolo_summary { margin: 2em auto 1em; }
@@ -1684,6 +1684,25 @@ fieldset { border: 0; }
 	color: rgba(200,150,72,1);
 }
 
+
+/* Credits ************************/
+
+#credits
+{
+	dispaly: block;
+	position: relative;
+	width: 100%;
+	text-align: center;
+	margin: 1em auto 5em;
+	font-size: .9rem;
+	font-family: "JosefinSans3", sans-serif;
+	color: #000;
+}
+
+#credits a { color: rgba(200,150,72,1); }
+
+#credits a:hover { opacity: .7; }
+
 /* Transizioni  ************************/
 
 #banner_cookies a { transition: all .3s ease-in-out; }
@@ -1719,6 +1738,8 @@ fieldset { border: 0; }
 .pdf_cal_link { transition: all .3s ease-in-out; }
 
 .pdf_cal { transition: all .3s ease-in-out; }
+
+#credits a { transition: all .3s ease-in-out; }
 
 /* Animate */
 

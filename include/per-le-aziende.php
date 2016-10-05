@@ -61,90 +61,90 @@
 		
 		?>
      	<!--<div class="boxBlock" style="background-image:url(<?php //echo $siteurl_base;  ?>img/<?php //echo $img; ?>)">
-          <a href="#" rel="<?php //echo $PaginaLoop["pagina_id"]; ?>">
+          <a data-id="1" href="#" rel="<?php //echo $PaginaLoop["pagina_id"]; ?>">
           
              <p><?php // echo $PaginaLoop["pagina_meta_title"]; ?></p>
         
           </a>
         </div>-->
-        <div class="boxBlock" style="background-image:url(img/azienda_1.png);">
-          <a href="#" rel="">
+        <div data-id="1" class="boxBlock" style="background-image:url(img/azienda_1.png);">
+          <a  data-id="1" rel="">
           
              <p>Nome Azienda</p>
         
           </a>
         </div>
-         <div class="boxBlock" style="background-image:url(img/azienda_2.png);">
-          <a href="#" rel="">
+         <div data-id="1" class="boxBlock" style="background-image:url(img/azienda_2.png);">
+          <a  data-id="1" rel="">
           
              <p>Nome Azienda</p>
         
           </a>
         </div>
-         <div class="boxBlock" style="background-image:url(img/azienda_3.png);">
-          <a href="#" rel="">
+         <div data-id="1" class="boxBlock" style="background-image:url(img/azienda_3.png);">
+          <a  data-id="1" rel="">
           
              <p>Nome Azienda</p>
         
           </a>
         </div>
-         <div class="boxBlock" style="background-image:url(img/azienda_4.png);">
-          <a href="#" rel="">
+         <div data-id="1" class="boxBlock" style="background-image:url(img/azienda_4.png);">
+          <a  data-id="1" rel="">
           
              <p>Nome Azienda</p>
         
           </a>
-        </div> <div class="boxBlock" style="background-image:url(img/azienda_5.png);">
-          <a href="#" rel="">
-          
-             <p>Nome Azienda</p>
-        
-          </a>
-        </div>
-         <div class="boxBlock" style="background-image:url(img/azienda_6.png);">
-          <a href="#" rel="">
+        </div> <div data-id="1" class="boxBlock" style="background-image:url(img/azienda_5.png);">
+          <a  data-id="1" rel="">
           
              <p>Nome Azienda</p>
         
           </a>
         </div>
-         <div class="boxBlock" style="background-image:url(img/azienda_7.png);">
-          <a href="#" rel="">
+         <div data-id="1" class="boxBlock" style="background-image:url(img/azienda_6.png);">
+          <a  data-id="1" rel="">
           
              <p>Nome Azienda</p>
         
           </a>
         </div>
-         <div class="boxBlock" style="background-image:url(img/azienda_8.png);">
-          <a href="#" rel="">
+         <div data-id="1" class="boxBlock" style="background-image:url(img/azienda_7.png);">
+          <a  data-id="1" rel="">
           
              <p>Nome Azienda</p>
         
           </a>
         </div>
-         <div class="boxBlock" style="background-image:url(img/azienda_9.png);">
-          <a href="#" rel="">
+         <div data-id="1"  class="boxBlock" style="background-image:url(img/azienda_8.png);">
+          <a  data-id="1" rel="">
           
              <p>Nome Azienda</p>
         
           </a>
         </div>
-         <div class="boxBlock" style="background-image:url(img/azienda_10.png);">
-          <a href="#" rel="">
+         <div  data-id="1" class="boxBlock" style="background-image:url(img/azienda_9.png);">
+          <a data-id="1" href="#" rel="">
           
              <p>Nome Azienda</p>
         
           </a>
         </div>
-         <div class="boxBlock" style="background-image:url(img/azienda_11.png);">
-          <a href="#" rel="">
+         <div data-id="1" class="boxBlock" style="background-image:url(img/azienda_10.png);">
+          <a  data-id="1" rel="">
           
              <p>Nome Azienda</p>
         
           </a>
         </div>
-         <div class="boxBlock" style="background-image:url(img/azienda_12.png);">
-          <a href="#" rel="">
+         <div data-id="1" class="boxBlock" style="background-image:url(img/azienda_11.png);">
+          <a  data-id="1" rel="">
+          
+             <p>Nome Azienda</p>
+        
+          </a>
+        </div>
+         <div data-id="1" class="boxBlock" style="background-image:url(img/azienda_12.png);">
+          <a data-id="1" href="#" rel="">
           
              <p>Nome Azienda</p>
         

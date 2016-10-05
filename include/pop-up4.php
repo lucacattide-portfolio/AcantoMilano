@@ -186,7 +186,7 @@
 							
 						?>
 				   
-					   <a class="pulsante_pdf deseleziona <?php if ($presente == 0) { echo "pdf_presente"; } ?>" href="<?php if ($presente == 0) { echo "#"; } else { echo $siteurl_base."img/".$immagine3; } ?>" target="_blank"  title="<?php echo $articolo["articolo_titolo"]; ?>">
+					   <a class="pulsante_pdf deseleziona <?php if ($presente == 0) { echo "pdf_presente"; } ?>" href="<?php if ($presente == 0) { echo "#"; } else { echo $siteurl_base."img/".$immagine3; } ?>" target="_blank"  title="<?php if(!empty($articolo["articolo_titolo"])): echo $articolo["articolo_titolo"]; else: echo $articolo3["articolo_titolo"]; endif;  ?>">
 				   
 						   <div class="pdf_interno deseleziona">
 						   
@@ -205,7 +205,7 @@
                        
                    		<!--Fine PDF-->
 					   
-                       <a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php echo $articolo["articolo_id"]; ?>"> <!--Prenota-->
+                       <a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php if(!empty($articolo["articolo_id"])): echo $articolo["articolo_id"]; else: echo $articolo3["articolo_id"]; endif; ?>"> <!--Prenota-->
                  
                           Prenota Ora
                  
