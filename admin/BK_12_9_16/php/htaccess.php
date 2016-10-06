@@ -1,7 +1,0 @@
-<?php
-
-	// Creazione .htaccess
-	
-	$htaccess = "";
-
-?>
