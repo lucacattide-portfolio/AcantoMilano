@@ -38,7 +38,7 @@ if($pag == "pagina" || $pag == ""  ):
               <!-- END URL PAGINA -->  
               
               <!-- URL PAGINA -->
-              <div class="col-md-6 unit">
+            <?php if($_POST["accesso"] >= 2): else: ?>  <div class="col-md-6 unit">
                 <label class="label">Nome file</label>
                 <div class="input">
                   <label class="icon-left" for="text"> <i class="fa fa-terminal"></i> </label>
@@ -46,7 +46,7 @@ if($pag == "pagina" || $pag == ""  ):
                 </div>
               </div>
               <!-- END URL PAGINA -->  
-            </div> 
+            </div>  <?php endif; ?>
             
             <div class="row">
              <div class="col-md-6 unit">
@@ -73,6 +73,7 @@ if($pag == "pagina" || $pag == ""  ):
                  <textarea name="pagina_meta_description" id="textarea" spellcheck="false" placeholder="Descrizione pagina" class="form-control"></textarea>
                 </div>
               </div>
+             <?php if($_POST["accesso"] >= 2): else: ?>
               <div class="col-md-6 unit">                      
               <!-- start single select -->
               
@@ -102,7 +103,8 @@ if($pag == "pagina" || $pag == ""  ):
                   </label>
             
               <!-- end single select -->
-             </div>  
+             </div> 
+             <?php endif; ?> 
              
              <div class="row col-md-6">
               <div class="Gal col-md-12 unit">
@@ -248,6 +250,8 @@ if($pag == "crea-pagina"):
                        <hr>
                       </div>
               </div>
+               <?php endif; ?>
+               <?php if( $id != 2 || $id != 1 || $id != 3 || $id != 5 || $id != 17 || $id != 31 || $id != 29 || $id != 25 || $id != 26 ): ?>
               <div class="col-md-12">
                       <label class="label">Disponibilità posti</label>
                       <div class="col-md-4">
@@ -264,7 +268,8 @@ if($pag == "crea-pagina"):
                        <hr>
                       </div>
                     </div>
-              <?php endif; ?>
+                <?php endif; ?>  
+             
               <div class="col-md-12 unit">
                 <label class="label">Data Articolo</label>
                 <div class="input-group date addon-datepickers">

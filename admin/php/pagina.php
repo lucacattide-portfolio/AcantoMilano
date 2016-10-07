@@ -18,9 +18,11 @@
     </div>
 </div>
 
+<?php if($_SESSION["accesso"] >= 2): else: ?>
 <div class="btnAdd-page btn-primary">
  <a class="aggiungi" title="Aggiungi Pagina"  href="#"><i class="zmdi zmdi-plus zmdi-hc-fw"></i></a>
 </div>
+<?php endif; ?>
 
 
 <div class="row">
@@ -125,8 +127,9 @@
                      <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
                       <a  class="btn btn-default btn-sm m-user-edit modifica" href="#"><i class="zmdi zmdi-edit"></i></a> 
                       <input type="hidden" name="eliminPagina" />
+                      <input type="hidden" name="accesso" value="<?php echo $_SESSION["acesso"]; ?>" />
                       <input class="idSelection" type="hidden" name="pagina_id" value="<?php echo $rowPagina3["pagina_id"]; ?>" />
-                      <button class="btn btn-default btn-sm m-user-delete"><i class="zmdi zmdi-close"></i></button>
+                      <?php if($_SESSION["accesso"] >= 2): else: ?><button class="btn btn-default btn-sm m-user-delete"><i class="zmdi zmdi-close"></i></button><?php endif; ?>
                      </form>
                     </div>
                    </div>

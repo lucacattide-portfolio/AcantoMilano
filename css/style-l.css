@@ -554,8 +554,8 @@ a[data-rel="1"] { background-color: #626CB4; }
 	max-width: 310px;
 	width: 100%;
 	height: 236px;
-	margin-left: 10px;
-	margin-bottom: 13px;
+	margin-left: /*10px*/ 9px;
+	margin-bottom: /*13px*/ 12px;
 	/*margin-left: 5px;
 	margin-right: 5px;
 	margin-top: 5px;
@@ -612,6 +612,10 @@ a[data-rel="1"] { background-color: #626CB4; }
 {
 	max-width: 210px;
 	height: 160px;
+	border: 1px solid #dedede;
+	/*-webkit-box-shadow: inset 0px 0px 2px 0px #DEDEDE;
+	-moz-box-shadow: inset 0px 0px 2px 0px #DEDEDE;
+	box-shadow: inset 0px 0px 2px 0px #DEDEDE;*/
 }
 
 .box_info a { color: #dfc37a; }
@@ -643,6 +647,26 @@ a[data-rel="1"] { background-color: #626CB4; }
 {
 	color: #dfc37a;
 	background-color: #fff;
+}
+
+.prenota_pop_1
+{
+	font-size: .7rem;
+	font-family: 'JosefinSans3', sans-serif;
+	color: #fff !important;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	background-color: #dfc37a !important;
+	padding: 1.5em 22px;
+	margin: 0 !important;
+	display: inline-block;
+	float: right;
+}
+
+.prenota_pop_1:hover, .prenota_pop_1:focus
+{
+	background-color: #fff !important;
+	color: #dfc37a !important;
 }
 
 /* Popup Verticale  ************************/
@@ -1554,12 +1578,19 @@ fieldset { border: 0; }
 
 .social_share
 {
-	background-color: #dfc37a;
+	background-color: #fff;
 	display: inline-block;
 	padding: .5em 8px;
-	color: #fff !important;
+	color: #dfc37a !important;
+	border: 1px solid #dfc37a;
 	font-size: .9rem;
 	font-family: 'JosefinSans3', sans-serif;
+}
+
+.social_share:hover
+{
+	background-color: #dfc37a;
+	color: #fff !important;
 }
 
 /* Custom Scroll ************************/

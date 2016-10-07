@@ -128,6 +128,12 @@
                     
                         <?php echo $articolo3["articolo_testo"]; ?>
                         
+                         <a class="prenota_interno deseleziona prenotazione prenota_pop_1" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php if(!empty($articolo["articolo_id"])): echo $articolo["articolo_id"]; else: echo $articolo3["articolo_id"]; endif; ?>"> <!--Prenota-->
+                 
+                          Prenota Ora
+                 
+                       </a>
+                        
                     </div>
                     
                     <!--Fine Corpo-->

@@ -88,7 +88,7 @@ if($pag == "pagina" || $pag == ""):
           <input type="hidden" name="pagina_id" value="<?php echo $rowPagina["pagina_id"]; ?>" />
           <div class="form-content">
           
-           
+           <?php if($_POST["accesso"] >= 2): else: ?>
             <div class="row">
               <!-- URL PAGINA -->
               <div class="col-md-6 unit">
@@ -101,15 +101,16 @@ if($pag == "pagina" || $pag == ""):
               <!-- END URL PAGINA -->  
               
               <!-- URL PAGINA -->
-              <div class="col-md-6 unit">
+             <div class="col-md-6 unit">
                 <label class="label">Nome file</label>
                 <div class="input">
                   <label class="icon-left" for="text"> <i class="fa fa-terminal"></i> </label>
                   <input name="pagina_riferimento" class="form-control" type="text" placeholder="pagina.php" value="<?php echo $rowPagina["pagina_riferimento"]; ?>">
                 </div>
-              </div>
+              </div> 
               <!-- END URL PAGINA -->  
             </div> 
+            <?php endif; ?>
             
             <div class="row">
              <div class="col-md-6 unit">
@@ -136,7 +137,7 @@ if($pag == "pagina" || $pag == ""):
                  <textarea name="pagina_meta_description" id="textarea" spellcheck="false" placeholder="Descrizione pagina" class="form-control"><?php echo $rowPagina["pagina_meta_description"]; ?></textarea>
                 </div>
               </div>
-              <div class="col-md-6 unit">                      
+             <?php if($_POST["accesso"] >= 2): else: ?>  <div class="col-md-6 unit">                      
               <!-- start single select -->
               
                   <label class="input select">
@@ -167,6 +168,7 @@ if($pag == "pagina" || $pag == ""):
             
               <!-- end single select -->
              </div>
+             <?php endif; ?>
              
              <div class="row col-md-6">
               <div class="Gal col-md-12 unit">

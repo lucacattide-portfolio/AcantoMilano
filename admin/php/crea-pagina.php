@@ -128,6 +128,8 @@
                        <hr>
                       </div>
                     </div>
+                     <?php endif; ?>
+                    <?php if( $id != 2 && $id != 1 && $id != 3 && $id != 5 && $id != 17 && $id != 31 && $id != 29 && $id != 25 && $id != 26 ): ?>
                      <div class="col-md-12">
                       <label class="label">Disponibilità posti</label>
                       <div class="col-md-4">
@@ -145,6 +147,8 @@
                       </div>
                     </div>
                     <?php endif; ?>
+                  
+                   
                     <div class="col-md-12">
                       <label class="label">Stato di pubblicazione</label>
                       <div class="col-md-4">

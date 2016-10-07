@@ -747,7 +747,7 @@ $(".fileUpload2").on('change', function () {
 			 var modId = $(this).parents();
 			 var ID = modId.children(".formElement .idSelection").val();
 			 $(".dialogWindowMod .modal-dialog").addClass("mWidth"); 
-			 $.post("php/config/forms_modifica.php", { pag: "<?php echo $pag; ?>", id:ID  }, function(data){
+			 $.post("php/config/forms_modifica.php", { pag: "<?php echo $pag; ?>", id:ID, accesso: "<?php echo $_SESSION["accesso"]; ?>"  }, function(data){
 			  $(".dialogWindowMod .modal-dialog").empty();	
 			  $(".dialogWindowMod .modal-dialog").html(data);
 			  $(".dialogWindowMod .modal-header .bootbox-close-button, .chiudi").on("click", function(){
