@@ -70,7 +70,7 @@
              
              <?php echo $articolo3["articolo_testo"]; ?>
              
-             <span class="dataMostra"> <?php echo $dataEv; ?> </span>
+             <span class="dataMostra"> <?php echo $articolo3["articolo_sottotitolo"];?> </span>
              <span class="leggi"> Leggi tutto </span>
           </div>
        </article>

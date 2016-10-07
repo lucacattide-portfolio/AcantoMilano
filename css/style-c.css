@@ -44,7 +44,7 @@
 	margin: 0px;
 	padding-left: 10px;
 	padding-right: 10px;
-	color: #C89648;
+	color: #dfc37a;
 }
 
 .contenuto-globale .testo-blocco h2 p
@@ -52,7 +52,7 @@
 	font-size: 1rem;
 	text-align: left;
 	text-transform: uppercase;
-	color: #C89648;
+	color: #dfc37a;
 	font-family: "JosefinSans3", sans-serif;
 	margin: 0px;
 	margin-top: 1em;
@@ -124,7 +124,7 @@
 .infoContainer .boxInfo hr
 {
 	width: 18px;
-	border: 1px solid #C89648;
+	border: 1px solid #dfc37a;
 }
 
 .infoContainer .boxInfo h3 p
@@ -137,7 +137,7 @@
 
 .infoContainer .boxInfo h3 p a { color: #000; }
 
-.infoContainer .boxInfo h3 p a:hover, .infoContainer .boxInfo h3 p a:focus { color: #C89648; }
+.infoContainer .boxInfo h3 p a:hover, .infoContainer .boxInfo h3 p a:focus { color: #dfc37a; }
 
 .intestazione-form
 {
@@ -252,7 +252,7 @@
 	float: right;
 	font-weight: 100;
 	display: inline-block;
-	background: #C89648;
+	background: #dfc37a;
 	color: rgba(255,255,255,1.00);
 	font-size: .9rem;
 	font-family: "JosefinSans3", sans-serif;
@@ -396,19 +396,25 @@
 
 .griglia-sezione .boxBlock
 {
-	display: inline-block;
+	display: block;
+	float: left;
 	overflow: hidden;
 	position: relative;
 	max-width: 310px;
 	width: 100%;
 	height: 242px;
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-top: 5px;
-	margin-bottom: 5px;
+	max-height: 242px;
+	margin: 5px;
+	padding: 0px;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
+}
+
+.griglia-sezione .boxBlock.centro
+{
+	display: inline-block !important;
+	float: none !important;
 }
 
 .griglia-sezione .boxBlock a
@@ -607,7 +613,7 @@
 {
 	font-family: "JosefinSans3", sans-serif;
 	font-size: 1rem;
-	color: #C89648;
+	color: #dfc37a;
 }
 
 .mostre-grid .itemContainer .testoContainer p:nth-child(1), .mostre-grid .itemContainer .testoContainer p:nth-child(2)
@@ -640,7 +646,7 @@
 
 .mostre-grid .itemContainer .testoContainer .leggi
 {
-	background: #C89648;
+	background: #dfc37a;
 	color: #FFF;
 	padding: 1em 16px;
 	float: right;
@@ -801,7 +807,7 @@
 
 .sezione-calendario1 .box-calendario .calendario-counter .calendario .int-date .box-int.InData
 {
-	background: rgba(200,150,0,1.00) !important;
+	background: rgba(223,195,122,1.00) !important;
 	color: rgba(255,255,255,1.00) !important;
 }
 
@@ -813,7 +819,7 @@
 
 .sezione-calendario1 .box-calendario .calendario-counter .calendario .int-date .box-int.hover:hover
 {
-	background: rgba(200,150,0,1.00);
+	background: rgba(223,195,122,1.00);
 	color: rgba(255,255,255,1.00);
 }
 
@@ -828,24 +834,29 @@
 
 .sezione-calendario1 .box-calendario:nth-child(2) .box-intestazione
 {
-	background: #D8B57F;
+	background: #dfc37a;
 	color: #FFF;
 }
 
 .sezione-calendario1 .box-calendario:nth-child(3) .box-intestazione
 {
 	background: rgba(255,255,255,0.9);
-	color: #D8B57F;
+	color: #dfc37a;
 }
 
 .sezione-calendario1 .box-calendario .lista-blocco
 {
 	width: 100%;
 	height: 100%;
-	background: rgba(255,255,255,1.00);
+	background: rgba(255,255,255,.9);
 	display: block;
 	clear: both;
 	overflow: hidden;
+	background-image: url("../img/23073.jpg");
+	background-size: cover;
+	background-position: center;
+	background-attachment: scroll;
+	background-blend-mode: screen;
 }
 
 .sezione-calendario1 .box-calendario .lista-blocco .box-list
@@ -863,7 +874,7 @@
 	padding-left: 15px;
 	font-family: "JosefinSans3", sans-serif;
 	font-size: 0.8rem;
-	color: #C89648;
+	color: #dfc37a;
 	display: block;
 	margin: 0px;
 	height: 100%;
@@ -899,7 +910,7 @@
 	font-family: "JosefinSans3", sans-serif;
 	font-size: 0.8rem;
 	padding: .5em 10px;
-	border: 1px solid #C89648;
+	border: 1px solid #dfc37a;
 }
 
 .sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box a
@@ -908,7 +919,7 @@
 	font-size: 0.8rem;
 	padding: .6em 16px;
 	color: #FFF;
-	background: #C89648;
+	background: #dfc37a;
 	font-weight: 100;
 	margin-left: 20px;
 	transition: all .3s ease-in-out;
@@ -917,7 +928,7 @@
 .sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box a:hover
 {
 	background-color: #fff;
-	color: #C89648;
+	color: #dfc37a;
 }
 
 @media all and (max-width: 1529px) {
@@ -1251,7 +1262,7 @@
 	font-weight: 100;
 	display: block;
 	clear: both;
-	background: #C89648;
+	background: #dfc37a;
 	color: rgba(255,255,255,1.00);
 	font-size: .9rem;
 	font-family: "JosefinSans3", sans-serif;

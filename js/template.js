@@ -93,6 +93,7 @@ function inizializza() {
 			$("#container_menu").addClass("container_chiuso"); // Nasconde Menu
 			$("#menu_voci").addClass("container_voci_chiuso"); // Nasconde Voci
 			$("#links_outbound").addClass("container_links_chiuso"); // Nasconde Links Outbound
+			$(".iva").addClass("container_links_chiuso"); // Nasconde Links Outbound
 			$("#separatore_menu").addClass("separatore_out"); // Nasconde Separatore
 			$("#container").addClass("container_full"); // Contenuto tutto schermo
 			$(".anteprima_news").removeClass("anteprima_ridotta"); // Contenuto tutto schermo
@@ -229,6 +230,7 @@ function transizioni() {
 		$("#container_menu").toggleClass("container_chiuso"); // Nasconde Menu
 		$("#menu_voci").toggleClass("container_voci_chiuso"); // Nasconde Voci
 		$("#links_outbound").toggleClass("container_links_chiuso"); // Nasconde Links Outbound
+		$(".iva").toggleClass("container_links_chiuso"); // Nasconde Links Outbound
 		$("#separatore_menu").toggleClass("separatore_out"); // Nasconde Separatore
 		$("#container").toggleClass("container_full"); // Contenuto tutto schermo
 		$(".anteprima_news").toggleClass("anteprima_ridotta"); // Contenuto tutto schermo
@@ -494,7 +496,7 @@ function preloader() {
 		
 		value: 1,
 		size: 100,
-		fill: { color: "#C89648" },
+		fill: { color: "#dfc37a" },
 		thickness: 5,
 		animation: { 
 		
@@ -524,6 +526,7 @@ function preloader() {
 				  $("#container_menu").removeClass("container_chiuso"); // Nasconde Menu
 				  $("#menu_voci").removeClass("container_voci_chiuso"); // Nasconde Voci
 				  $("#links_outbound").removeClass("container_links_chiuso"); // Nasconde Links Outbound
+				  $(".iva").removeClass("container_links_chiuso"); // Nasconde Links Outbound
 				  $("#separatore_menu").removeClass("separatore_out"); // Nasconde Separatore
 				  $("#container").removeClass("container_full"); // Contenuto tutto schermo
 				  $(".anteprima_news").addClass("anteprima_ridotta"); // Contenuto tutto schermo

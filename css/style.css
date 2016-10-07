@@ -66,7 +66,7 @@ title { text-transform: capitalize; }
 	text-align: center;
 	line-height: 20px;
 	font-size: 20px;
-	color: #C89648;
+	color: #dfc37a;
 	margin: -10px 0 0 0;
 }
 
@@ -127,7 +127,7 @@ title { text-transform: capitalize; }
 	position: absolute;
 	left: 246px;
 	top: 0;
-	border-right: 1px solid rgba(200, 150, 72, .3);
+	border-right: 1px solid rgba(223, 195, 122, .3);
 }
 
 .separatore_out { left: -1px !important; }
@@ -150,7 +150,7 @@ a { text-decoration: none; }
 
 #links_outbound .links a:link, #links_outbound .links a:active, #links_outbound .links a:visited { color: #fff; }
 
-.links a:hover, .links a:focus { color: #C89648; }
+.links a:hover, .links a:focus { color: #dfc37a; }
 
 #links_outbound .links a:hover, #links_outbound .links a:focus { color: #fff; }
 
@@ -162,7 +162,7 @@ a { text-decoration: none; }
 {
 	width: 32px;
 	height: 2em;
-	background-color: #C89648;
+	background-color: #dfc37a;
 	position: absolute;
 	z-index: 1000;
 	top: 1em;
@@ -184,7 +184,7 @@ a { text-decoration: none; }
 
 .pulsante_attivo { left: 16px !important; }
 
-#menu_principale { border-right: 1px solid rgba(200, 150, 72, .3); }
+#menu_principale { border-right: 1px solid rgba(223, 195, 122, .3); }
 
 .freccia_attiva
 {
@@ -218,7 +218,7 @@ a { text-decoration: none; }
 {
 	width: 31px;
 	height: 31px;
-	border: 1px solid rgba(200, 150, 72, .3);
+	border: 1px solid rgba(223, 195, 122, .3);
 	min-height: 31px;
 	max-height: 31px;
 	display: inline-block;
@@ -256,7 +256,7 @@ a { text-decoration: none; }
 
 #menu_lingua a:hover li, #menu_lingua a:focus li, .lingua_attiva
 {
-	background-color: #C89648 !important;
+	background-color: #dfc37a !important;
 	color: #fff !important;
 }
 
@@ -281,10 +281,10 @@ a { text-decoration: none; }
 	display: block;
 	width: 248px;
 	padding: 1em 16px .8em;
-	border-bottom: 1px solid rgba(200, 150, 72, .2);
+	border-bottom: 1px solid rgba(223, 195, 122, .2);
 }
 
-#menu_voci a:first-child { border-top: 1px solid rgba(200, 150, 72, .3); }
+#menu_voci a:first-child { border-top: 1px solid rgba(223, 195, 122, .3); }
 
 #menu_voci > a:last-child
 {
@@ -294,13 +294,13 @@ a { text-decoration: none; }
 
 #menu_voci a:hover, #menu_voci a:focus
 {
-	background-color: #C89648;
+	background-color: #dfc37a;
 	color: #fff;
 }
 
 .voce_attiva
 {
-	background-color: #C89648 !important;
+	background-color: #dfc37a !important;
 	color: #fff !important;
 }
 
@@ -341,7 +341,7 @@ a { text-decoration: none; }
 	width: 248px/*100%*/;
 	height: 6em;
 	position: absolute;
-	bottom: 1em;
+	bottom: 3em;
 	left: 0;
 	overflow: hidden;
 }
@@ -352,7 +352,7 @@ a { text-decoration: none; }
 	max-height: 4em;
 	border-top: 1px solid #fff;
 	text-align: center;
-	background-color: #C89648;
+	background-color: #dfc37a;
 }
 
 .social
@@ -389,6 +389,23 @@ a { text-decoration: none; }
 	line-height: 1.7rem;
 	padding: .2em 0;
 	border-bottom: 1px solid #fff;
+}
+
+.iva
+{
+	font-family: 'JosefinSans3', sans-serif;
+	font-size: .8rem;
+	line-height: 1.7rem;
+	letter-spacing: 2px;
+	padding: .2em 0;
+	background-color: transparent;
+	border-top: none;
+	width: 248px/*100%*/;
+	height: auto;
+	position: absolute;
+	bottom: 1em;
+	left: 0;
+	overflow: hidden;
 }
 
 /* Transizioni *****************************************************************/
@@ -429,6 +446,14 @@ a { text-decoration: none; }
 
 .container_claim { transition: all .3s ease-in-out; }
 
+/*  AGGIUNTE **********************************************************************/
+
+.data_dettaglio
+{
+	position: relative;
+	margin-bottom: 50px;
+}
+
 /* inizio Mobile *****************************************************************/
 
 @media all and (max-width: 2556px) { /* Desktop - Hi-Res */
@@ -448,8 +473,8 @@ a { text-decoration: none; }
 
 .evento_correlato
 {
-	height: 13.75em;
-	max-height: 13.75em;
+	height: 14em;
+	max-height: 14em;
 }
 }
 
@@ -794,9 +819,11 @@ body
 {
 	width: 100%;
 	left: 0;
-	bottom: 1em;
+	bottom: 3em;
 	position: fixed;
 }
+
+.iva { width: 100%; }
 
 .social { width: 33.2%; }
 
@@ -887,12 +914,6 @@ body
 .elenco_popup { width: 94%; }
 
 #container .mCSB_scrollTools { visibility: hidden; }
-
-.griglia-sezione-esterna .boxBlock
-{
-	max-width: 330px;
-	height: 270px;
-}
 
 #container_contenuti[rel="speciale-cenacolo"] .header_popup { margin-top: 0; }
 
@@ -1044,6 +1065,14 @@ body { overflow-x: hidden; }
 }
 
 @media all and (max-width: 600px) {
+
+.griglia-sezione-esterna .boxBlock.aziende
+{
+	width: 100%;
+	height: 160px;
+}
+
+#links_outbound { bottom: 5em; }
 
 .griglia-sezione a.prenota_interno { width: 92%; }
 
@@ -1334,7 +1363,7 @@ body { font-size: 12px; }
 
 .anteprima_news { width: 90%; }
 
-#links_outbound { bottom: 2em; }
+#links_outbound { bottom: 5em; }
 
 #banner_cookies p { padding: 0 48px; }
 

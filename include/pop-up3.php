@@ -39,7 +39,7 @@
 		
 			if( $countArticolo >= 1 ):
 			   
-				while ($articolo = $rArt->fetch_array()): 
+			   	 while ($articolo = $rArt->fetch_array()): 
 				 $sqlPaginaLoop = "SELECT * FROM `pagina` WHERE `pagina_id` = '".$articolo["articolo_pagina_id"]."' ";
 				 $rPaginaLoop = $mysqli->query( $sqlPaginaLoop );
 				 $countPaginaLoop =  $rPaginaLoop->num_rows;
@@ -169,90 +169,105 @@
             <!--Fine Corpo-->
             
              <!--Inizio Prenotazione-->
-            
-            <center> 
-           
-           		<a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php echo $articolo["articolo_id"]; ?>">
-           
-              		Prenota Ora
-           
-           		</a>
-                
-           </center>
+   
          
            <!--Fine Prenotazione--> 
             
             
             <!--Inizio Date-->
             
-            <!--<!--Inizio Container--
+            <!--<!--Inizio Container-->
             
             <div class="elenco_date_dettaglio"> 
             
             	<center>
             
-                    <!--Inizio Dettagli--
+                    <!--Inizio Dettagli-->
+                    
+                    <?php
+                             
+                             $sqlArticoloDate = "SELECT * FROM `articolo` WHERE articolo_titolo LIKE '%".$articolo["articolo_titolo"]."%' AND `articolo_pagina_id` = '".$articolo["articolo_pagina_id"]."' AND articolo_visibile = 1 ";
+                             $rArtDate = $mysqli->query($sqlArticoloDate);
+                             $countArticoloDate =  $rArtDate->num_rows;
+                         
+                             if( $countArticoloDate >= 1 ):
+							 
+								 while ($articoloD = $rArtDate->fetch_array()): 
+                  
+                          
+                           ?>
                 
                     <div class="data_dettaglio">
                     
-                        <!--Inizio Data--
+                        <!--Inizio Data-->
                     
                         <span class="giorno_dettaglio">
                         
-                            <span class="numero"> <!--Numero--
+                            <span class="numero"> <!--Numero-->
                                 
-                                <?php //echo date("d", strtotime($articolo["articolo_data_modifica"])); ?>
+                                <?php echo date("d", strtotime($articoloD["articolo_data_modifica"])); ?>
                             
                             </span>
-                            <span class="mese"> <!--Mese--
+                            <span class="mese"> <!--Mese-->
                             
-                               <?php //echo strftime("%b", strtotime($articolo["articolo_data_modifica"])); ?>
+                               <?php echo strftime("%b", strtotime($articoloD["articolo_data_modifica"])); ?>
                                
                             
                             </span>
-                            <span class="anno"> <!--Anno--
+                            <span class="anno"> <!--Anno-->
                             
-                                 <?php //echo date("Y", strtotime($articolo["articolo_data_modifica"])); ?>
+                                 <?php echo date("Y", strtotime($articoloD["articolo_data_modifica"])); ?>
                             
                             </span>
                         
                         </span>
                         
-                        <!--Fine Data--
+                        <!--Fine Data-->
                         
-                        <span class="ora_dettaglio"> <!--Ora--
+                        <span class="ora_dettaglio"> <!--Ora-->
                         
-                             <?php //echo date("H:i", strtotime($articolo["articolo_data_modifica"])); ?>
+                             <?php echo date("H:i", strtotime($articoloD["articolo_data_modifica"])); ?>
                             
                         </span>
                         
-                        <!--Inizio Prenotazione--
+                        <!--Inizio Prenotazione-->
                        
-                        <a class="prenota_interno deseleziona prenotazione" href="<?php //echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php //echo $articolo["articolo_id"]; ?>">
+           		        <a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php echo $articoloD["articolo_id"]; ?>">
                    
                             Prenota Ora
                    
                         </a>
                      
-                        <!--Fine Prenotazione--   
+                        <!--Fine Prenotazione-->   
                        
-                        <!--Inizio Disponibilità--
-                            
-                        <div class="disponibilita">
+                          <!--Inizio Disponibilità-->
+                          
+             
+                            <div class="disponibilita">
+                          
+                              <span class="dispo_icona <?php if ($articoloD["articolo_img_id"] == 1): echo "disponibile_ico"; endif; ?>"> <!--Icona-->
+                              </span>
+                              <span class="dispo_label <?php if ($articoloD["articolo_img_id"] == 1): echo "disponibile"; endif; ?>"> <!--Etichetta-->
+                              
+                                  Esaurito
+                              
+                              </span>
+                          
+                            </div>
                         
-                            <span class="dispo_icona <?php //if ($articolo["articolo_img_id"] == 1): echo "disponibile_ico"; endif; ?>"> <!--Icona--
-                            </span>
-                            <span class="dispo_label <?php //if ($articolo["articolo_img_id"] == 1): echo "disponibile"; endif; ?>"> <!--Etichetta--
-                            
-                                Esaurito
-                            
-                            </span>
-                        
-                        </div>
-                        
-                        <!--Fine Disponibilità-- 
+						
+                        <!--Fine Disponibilità-->
                     
                     </div>	
+                    
+                      <?php
+						      
+						  endwhile;
+					  
+						endif;
+                          
+                        ?>
+                        
                     
                     <!--Fine Dettagli---->
                 

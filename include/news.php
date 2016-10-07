@@ -48,7 +48,7 @@
 				endif;
 		
 		?>
-     	<div class="boxBlock" style="background-image:url(<?php echo $siteurl_base;  ?>img/<?php echo $img; ?>)">
+     	<div class="boxBlock centro" style="background-image:url(<?php echo $siteurl_base;  ?>img/<?php echo $img; ?>)">
           <a data-id="2" href="<?php echo $siteurl_base; ?>include/pop-up4.php" rel="<?php echo $PaginaLoop["pagina_id"]; ?>">
           
              <p><?php echo $PaginaLoop["pagina_meta_title"]; ?></p>
