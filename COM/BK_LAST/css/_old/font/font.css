@@ -1,0 +1,23 @@
+@font-face {
+	font-family:'NeutrafaceText-Bold';
+	src: url('NeutraText-Bold.eot');
+	src: url('NeutraText-Bold.woff') format('woff'),  url('NeutraText-Bold.svg#NeutrafaceText-Bold') format('svg');
+}
+@font-face {
+	font-family:'NeutrafaceText-Book';
+	src: url('NeutraText-Book.eot');
+	src: url('NeutraText-Book.woff') format('woff'),  url('NeutraText-Book.svg#NeutrafaceText-Book') format('svg');
+}
+@font-face {
+	font-family:'NeutrafaceText-Demi';
+	src: url('NeutraText-Demi.eot');
+	src: url('NeutraText-Demi.woff') format('woff'),  url('NeutraText-Demi.svg#NeutrafaceText-Demi') format('svg');
+}
+@font-face {
+    font-family:'open_sansregular';
+    src: url('OpenSans-Regular-webfont.eot');
+    src: url('OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Regular-webfont.woff') format('woff'),
+         url('OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+}

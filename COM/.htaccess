@@ -1,0 +1,17 @@
+RewriteEngine On 
+
+RewriteRule ^home/?$ index.php?pag=1 [L]
+RewriteRule ^about-us/?$ index.php?pag=2&box=2 [L]
+RewriteRule ^accento-su-arte/?$ index.php?pag=2&art=16 [L]
+RewriteRule ^carlotta/?$ index.php?pag=2&art=17 [L]
+RewriteRule ^emanuela/?$ index.php?pag=2&art=18 [L]
+RewriteRule ^/?$ index.php?pag=2&art=74 [L]
+RewriteRule ^/?$ index.php?pag=2&art=75 [L]
+RewriteRule ^/?$ index.php?pag=2&art=76 [L]
+RewriteRule ^book-your-ptivate-tour/?$ index.php?pag=32 [L]
+RewriteRule ^book-your-last-supper/?$ index.php?pag=33 [L]
+RewriteRule ^walking-tours/?$ index.php?pag=34 [L]
+RewriteRule ^some-ideas/?$ index.php?pag=35 [L]
+RewriteRule ^whats-on-in-milan/?$ index.php?pag=36 [L]
+RewriteRule ^contacts/?$ index.php?pag=37 [L]
+RewriteRule ^cookies/?$ index.php?pag=38 [L]

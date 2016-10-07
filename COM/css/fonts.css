@@ -1,0 +1,37 @@
+/* Inizio Fonts */
+
+/* Webfont: Futura-Medium */@font-face {
+    font-family: 'FuturaMed';
+    src: url('fonts/Futura Med/Futura-Medium.eot'); /* IE9 Compat Modes */
+    src: url('fonts/Futura Med/Futura-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/Futura Med/Futura-Medium.woff') format('woff'), /* Modern Browsers */
+         url('fonts/Futura Med/Futura-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('fonts/Futura Med/Futura-Medium.svg#Futura-Medium') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+/* Webfont: JosefinSans-Regular2 */@font-face {
+    font-family: 'JosefinSans3';
+    src: url('fonts/Josefin Sans 3/JosefinSans-Regular2.eot'); /* IE9 Compat Modes */
+    src: url('fonts/Josefin Sans 3/JosefinSans-Regular2.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/Josefin Sans 3/JosefinSans-Regular2.woff') format('woff'), /* Modern Browsers */
+         url('fonts/Josefin Sans 3/JosefinSans-Regular2.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Jfonts/Josefin Sans 3/osefinSans-Regular2.svg#JosefinSans-Regular2') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+/* Webfont: JosefinSans */@font-face {
+    font-family: 'JosefinSans2';
+    src: url('fonts/Josefin Sans 2/JosefinSans.eot'); /* IE9 Compat Modes */
+    src: url('fonts/Josefin Sans 2/JosefinSans.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/Josefin Sans 2/JosefinSans.woff') format('woff'), /* Modern Browsers */
+         url('fonts/Josefin Sans 2/JosefinSans.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('fonts/Josefin Sans 2/JosefinSans.svg#JosefinSans') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/* Fine Fonts */
