@@ -469,12 +469,12 @@ a[data-rel="1"] { background-color: #626CB4; }
 	font-family: 'JosefinSans3', sans-serif;
 	word-wrap: break-word;
 	line-height: 1.1rem;
-	width: 52%;
+	width: 92%;
 	height: auto;
-	margin: 0 auto;
+	margin: 0 auto 4em;
 }
 
-#container_contenuti[rel="speciale-cenacolo"] .corpo_summary { width: 58%; }
+#container_contenuti[rel="speciale-cenacolo"] .corpo_summary { width: 92%; }
 
 .corpo_summary a { color: #dfc37a; }
 
@@ -517,6 +517,7 @@ a[data-rel="1"] { background-color: #626CB4; }
 	position: relative;
 	clear: both;
 	margin: 0 auto 20em;
+	background-color: #fff;
 }
 
 #carlotta_summary .titolo_summary { margin: 2em auto 1em; }
@@ -612,8 +613,7 @@ a[data-rel="1"] { background-color: #626CB4; }
 {
 	max-width: 210px;
 	height: 160px;
-	border: 1px solid #dedede;
-	/*-webkit-box-shadow: inset 0px 0px 2px 0px #DEDEDE;
+	border: 1px solid #dedede;/*-webkit-box-shadow: inset 0px 0px 2px 0px #DEDEDE;
 	-moz-box-shadow: inset 0px 0px 2px 0px #DEDEDE;
 	box-shadow: inset 0px 0px 2px 0px #DEDEDE;*/
 }
@@ -622,8 +622,8 @@ a[data-rel="1"] { background-color: #626CB4; }
 
 .box_info a:hover { opacity: .7; }
 
-.boxBlock:hover { opacity: .7; }
-
+/*.boxBlock:hover { opacity: .7; }
+*/
 .boxBlock:hover a p
 {
 	color: #fff;
@@ -793,13 +793,14 @@ a[data-rel="1"] { background-color: #626CB4; }
 {
 	display: block;
 	position: relative;
-	width: 64%;
-	height: 47em;
+	width: 98%;
+	/*height: 47em;*/
+	height: calc(100% - 11em);
 	margin: 0 auto;
 	overflow: hidden;
-}
+ }
 
-.container_popup_verticale .align_bio { width: 82%; }
+.container_popup_verticale .align_bio { width: 92%; }
 
 .container_popup_verticale .titolo_summary { margin-bottom: 1em; }
 
@@ -817,7 +818,7 @@ a[data-rel="1"] { background-color: #626CB4; }
 	height: 26em;
 	max-height: 26em;
 	overflow: hidden;
-	background-size: 100%;
+	background-size: cover;
 	background-position: center;
 	background-attachment: scroll;
 	background-repeat: no-repeat;
@@ -905,8 +906,20 @@ a[data-rel="1"] { background-color: #626CB4; }
 {
 	display: block;
 	position: relative;
-	margin: 5em auto 0;
+	margin: 1em auto 0;
 }
+
+#container_contenuti[rel="speciale-cenacolo"] .data_dettaglio { margin: 1em 8px 0; }
+
+#container_contenuti[rel="speciale-cenacolo"] .data_dettaglio .prenota_interno
+{
+	margin: 0 auto 1em;
+	padding: 1.5em 16px;
+}
+
+#container_contenuti[rel="speciale-cenacolo"] .data_dettaglio .disponibilita { float: none; }
+
+#container_contenuti[rel="speciale-cenacolo"] .titolo_summary_2 { margin: 1.5em auto 1em; }
 
 .data_dettaglio
 {
@@ -1174,16 +1187,16 @@ fieldset { border: 0; }
 	font-size: .9rem;
 	font-family: 'JosefinSans3', sans-serif;
 	display: block;
-	height: 3em;
+	height: 1.8em;
 	padding: .2em 4px;
 	background-color: #D14F4F;
 	color: #fff;
 	margin: 0;
 	text-align: center;
-	line-height: 2.7rem;
-	-webkit-box-shadow: 0px 0px 10px 0px #000;
-	-moz-box-shadow: 0px 0px 10px 0px #000;
-	box-shadow: 0px 0px 10px 0px #000;
+	line-height: 1.7rem;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
 }
 
 #apertura_titolo p { margin: 0; }
@@ -1200,8 +1213,8 @@ fieldset { border: 0; }
 	background-size: 40%;
 	background-repeat: no-repeat;
 	background-position: center;
-	width: 42px;
-	height: 42px;
+	width: 26px;
+	height: 26px;
 }
 
 #pulsante_apertura_cal:hover
@@ -1251,15 +1264,16 @@ fieldset { border: 0; }
 #titolo_dettagli
 {
 	text-transform: uppercase;
-	font-size: .9rem;
+	font-size: 0.9rem;
+	line-height: 2.5rem;
 	font-family: 'JosefinSans3', sans-serif;
 	text-align: left;
-	padding: .5em 0 .5em 32px;
+	/*padding: .5em 0 .5em 32px;*/
+	padding-left: 0.5em;
 	background-color: #F58D8D;
 	color: #fff;
 	margin: 0;
 	height: 2.5em;
-	line-height: 2.7em;
 }
 
 #titolo_dettagli hr
@@ -1296,6 +1310,7 @@ fieldset { border: 0; }
 	min-height: 6em;
 	padding: 2em;
 	background-color: #FAFAFA;
+	clear: both;
 }
 
 .container_evento:nth-child(even) { background-color: #fff; }
@@ -1513,8 +1528,8 @@ fieldset { border: 0; }
 	background-color: #fff;
 }
 
-#correlati a:hover { opacity: .7; }
-
+/*#correlati a:hover { opacity: .7; }
+*/
 #correlati a:hover .pulsante_box
 {
 	color: #fff;
@@ -1531,14 +1546,14 @@ fieldset { border: 0; }
 	display: block;
 	position: fixed;
 	top: 5em;
-	right: 0;
+	right: 14px;
 	left: auto;
 	bottom: auto;
 	z-index: 2000;
 	background-color: #dfc37a;
-	-webkit-box-shadow: 0px 0px 7px #000;
-	-moz-box-shadow: 0px 0px 7px #000;
-	box-shadow: 0px 0px 7px #000;
+	-webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0px 0px 7px rgba(0, 0, 0, .5);
+	box-shadow: 0px 0px 7px rgba(0, 0, 0, .5);
 	padding: .5em;
 	overflow: hidden;
 }
@@ -1580,11 +1595,33 @@ fieldset { border: 0; }
 {
 	background-color: #fff;
 	display: inline-block;
-	padding: .5em 8px;
+	position: relative;
+	padding: .5em 16px;
 	color: #dfc37a !important;
 	border: 1px solid #dfc37a;
 	font-size: .9rem;
 	font-family: 'JosefinSans3', sans-serif;
+}
+
+.container_popup_verticale.popup3 .social_share
+{
+	position: absolute;
+	top: 25em;
+	left: 32px;
+}
+
+.container_popup_verticale.popup2 .social_share
+{
+	position: absolute;
+	top: 25em;
+	left: 32px;
+}
+
+#container_contenuti[rel="speciale-cenacolo"] .social_share
+{
+	position: absolute;
+	top: 25em;
+	left: 32px;
 }
 
 .social_share:hover
@@ -1607,13 +1644,15 @@ fieldset { border: 0; }
 
 .mCSB_scrollTools .mCSB_draggerContainer { height: 80%; }
 
+#mCSB_1 .mCSB_scrollTools .mCSB_draggerContainer { height: 100% !important; }
+
 #dettagli_contenuti .mCSB_scrollTools .mCSB_draggerContainer
 {
 	height: 90%;
 	margin-top: 1.2em;
 }
 
-#mCSB_4, #mCSB_2 { min-height: 47em; }
+/*#mCSB_4, #mCSB_2 { min-height: 47em; }*/
 
 /* CONTATTI *************************************************/
 

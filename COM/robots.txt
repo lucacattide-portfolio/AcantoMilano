@@ -1,0 +1,10 @@
+User-agent: *
+Sitemap: http://www.acantomilano.it/sitemap.xml
+Allow: /css/
+Allow: /img/
+Allow: /include/
+Allow: /js/
+Allow: /index.php
+Allow: /favicon.png
+Disallow: /cgi-bin/
+Disallow: /admin/

@@ -32,6 +32,19 @@
    <article>
    
    			<header class="header_popup" >
+            
+               <div class="fb-share-button" data-href="<?php echo "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.acantomilano.it%2F".$paginaUrl;
+				
+				/*"http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].$_SERVER['QUERY_STRING'];*/ ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                
+                    <a class="fb-xfbml-parse-ignore social_share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo "http%3A%2F%2Fwww.acantomilano.it%2F".$paginaUrl; ?>&amp;src=sdkpreparse">
+                    
+                        Share
+                        
+                    </a>
+                    
+                </div>
+            
               <ul class="slides-container">
                <?php  
 			   
@@ -77,6 +90,9 @@
 		 
 		 ?>       
               </ul>
+              
+              
+                
             </header>
         
         	<!--Inizio Titoli-->
@@ -88,6 +104,109 @@
                     Summary
                     
                 </h7>
+                
+                 <!--<!--Inizio Container-->
+            
+            <div class="elenco_date_dettaglio"> 
+            
+            	<center>
+            
+                    <!--Inizio Dettagli-->
+                    
+                    <?php
+                             
+                             $sqlArticoloDate = "SELECT * FROM `articolo` WHERE articolo_titolo LIKE '%".$articolo["articolo_titolo"]."%' AND `articolo_pagina_id` = '".$articolo["articolo_pagina_id"]."' AND articolo_visibile = 1 ";
+                             $rArtDate = $mysqli->query($sqlArticoloDate);
+                             $countArticoloDate =  $rArtDate->num_rows;
+                         
+                             if( $countArticoloDate >= 1 ):
+							 
+								 while ($articoloD = $rArtDate->fetch_array()): 
+                  
+                          
+                           ?>
+                
+                    <div class="data_dettaglio">
+                    
+                        <!--Inizio Data-->
+                    
+                        <span class="giorno_dettaglio">
+                        
+                            <span class="numero"> <!--Numero-->
+                                
+                                <?php echo date("d", strtotime($articoloD["articolo_data_modifica"])); ?>
+                            
+                            </span>
+                            <span class="mese"> <!--Mese-->
+                            
+                               <?php echo strftime("%b", strtotime($articoloD["articolo_data_modifica"])); ?>
+                               
+                            
+                            </span>
+                            <span class="anno"> <!--Anno-->
+                            
+                                 <?php echo date("Y", strtotime($articoloD["articolo_data_modifica"])); ?>
+                            
+                            </span>
+                        
+                        </span>
+                        
+                        <!--Fine Data-->
+                        
+                        <span class="ora_dettaglio"> <!--Ora-->
+                        
+                             <?php echo date("H:i", strtotime($articoloD["articolo_data_modifica"])); ?>
+                            
+                        </span>
+                        
+                        <!--Inizio Prenotazione-->
+                       
+           		        <a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php echo $articoloD["articolo_id"]; ?>">
+                   
+                            Book Now
+                   
+                        </a>
+                     
+                        <!--Fine Prenotazione-->   
+                       
+                          <!--Inizio Disponibilità-->
+                          
+             
+                            <div class="disponibilita">
+                          
+                              <span class="dispo_icona <?php if ($articoloD["articolo_img_id"] == 1): echo "disponibile_ico"; endif; ?>"> <!--Icona-->
+                              </span>
+                              <span class="dispo_label <?php if ($articoloD["articolo_img_id"] == 1): echo "disponibile"; endif; ?>"> <!--Etichetta-->
+                              
+                                  Sold Out
+                              
+                              </span>
+                          
+                            </div>
+                        
+						
+                        <!--Fine Disponibilità-->
+                    
+                    </div>	
+                    
+                      <?php
+						      
+						  endwhile;
+					  
+						endif;
+                          
+                        ?>
+                        
+                    
+                    <!--Fine Dettagli---->
+                
+                </center>
+            
+           </div>
+           
+           <!--Fine Date Dettagli--> 
+
+                
                 <h2 class="titolo_summary_2"> <!--Contenuti-->
                 
                     <?php echo $articolo["articolo_titolo"]; ?>
@@ -110,18 +229,7 @@
             
 				<!--Inizio Facebook Widget-->
                     
-                <div class="fb-share-button" data-href="<?php echo "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.acantomilano.it%2F".$paginaUrl;
-				
-				/*"http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].$_SERVER['QUERY_STRING'];*/ ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
-                
-                    <a class="fb-xfbml-parse-ignore social_share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo "http%3A%2F%2Fwww.acantomilano.it%2F".$paginaUrl; ?>&amp;src=sdkpreparse">
-                    
-                        Share
-                        
-                    </a>
-                    
-                </div>
-                
+               
                 <!--Fine Facebook Widget-->          
                   
             	<?php echo $articolo["articolo_testo"]; ?>
@@ -149,16 +257,16 @@
             
             <?php  endwhile; endif; ?>    
             
-            
+                       <!-- 
             <center> 
            
-           		<a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php echo $articolo["articolo_id"]; ?>">
+           		<a class="prenota_interno deseleziona prenotazione" href="<?php //echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php //echo $articolo["articolo_id"]; ?>">
            
               		BOOK NOW
            
            		</a>
                 
-           </center>
+           </center>-->
             
             <!--Fine Corpo-->
             

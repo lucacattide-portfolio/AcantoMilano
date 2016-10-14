@@ -17,7 +17,7 @@
     
     <!--Inizio Contaniner Popup-->
     
-    <div class="container_popup_verticale">
+    <div class="container_popup_verticale popup">
     
     	<h2 class="titolo_popup"> <!--Titolo-->
         
@@ -78,7 +78,7 @@
         
                 <div class="img_bio containers_bio">
                 
-                    <img src="<?php echo $siteurl_base."img/".$img; ?>" alt="<?php echo $articolo3["articolo_titolo"]; ?>" /> <!--Foto-->
+                    <img src="<?php echo $siteurl_base."img/".$img; ?>" alt="<?php $imgPop = str_replace("<p>", "", $articolo3["articolo_titolo"]); $imgPop = str_replace("</p>", "", $imgPop); echo $imgPop; ?> " /> <!--Foto-->
                 
                 </div>
                 

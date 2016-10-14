@@ -147,6 +147,13 @@
     <!--Fine Form-->
     
     <div id="prenota_sfondo"> <!--Sfondo-->
+    
+    	<div class="clear">
+        </div>
+    
+    </div>
+    
+    <div class="clear">
     </div>
 
 <!--</aside>

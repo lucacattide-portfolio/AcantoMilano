@@ -178,7 +178,7 @@ if($pag == "pagina" || $pag == ""):
                         Sfoglia
                         <input type="file" id="fileUpload" name="file[]" multiple/>
                     </div>
-                    <input type="text" placeholder="no file selected" readonly id="prepend-small-btn" class="form-control">
+                    <input type="text" placeholder="Misure immagine 1920px X 1080px" readonly id="prepend-small-btn" class="form-control">
                  </div>
               </div>
               <div id="image-holder" class="blah col-md-12 unit">
@@ -290,9 +290,9 @@ if($pag == "categorie"):
                                           <div class="input prepend-small-btn">
                                               <div class="file-button">
                                                   Sfoglia
-                                                  <input type="file" id="fileUpload" name="file[]" />
+                                                  <input name="file[]" type="file" multiple="multiple" id="fileUpload" />
                                               </div>
-                                              <input type="text" placeholder="no file selected" readonly id="prepend-small-btn" class="form-control">
+                                              <input type="text" placeholder="Misure immagine 1920px X 1080px" readonly id="prepend-small-btn" class="form-control">
                                            </div>
                                         </div>
                                         <div id="image-holder" class="blah col-md-12 unit">

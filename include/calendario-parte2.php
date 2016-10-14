@@ -213,6 +213,9 @@
                 </div>
                 
                 <!--Fine Riga-->
+                
+                  <div  class="clear">
+                </div>
                             
             </div>
             

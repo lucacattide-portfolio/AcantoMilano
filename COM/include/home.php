@@ -32,8 +32,12 @@
 			 <?php 
 			 
              	if ( $countArticolo >= 1 ): // Se esistono almeno un record 
-				
-                  while ($articolo = $rArt->fetch_array()): // Allora finchè esistono record non vuoti
+			
+					$sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1 AND articolo_id != 100 "; // Assegnazione Query Pagina DB
+			
+					$rArt2 = $mysqli->query($sqlArticolo2);
+
+                  while ($articolo = $rArt2->fetch_array()): // Allora finchè esistono record non vuoti
 				  
              ?> 
            
@@ -127,27 +131,41 @@
     
         <ul class="slides-container">
         
+         <?php 
+			 
+			 $sqlART = " SELECT * FROM `articolo` WHERE articolo_id = 100 "; 
+			 
+			 $rART =  $mysqli->query($sqlART);
+			 
+			 	while ($ART = $rART->fetch_array()):
+	   
+				   // IMMAGINE GALLERY
+				   $sqlImg2 = "SELECT * FROM `immagine` WHERE immagine_articolo_id = ".$ART["articolo_id"]."  ";
+				   $rImg2 = $mysqli->query($sqlImg2);
+				   
+				   while ($immagine2 = $rImg2->fetch_array()):
+				   
+				   		$immagine3 = $immagine2["immagine_label"];
+        
+		?>
+        
         	<!--Inizio Elemento-->
         
         	<li>
             
-            	<div class="elemento_box_slides elemento_full" style="background-image: url('img/86045.JPG');">
+            	<div class="elemento_box_slides elemento_full" style="background-image:url(<?php echo $siteurl_base;  ?>img/<?php echo $immagine3; ?>)">
+
                 </div>
             
             </li>
             
-            <li>
-            
-            	<div class="elemento_box_slides elemento_full" style="background-image: url('img/86045.JPG');">
-                </div>
-            
-            </li>
-            <li>
-            
-            	<div class="elemento_box_slides elemento_full" style="background-image: url('img/86045.JPG');">
-                </div>
-            
-            </li>
+        <?php
+		
+				   endwhile;
+		
+				endwhile;
+					
+		?>
             
             <!--Fine Elemento-->
         

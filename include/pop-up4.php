@@ -17,7 +17,7 @@
     
     <!--Inizio Contaniner Popup-->
     
-    <div class="container_popup_verticale overHide">
+    <div class="container_popup_verticale popup4 overHide">
     
     	<h2 class="titolo_popup"> <!--Titolo-->
         

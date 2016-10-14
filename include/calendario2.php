@@ -981,7 +981,7 @@
                 
                 <!--Fine Riga-->
                 
-                <div class="clear">
+                <div style="clear:both;" class="clear">
                 </div>
                             
             </div>

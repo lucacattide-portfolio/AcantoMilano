@@ -18,7 +18,7 @@
 .contenuto-globale .image
 {
 	width: 25%;
-	min-height: 200px;
+	min-height: 400px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -38,7 +38,7 @@
 
 .contenuto-globale .testo-blocco h2
 {
-	width: calc(100% -20px);
+	width: calc(100% - 20px);
 	overflow: hidden;
 	clear: both;
 	margin: 0px;
@@ -91,7 +91,7 @@
 	letter-spacing: 1px;
 	text-align: center;
 	text-transform: uppercase;
-	margin: 3em auto 1em;
+	margin: 1.5em auto 1em;
 }
 
 .infoContainer
@@ -231,6 +231,7 @@
 	min-height: 200px;
 	margin-bottom: 10px;
 	padding-bottom: 10px;
+	padding-top: 10px;
 	outline: none;
 }
 
@@ -331,8 +332,8 @@
 	overflow: hidden;
 	clear: both;
 	margin: 1em auto;
-	max-width: 970px;
-	width: 100%;
+	/*max-width: 970px;*/
+	width: 88%;
 	min-height: 100px;
 }
 
@@ -385,8 +386,8 @@
 .griglia-sezione
 {
 	width: 100%;
-	max-width: 970px;
-	height: auto;
+	/*	max-width: 970px;
+*/	height: auto;
 	position: relative;
 	overflow: hidden;
 	clear: both;
@@ -394,13 +395,14 @@
 	margin-bottom: 20px;
 }
 
+
 .griglia-sezione .boxBlock
 {
 	display: block;
 	float: left;
 	overflow: hidden;
 	position: relative;
-	max-width: 310px;
+	max-width: 280px;
 	width: 100%;
 	height: 242px;
 	max-height: 242px;
@@ -491,7 +493,12 @@
 
 .prenota_interno.news { display: inline-block; }
 
-.griglia_viaggi { margin-bottom: 5em; }
+.griglia_viaggi
+{
+	margin-bottom: 5em;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 /* Transizioni */
 
@@ -515,11 +522,11 @@
 	height: auto;
 	display: block;
 	clear: both;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	font-family: "JosefinSans3", sans-serif;
 	text-transform: uppercase;
 	color: #333333;
-	margin: 1.5em auto;
+	margin: 2em auto;
 }
 
 .mostre h2.intestazione p
@@ -532,19 +539,19 @@
 
 .mostre-grid
 {
-	width: 66%;
+	width: 98%;
 	/*max-width: 980px;*/
-	height: calc(100% - 200px);
+	height: calc(100% - 10em);
 	overflow: hidden;
 	clear: both;
 	display: block;
 	position: relative;
-	margin: 0 auto 0 21%;
+	margin: 0 auto 0;
 }
 
 .mostre-grid .itemContainer
 {
-	width: 90%;
+	width: 92%;
 	clear: both;
 	background: rgba(255,255,255,1.00);
 	position: relative;
@@ -553,7 +560,7 @@
 	min-height: 50px;
 	height: auto;
 	transition: all 0.3s ease-in;
-	margin: 0px;
+	margin: 0 auto;
 	padding: 0px;
 	margin-bottom: 2em;
 }
@@ -584,7 +591,7 @@
 
 .mostre-grid .itemContainer .testoContainer
 {
-	width: calc( 75% - 32px );
+	width: calc( 84% - 32px );
 	padding: 1em;
 	margin: 0px;
 	height: auto;
@@ -635,6 +642,7 @@
 	position: relative;
 	margin-top: /*1em*/ 0;
 }
+
 .mostre-grid .itemContainer .testoContainer .dataMostra p { margin: 0 0 1em; }
 
 .mostre-grid .itemContainer .testoContainer.expand p
@@ -654,6 +662,8 @@
 	font-family: "JosefinSans3", sans-serif;
 	font-size: .9rem;
 	cursor: pointer;
+	margin-top: 2em;
+	text-align: center;
 }
 
 /*  CALENDARIO   *************************************************************************************/
@@ -661,7 +671,7 @@
 .sezione-calendario1
 {
 	width: 100%;
-	height: 430px;
+	height: 360px;
 	position: relative;
 	clear: both;
 	overflow: hidden;
@@ -698,15 +708,15 @@
 .sezione-calendario1 .box-calendario .box-intestazione
 {
 	width: 100%;
-	height: 48px;
+	height: 2.2em;
 	background: rgba(255,255,255,1.00);
 	padding: 0px;
 	margin: 0px;
 	font-family: "JosefinSans3", sans-serif;
-	font-size: 1.1rem;
+	font-size: .9rem;
 	text-transform: uppercase;
 	text-align: center;
-	line-height: 48px;
+	line-height: 2.2rem;
 	font-weight: 100;
 }
 
@@ -716,7 +726,7 @@
 {
 	border-top: 1px solid rgba(203,203,203,.50);
 	border-bottom: 1px solid rgba(203,203,203,.50);
-	height: 46px;
+	height: 2.1em;
 	color: #606060;
 }
 
@@ -737,9 +747,9 @@
 
 .sezione-calendario1 .box-calendario:nth-child(1) .box-intestazione .arrow:nth-child(2)
 {
-	transform: rotate(180deg);
-	-ms-transform: rotate(180deg);
 	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 
 .sezione-calendario1 .box-calendario .calendario-counter
@@ -754,7 +764,7 @@
 
 .sezione-calendario1 .box-calendario .calendario-counter .calendario
 {
-	width: 358px;
+	width: 288px;
 	height: 286px;
 	margin-left: auto;
 	margin-right: auto;
@@ -777,13 +787,13 @@
 	display: block;
 	float: left;
 	text-align: center;
-	width: 51px;
+	width: 41px;
 	line-height: 30px;
 }
 
 .sezione-calendario1 .box-calendario .calendario-counter .calendario .int-date
 {
-	width: calc(100% -1px);
+	width: calc(100% - 1px);
 	height: auto;
 	clear: both;
 	border-top: 1px solid #EEDFC7;
@@ -798,8 +808,8 @@
 	display: block;
 	float: left;
 	text-align: center;
-	width: 50px;
-	line-height: 50px;
+	width: 40px;
+	line-height: 40px;
 	border-right: 1px solid #EEDFC7;
 	background: rgba(255,255,255,1.00);
 	border-bottom: 1px solid #EEDFC7;
@@ -849,12 +859,12 @@
 {
 	width: 100%;
 	height: 100%;
-	background: rgba(255,255,255,.9);
+	background: /*rgba(255,255,255,.9)*/#bba366;
 	display: block;
 	clear: both;
 	overflow: hidden;
-	background-image: url("../img/23073.jpg");
-	background-size: cover;
+	/*	background-image: url("../img/23073.jpg");
+*/	background-size: cover;
 	background-position: center;
 	background-attachment: scroll;
 	background-blend-mode: screen;
@@ -875,11 +885,11 @@
 	padding-left: 15px;
 	font-family: "JosefinSans3", sans-serif;
 	font-size: 0.8rem;
-	color: #dfc37a;
+	color: /*#dfc37a*/#fff;
 	display: block;
 	margin: 0px;
 	height: 100%;
-	padding-top: 7%;
+	padding-top: 1em;
 	overflow: hidden;
 	font-weight: 100;
 	float: left;
@@ -902,7 +912,7 @@
 	overflow: hidden;
 	margin: 0px;
 	padding: 0px;
-	padding-top: 7%;
+	padding-top: 1em;
 	text-align: center;
 }
 
@@ -912,6 +922,7 @@
 	font-size: 0.8rem;
 	padding: .5em 10px;
 	border: 1px solid #dfc37a;
+	color: #fff;
 }
 
 .sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box a
@@ -933,6 +944,15 @@
 }
 
 @media all and (max-width: 1529px) {
+	
+.griglia-sezione .boxBlock
+{
+	max-width: 360px;
+	height: 292px;
+	max-height: 292px;
+}
+
+.mostre-grid .itemContainer .testoContainer { width: calc( 76% - 32px ); }
 
 .evento_correlato
 {
@@ -971,7 +991,12 @@
 
 @media all and (max-width: 1440px) {
 
-.mostre-grid { width: 70%; }
+.griglia-sezione .boxBlock
+{
+	max-width: 310px;
+	height: 272px;
+	max-height: 272px;
+}
 
 .testoIntestazione p
 {
@@ -1042,6 +1067,8 @@
 
 @media all and (max-width: 1024px) {
 
+.sezione-calendario1 .box-calendario .lista-blocco { min-height: 19em; }
+
 .sezione-grid { max-width: 780px; }
 
 .griglia-sezione .boxBlock { max-width: 376px; }
@@ -1099,7 +1126,7 @@
 
 .mostre
 {
-	width: 78%;
+	width: 92%;
 	margin: 0 auto;
 }
 }
@@ -1164,7 +1191,7 @@
 
 .mostre
 {
-	width: 86%;
+	width: 88%;
 	margin: 0 auto;
 }
 

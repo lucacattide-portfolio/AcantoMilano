@@ -180,7 +180,7 @@
                                 Sfoglia
                                 <input type="file" class="fileUpload2" rel="<?php echo $rowArticolo["articolo_id"]; ?>" name="file[]" multiple/>
                             </div>
-                            <input type="text" placeholder="no file selected" readonly id="prepend-small-btn" class="form-control">
+                            <input type="text" placeholder="Misura immagine 1920px X 1080px " readonly id="prepend-small-btn" class="form-control">
                          </div>
                      </div>
                      <div  class="blah col-md-12 image-holder2 unit" rel="<?php echo $rowArticolo["articolo_id"]; ?>" >

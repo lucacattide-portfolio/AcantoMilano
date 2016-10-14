@@ -128,6 +128,8 @@
                        <hr>
                       </div>
                     </div>
+                     <?php endif; ?>
+                    <?php if( $id != 2 && $id != 1 && $id != 3 && $id != 5 && $id != 17 && $id != 31 && $id != 29 && $id != 25 && $id != 26 ): ?>
                      <div class="col-md-12">
                       <label class="label">Disponibilità posti</label>
                       <div class="col-md-4">
@@ -176,7 +178,7 @@
                                 Sfoglia
                                 <input type="file" class="fileUpload2" rel="<?php echo $rowArticolo["articolo_id"]; ?>" name="file[]" multiple/>
                             </div>
-                            <input type="text" placeholder="no file selected" readonly id="prepend-small-btn" class="form-control">
+                            <input type="text" placeholder="Misure immagine 1920px X 1080px" readonly id="prepend-small-btn" class="form-control">
                          </div>
                      </div>
                      <div  class="blah col-md-12 image-holder2 unit" rel="<?php echo $rowArticolo["articolo_id"]; ?>" >

@@ -18,7 +18,7 @@
 .contenuto-globale .image
 {
 	width: 25%;
-	min-height: 200px;
+	min-height: 400px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -91,7 +91,7 @@
 	letter-spacing: 1px;
 	text-align: center;
 	text-transform: uppercase;
-	margin: 3em auto 1em;
+	margin: 1.5em auto 0;
 }
 
 .infoContainer
@@ -231,6 +231,7 @@
 	min-height: 200px;
 	margin-bottom: 10px;
 	padding-bottom: 10px;
+	padding-top: 10px;
 	outline: none;
 }
 
@@ -331,11 +332,10 @@
 	overflow: hidden;
 	clear: both;
 	margin: 1em auto;
-	max-width: 970px;
-	width: 100%;
+	/*max-width: 970px;*/
+	width: 92%;
 	min-height: /*100px*/ 0;
 }
-
 
 /* intestazione ****************************************************************/
 
@@ -411,11 +411,13 @@
 	background-position: center center;
 	background-size: cover;
 }
+
 .griglia-sezione .boxBlock.centro
 {
 	display: inline-block !important;
 	float: none !important;
 }
+
 .griglia-sezione .boxBlock a
 {
 	width: 100%;
@@ -531,19 +533,19 @@
 
 .mostre-grid
 {
-	width: 66%;
+	width: 98%;
 	/*max-width: 980px;*/
-	height: calc(100% - 200px);
+	height: calc(100% - 10em);
 	overflow: hidden;
 	clear: both;
 	display: block;
 	position: relative;
-	margin: 0 auto 0 21%;
+	margin: 0 auto;
 }
 
 .mostre-grid .itemContainer
 {
-	width: 90%;
+	width: 92%;
 	clear: both;
 	background: rgba(255,255,255,1.00);
 	position: relative;
@@ -552,7 +554,7 @@
 	min-height: 50px;
 	height: auto;
 	transition: all 0.3s ease-in;
-	margin: 0px;
+	margin: 0 auto;
 	padding: 0px;
 	margin-bottom: 2em;
 }
@@ -583,7 +585,7 @@
 
 .mostre-grid .itemContainer .testoContainer
 {
-	width: calc( 75% - 32px );
+	width: calc( 85% - 32px );
 	padding: 1em;
 	margin: 0px;
 	height: auto;
@@ -927,6 +929,8 @@
 
 @media all and (max-width: 1529px) {
 
+.mostre-grid .itemContainer .testoContainer { width: calc( 80% - 32px ); }
+
 .evento_correlato
 {
 	height: 13.75em;
@@ -964,7 +968,7 @@
 
 @media all and (max-width: 1440px) {
 
-.mostre-grid { width: 70%; }
+.mostre-grid .itemContainer .testoContainer { width: calc( 78% - 32px ); }
 
 .testoIntestazione p
 {
@@ -1089,12 +1093,6 @@
 }
 
 .mostre h2.intestazione { margin: 1.5em auto 1em; }
-
-.mostre
-{
-	width: 78%;
-	margin: 0 auto;
-}
 }
 
 @media all and (max-width: 980px) {
@@ -1155,12 +1153,6 @@
 
 .container_popup_verticale .align_bio { width: 86%; }
 
-.mostre
-{
-	width: 86%;
-	margin: 0 auto;
-}
-
 .mostre-grid
 {
 	width: calc( 100% - 40px );
@@ -1170,7 +1162,7 @@
 	clear: both;
 	display: block;
 	position: relative;
-	margin: 0px 0px;
+	margin: 0 auto;
 	padding-bottom: 30px;
 }
 

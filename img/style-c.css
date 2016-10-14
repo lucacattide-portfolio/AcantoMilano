@@ -1,0 +1,1295 @@
+
+/* CHI SIAMO *************************************************/
+
+.contenuto-globale
+{
+	min-height: 200px;
+	height: auto;
+	background: rgba(255,255,255,1.00);
+	margin-bottom: 20px;
+	margin-top: 10px;
+	clear: both;
+	display: block;
+	position: relative;
+}
+
+.contenuto-globale .image
+{
+	width: 25%;
+	min-height: 200px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	float: left;
+	overflow: hidden;
+	display: block;
+}
+
+.contenuto-globale .testo-blocco
+{
+	width: 75%;
+	float: left;
+	min-height: 200px;
+	overflow: hidden;
+	display: block;
+}
+
+.contenuto-globale .testo-blocco h2
+{
+	width: calc(100% -20px);
+	overflow: hidden;
+	clear: both;
+	margin: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #C89648;
+}
+
+.contenuto-globale .testo-blocco h2 p
+{
+	font-size: 1rem;
+	text-align: left;
+	text-transform: uppercase;
+	color: #C89648;
+	font-family: "JosefinSans3", sans-serif;
+	margin: 0px;
+	margin-top: 1em;
+	padding: 1em;
+}
+
+.contenuto-globale .testo-blocco .testo
+{
+	width: calc(100% -20px);
+	overflow: hidden;
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.contenuto-globale .testo-blocco .testo p
+{
+	font-size: 0.9rem;
+	text-align: left;
+	font-family: "JosefinSans3", sans-serif;
+	margin: 0px;
+	margin-bottom: 1em;
+	margin-top: 1em;
+	line-height: 1.1rem;
+	padding: 0 1em 1em;
+}
+
+/* CONTATTI *************************************************/
+
+.titolo-contatti
+{
+	font-family: "JosefinSans3", sans-serif;
+	font-size: 2rem;
+	letter-spacing: 1px;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 3em auto 1em;
+}
+
+.infoContainer
+{
+	width: 100%;
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	clear: both;
+	overflow: hidden;
+}
+
+.infoContainer .boxInfo
+{
+	width: 33%;
+	display: inline-block;
+	overflow: hidden;
+	float: left;
+}
+
+.infoContainer .boxInfo h2 p
+{
+	font-family: "JosefinSans3", sans-serif;
+	font-size: .9rem;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.infoContainer .boxInfo hr
+{
+	width: 18px;
+	border: 1px solid #C89648;
+}
+
+.infoContainer .boxInfo h3 p
+{
+	font-family: "JosefinSans3", sans-serif;
+	font-size: .9rem;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.infoContainer .boxInfo h3 p a { color: #000; }
+
+.infoContainer .boxInfo h3 p a:hover, .infoContainer .boxInfo h3 p a:focus { color: #C89648; }
+
+.intestazione-form
+{
+	width: 100%;
+	max-width: 960px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	clear: both;
+	min-height: 100px;
+}
+
+.intestazione-form h4
+{
+	font-family: "JosefinSans3", sans-serif;
+	display: inline-block;
+	margin-left: 20px;
+	margin-right: 20px;
+	width: auto;
+	max-width: 250px;
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.intestazione-form hr
+{
+	width: 40%;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0px;
+	height: 1px;
+	background: rgba(233,233,233,1.00);
+}
+
+.intestazione-form p
+{
+	font-family: "JosefinSans3", sans-serif;
+	font-size: .9rem;
+}
+
+.form-contatti
+{
+	width: 100%;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	overflow: hidden;
+	min-height: 100px;
+	margin-top: 50px;
+	padding-bottom: 100px;
+}
+
+.form-contatti label
+{
+	width: 100%;
+	min-height: 50px;
+	text-align: center;
+	font-family: "JosefinSans3", sans-serif;
+	font-size: .9rem;
+}
+
+.form-contatti label p { font-size: .9rem; }
+
+.form-contatti label input
+{
+	width: calc(100% - 10px);
+	font-family: "JosefinSans3", sans-serif;
+	border: 1px solid rgba(233,233,233,1.00);
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.2rem;
+	text-align: center;
+	height: 2rem;
+	outline: none;
+}
+
+.form-contatti label textarea
+{
+	width: calc(100% - 10px);
+	font-family: "JosefinSans3", sans-serif;
+	border: 1px solid rgba(233,233,233,1.00);
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.2rem;
+	text-align: center;
+	min-height: 200px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	outline: none;
+}
+
+.form-contatti label input[type="checkbox"]
+{
+	width: 15px;
+	height: 15px;
+	float: left;
+	display: inline-block;
+	margin-right: 10px;
+	outline: none;
+}
+
+.form-contatti label input[type="checkbox"]:hover { cursor: pointer; }
+
+.form-contatti button
+{
+	float: right;
+	font-weight: 100;
+	display: inline-block;
+	background: #C89648;
+	color: rgba(255,255,255,1.00);
+	font-size: .9rem;
+	font-family: "JosefinSans3", sans-serif;
+	padding-top: 8px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 8px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+
+.form-contatti input:hover
+{
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(200,150,72,.7);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(200,150,72,.7);
+	box-shadow: 0px 0px 3px 0px rgba(200,150,72,.7);
+}
+
+.form-contatti input:focus
+{
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(200,150,72,1);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(200,150,72,1);
+	box-shadow: 0px 0px 3px 0px rgba(200,150,72,1);
+}
+
+.form-contatti textarea:hover
+{
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(200,150,72,.7);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(200,150,72,.7);
+	box-shadow: 0px 0px 3px 0px rgba(200,150,72,.7);
+}
+
+.form-contatti textarea:focus
+{
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(200,150,72,1);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(200,150,72,1);
+	box-shadow: 0px 0px 3px 0px rgba(200,150,72,1);
+}
+
+.form-contatti button:hover, .form-contatti button:focus
+{
+	background-color: #fff;
+	opacity: .7;
+	color: rgba(200,150,72,1);
+}
+
+#form_notifica
+{
+	display: block;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	font-size: 1rem;
+	font-family: "JosefinSans3", sans-serif;
+	color: rgba(200,150,72,1);
+}
+
+/* Transizioni *************************************************/
+
+.infoContainer .boxInfo h3 p a { transition: all .3s ease-in-out; }
+
+.form-contatti input { transition: all .3s ease-in-out; }
+
+.form-contatti textarea { transition: all .3s ease-in-out; }
+
+.form-contatti button { transition: all .3s ease-in-out; }
+
+/* VISITE GUIDATE * NEWS EVENTI * VIAGGI DI ACANTO **********************************/
+
+
+.sezione-grid
+{
+	position: relative;
+	display: block;
+	overflow: hidden;
+	clear: both;
+	margin: 2em auto;
+	max-width: 970px;
+	width: 100%;
+	min-height: 100px;
+}
+
+/* intestazione ****************************************************************/
+
+.sezione-grid h2.intestazione
+{
+	width: 100%;
+	text-align: center;
+	height: auto;
+	display: block;
+	clear: both;
+	font-size: 2rem;
+	font-family: "JosefinSans3", sans-serif;
+	text-transform: uppercase;
+	color: #333333;
+	margin: 3em auto 1em;
+}
+
+.sezione-grid h2.intestazione p
+{
+	font-size: 2rem;
+	font-family: "JosefinSans3", sans-serif;
+	text-transform: uppercase;
+	color: #333333;
+}
+
+/* titolo */
+
+.testoIntestazione
+{
+	width: 100%;
+	height: auto;
+	display: block;
+	position: relative;
+	clear: both;
+	font-family: "JosefinSans3", sans-serif;
+	color: #555555;
+}
+
+.testoIntestazione p
+{
+	font-size: .9rem;
+	line-height: 1.1rem;
+	color: #555555;
+}
+
+/* GRIGLIA ************************/
+
+.griglia-sezione
+{
+	width: 100%;
+	max-width: 970px;
+	height: auto;
+	position: relative;
+	overflow: hidden;
+	clear: both;
+	margin-top: 120px;
+	margin-bottom: 20px;
+}
+
+.griglia-sezione .boxBlock
+{
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	max-width: 310px;
+	width: 100%;
+	height: 242px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.griglia-sezione .boxBlock a
+{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: block;
+	text-decoration: none;
+}
+
+.griglia-sezione .boxBlock p
+{
+	background: rgba(255,255,255,0.70);
+	font-family: "JosefinSans3", sans-serif;
+	font-size: 1.2rem;
+	color: #333;
+	padding: 16px 16px;
+	width: calc(100% - 140px);
+	display: block;
+	position: relative;
+	margin: 0px;
+	top: 50%;
+	transform: perspective(1px) translateY(-50%);
+	text-decoration: none;
+}
+
+.griglia-sezione .boxBlock.art a p { font-size: 1rem !important; }
+
+.griglia-sezione a.newsletter
+{
+	padding: 15px 16px;
+	color: #FFF;
+	width: 140px;
+	position: relative;
+	clear: both;
+	display: block;
+	margin-top: 100px;
+	font-family: "JosefinSans3", sans-serif;
+	font-size: .9rem;
+	background: rgba(144,144,144,0.70);
+}
+
+.griglia-sezione a.newsletter:hover { opacity: .7; }
+
+.newsletter_popup
+{
+	padding: 15px 16px;
+	color: #FFF;
+	width: 140px;
+	position: relative;
+	clear: both;
+	display: block;
+	margin-top: 1em;
+	font-family: "JosefinSans3", sans-serif;
+	font-size: .9rem;
+	background: rgba(144,144,144,0.70);
+}
+
+.newsletter_popup:hover { opacity: .7; }
+
+.pulsanti_interni
+{
+	display: block;
+	position: relative;
+	width: 62%;
+}
+
+.newsletter.news
+{
+	display: inline-block !important;
+	margin-right: 16px;
+}
+
+.prenota_interno.news { display: inline-block; }
+
+.griglia_viaggi { margin-bottom: 5em; }
+
+/* Transizioni */
+
+.griglia-sezione a { transition: all .3s ease-in-out; }
+
+/* MOSTRE  ******************************************************/
+
+.mostre
+{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: block;
+	position: relative;
+}
+
+.mostre h2.intestazione
+{
+	width: 100%;
+	text-align: center;
+	height: auto;
+	display: block;
+	clear: both;
+	font-size: 2rem;
+	font-family: "JosefinSans3", sans-serif;
+	text-transform: uppercase;
+	color: #333333;
+	margin: 3em auto 1em;
+}
+
+.mostre h2.intestazione p
+{
+	font-family: "JosefinSans3", sans-serif;
+	text-transform: uppercase;
+	color: #333333;
+	text-align: center;
+}
+
+.mostre-grid
+{
+	width: 66%;
+	max-width: 980px;
+	height: calc(100% - 200px);
+	overflow: hidden;
+	clear: both;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+}
+
+.mostre-grid .itemContainer
+{
+	width: 90%;
+	clear: both;
+	background: rgba(255,255,255,1.00);
+	position: relative;
+	display: block;
+	overflow: hidden;
+	min-height: 50px;
+	height: auto;
+	transition: all 0.3s ease-in;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 2em;
+}
+
+.mostre-grid .itemContainer .ImgContent
+{
+	width: 25%;
+	height: 100%;
+	max-width: 220px;
+	min-height: 250px;
+	float: left;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.mostre-grid .itemContainer .ImgContent img
+{
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.mostre-grid .itemContainer .testoContainer
+{
+	width: calc( 75% - 32px );
+	padding: 1em;
+	margin: 0px;
+	height: auto;
+	float: left;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	transition: all 0.3s ease-in;
+}
+
+.mostre-grid .itemContainer .testoContainer p
+{
+	width: 100%;
+	overflow: hidden;
+	font-family: "JosefinSans3", sans-serif;
+    font-size: .9rem;
+    line-height: 1.1rem;	
+	color: #333333;
+	height: 0px;
+	max-height: 0px;
+	min-height: 0px;
+	transition: all 0.5s ease-in;
+}
+
+.mostre-grid .itemContainer .testoContainer h3 p
+{
+	font-family: "JosefinSans3", sans-serif;
+	font-size: 1rem;
+	color: #C89648;
+}
+
+.mostre-grid .itemContainer .testoContainer p:nth-child(1), .mostre-grid .itemContainer .testoContainer p:nth-child(2)
+{
+	height: auto;
+	max-height: 500px;
+	min-height: 0px;
+}
+
+.mostre-grid .itemContainer .testoContainer .dataMostra
+{
+	float: left;
+	color: #555555;
+	display: block;
+	font-family: "JosefinSans3", sans-serif;
+	font-size: 1rem;
+	width: 49%;
+	height: auto;
+	position: relative;
+	margin-top: 1em;
+}
+
+.mostre-grid .itemContainer .testoContainer.expand p
+{
+	height: auto;
+	max-height: 500px;
+	min-height: 0px;
+	transition: all 0.8s ease-in;
+}
+
+.mostre-grid .itemContainer .testoContainer .leggi
+{
+	background: #C89648;
+	color: #FFF;
+	padding: 1em 16px;
+	float: right;
+	font-family: "JosefinSans3", sans-serif;
+	font-size: .9rem;
+	cursor: pointer;
+}
+
+/*  CALENDARIO   *************************************************************************************/
+
+.sezione-calendario1
+{
+	width: 100%;
+	height: 430px;
+	position: relative;
+	clear: both;
+	overflow: hidden;
+	padding: 0px;
+	margin: 0px;
+}
+
+.sezione-calendario1 .box-calendario
+{
+	width: 33.33%;
+	height: 100%;
+	display: block;
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.sezione-calendario1 .box-calendario .box-calendario-3
+{
+	width: 100%;
+	height: 100%;
+	display: block;
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.sezione-calendario1 .box-calendario .box-intestazione
+{
+	width: 100%;
+	height: 48px;
+	background: rgba(255,255,255,1.00);
+	padding: 0px;
+	margin: 0px;
+	font-family: "JosefinSans3", sans-serif;
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 48px;
+	font-weight: 100;
+}
+
+.sezione-calendario1 .box-calendario:first-child .box-intestazione { text-transform: capitalize; }
+
+.sezione-calendario1 .box-calendario:nth-child(1) .box-intestazione
+{
+	border-top: 1px solid rgba(203,203,203,.50);
+	border-bottom: 1px solid rgba(203,203,203,.50);
+	height: 46px;
+	color: #606060;
+}
+
+.sezione-calendario1 .box-calendario:nth-child(1) .box-intestazione .arrow
+{
+	height: 4px;
+	display: inline-block;
+	margin: 0px;
+	padding: 4px;
+	margin-left: 16px;
+	margin-right: 16px;
+	background: url(../img/arrow-caledar.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
+}
+
+.sezione-calendario1 .box-calendario:nth-child(1) .box-intestazione .arrow:nth-child(2)
+{
+	transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+}
+
+.sezione-calendario1 .box-calendario .calendario-counter
+{
+	width: 100%;
+	height: 100%;
+	clear: both;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+
+.sezione-calendario1 .box-calendario .calendario-counter .calendario
+{
+	width: 358px;
+	height: 286px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 18px;
+}
+
+.sezione-calendario1 .box-calendario .calendario-counter .calendario .int-giorni
+{
+	width: 100%;
+	height: 30px;
+	clear: both;
+	font-family: "JosefinSans3", sans-serif;
+	font-size: .9rem;
+	overflow: hidden;
+	margin-bottom: 0.5em;
+}
+
+.sezione-calendario1 .box-calendario .calendario-counter .calendario .int-giorni .box-int
+{
+	display: block;
+	float: left;
+	text-align: center;
+	width: 51px;
+	line-height: 30px;
+}
+
+.sezione-calendario1 .box-calendario .calendario-counter .calendario .int-date
+{
+	width: calc(100% -1px);
+	height: auto;
+	clear: both;
+	border-top: 1px solid #EEDFC7;
+	border-left: 1px solid #EEDFC7;
+	font-family: "JosefinSans3", sans-serif;
+	font-size: 1rem;
+	overflow: hidden;
+}
+
+.sezione-calendario1 .box-calendario .calendario-counter .calendario .int-date .box-int
+{
+	display: block;
+	float: left;
+	text-align: center;
+	width: 50px;
+	line-height: 50px;
+	border-right: 1px solid #EEDFC7;
+	background: rgba(255,255,255,1.00);
+	border-bottom: 1px solid #EEDFC7;
+	transition: all 0.5s ease-in;
+}
+
+.sezione-calendario1 .box-calendario .calendario-counter .calendario .int-date .box-int.InData
+{
+	background: rgba(200,150,0,1.00) !important;
+	color: rgba(255,255,255,1.00) !important;
+}
+
+.sezione-calendario1 .box-calendario .calendario-counter .calendario .int-date .box-int.hover
+{
+	background: rgba(225,225,225,0.50);
+	color: rgba(0,0,0,1.00);
+}
+
+.sezione-calendario1 .box-calendario .calendario-counter .calendario .int-date .box-int.hover:hover
+{
+	background: rgba(200,150,0,1.00);
+	color: rgba(255,255,255,1.00);
+}
+
+.sezione-calendario1 .box-calendario .calendario-counter .calendario .int-date .box-int a
+{
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: block;
+}
+
+.sezione-calendario1 .box-calendario:nth-child(2) .box-intestazione
+{
+	background: #D8B57F;
+	color: #FFF;
+}
+
+.sezione-calendario1 .box-calendario:nth-child(3) .box-intestazione
+{
+	background: rgba(255,255,255,0.9);
+	color: #D8B57F;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco
+{
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,1.00);
+	display: block;
+	clear: both;
+	overflow: hidden;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list
+{
+	width: 100%;
+	height: calc(30% - 1px);
+	overflow: hidden;
+	position: relative;
+	border-bottom: 1px solid rgba(208,208,208,1.00);
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list h2
+{
+	width: 49%;
+	padding-left: 15px;
+	font-family: "JosefinSans3", sans-serif;
+	font-size: 0.8rem;
+	color: #C89648;
+	display: block;
+	margin: 0px;
+	height: 100%;
+	padding-top: 7%;
+	overflow: hidden;
+	font-weight: 100;
+	float: left;
+	position: relative;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list h2 p
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box
+{
+	width: 46%;
+	position: relative;
+	height: 100%;
+	display: block;
+	float: right;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 7%;
+	text-align: center;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box .ore
+{
+	font-family: "JosefinSans3", sans-serif;
+	font-size: 0.8rem;
+	padding: .5em 10px;
+	border: 1px solid #C89648;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box a
+{
+	font-family: "JosefinSans3", sans-serif;
+	font-size: 0.8rem;
+	padding: .6em 16px;
+	color: #FFF;
+	background: #C89648;
+	font-weight: 100;
+	margin-left: 20px;
+	transition: all .3s ease-in-out;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box a:hover
+{
+	background-color: #fff;
+	color: #C89648;
+}
+
+@media all and (max-width: 1529px) {
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box .ore
+{
+	display: block;
+	clear: both;
+	float: right;
+	margin-right: 20px;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box a
+{
+	padding: .6em 12px;
+	display: block;
+	clear: both;
+	text-align: center;
+	margin-top: 15px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	max-width: 120px;
+	float: right;
+	width: 60%;
+}
+}
+
+@media all and (max-width: 1440px) {
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box
+{
+	width: 26%;
+	margin: 0px 26px;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box .ore
+{
+	display: block;
+	margin-bottom: 1.5em;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box a { padding: .6em 12px; }
+
+.titolo_evento_dettaglio { min-height: 6.7em; }
+}
+
+@media all and (max-width: 1280px) {
+
+.info_1 { margin: 0 4% 0 0; }
+
+.info_2 { margin: 0 2% 0 0; }
+
+.info_3 { margin: 0 2% 0 0; }
+
+.info_4
+{
+	margin: 0 1% 0 1%;
+	padding-top: 2.2em;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box .ore
+{
+	display: block;
+	clear: both;
+	float: right;
+	margin-right: 20px;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box a
+{
+	padding: .6em 12px;
+	display: block;
+	clear: both;
+	text-align: center;
+	margin-top: -5px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	max-width: 140px;
+	margin-left: 0px;
+	float: right;
+}
+}
+
+@media all and (max-width: 1024px) {
+
+.sezione-grid { max-width: 780px; }
+
+.griglia-sezione .boxBlock { max-width: 376px; }
+
+.sezione-grid h2.intestazione { margin: 1.5em auto 1em; }
+
+.sezione-calendario1 { height: auto; }
+
+.sezione-calendario1 .box-calendario { width: 50%; }
+
+.sezione-calendario1 .box-calendario.ajax3
+{
+	width: 100%;
+	height: 21em;
+}
+
+#titolo_dettagli hr { width: 84%; }
+
+.info_1 { margin: 0 4% 0 0; }
+
+.info_2 { margin: 0 2% 0 0; }
+
+.info_3 { margin: 0 8% 0 0; }
+
+.container_evento { padding: 2em 2em 4em; }
+
+.pdf_cal { top: 50%; }
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box .ore
+{
+	display: inline-block;
+	margin-bottom: 0;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box a
+{
+	padding: .6em 16px;
+	margin-top: 15px;
+}
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box
+{
+	width: 45%;
+	margin: 0px;
+}
+
+.mostre h2.intestazione { margin: 1.5em auto 1em; }
+
+.mostre
+{
+	width: 78%;
+	margin: 0 auto;
+}
+}
+
+@media all and (max-width: 980px) {
+
+.sezione-grid
+{
+	position: relative;
+	display: block;
+	clear: both;
+	overflow: hidden;
+	margin: 0 auto;
+	max-width: auto;
+	width: 86%;
+	min-height: 100px;
+	padding-right: 30px;
+	padding-left: 10px;
+}
+
+/* MOSTRE */
+
+.mostre
+{
+	overflow: auto;
+	padding-bottom: 20px;
+}
+
+.mostre-grid
+{
+	width: calc( 100% - 40px );
+	max-width: 980px;
+	height: auto;
+	min-height: 100%;
+	clear: both;
+	display: block;
+	position: relative;
+	margin: 0 20px;
+	padding-bottom: 30px;
+}
+}
+
+@media all and (max-width: 820px) {
+
+.mostre-grid
+{
+	width: calc( 100% - 40px );
+	max-width: 980px;
+	height: auto;
+	min-height: 100%;
+	clear: both;
+	display: block;
+	position: relative;
+	margin: 0px 0px;
+	padding-bottom: 30px;
+}
+}
+
+@media all and (max-width: 620px) {
+
+.griglia-sezione { margin-top: 4em; }
+
+.griglia-sezione a.newsletter
+{
+	width: 100%;
+	margin-top: 2em;
+}
+
+.griglia-sezione a.prenota_interno
+{
+	margin: 2em auto 0;
+	width: 96%;
+}
+
+.pulsanti_interni { width: 98%; }
+
+/* mostre */
+.mostre-grid .itemContainer
+{
+	width: 100%;
+	clear: both;
+	background: rgba(255,255,255,1.00);
+	position: relative;
+	display: block;
+	overflow: hidden;
+	min-height: 50px;
+	height: auto;
+	transition: all 0.3s ease-in;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 2em;
+}
+
+/* contatti */
+
+.infoContainer .boxInfo
+{
+	width: 100%;
+	display: block;
+	clear: both;
+	overflow: hidden;
+}
+
+.intestazione-form hr
+{
+	width: 25%;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0px;
+	height: 1px;
+	background: rgba(233,233,233,1.00);
+}
+
+.form-contatti label
+{
+	width: calc(100% - 40px);
+	min-height: 50px;
+	text-align: center;
+	font-family: "JosefinSans3", sans-serif;
+	font-size: .9rem;
+}
+
+.form-contatti button
+{
+	float: left;
+	width: 100%;
+	margin-top: 20px;
+	font-weight: 100;
+	display: block;
+	clear: both;
+	background: #C89648;
+	color: rgba(255,255,255,1.00);
+	font-size: .9rem;
+	font-family: "JosefinSans3", sans-serif;
+	padding-top: 8px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 8px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+}
+
+@media all and (max-width: 450px) {
+
+/* chi siamo */
+
+.contenuto-globale .image
+{
+	width: 100%;
+	min-height: 250px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	float: left;
+	overflow: hidden;
+	display: block;
+}
+
+.contenuto-globale .testo-blocco
+{
+	width: 100%;
+	float: left;
+	min-height: 200px;
+	overflow: hidden;
+	display: block;
+}
+
+/* calendario */
+.sezione-calendario1 .box-calendario { width: 100%; }
+
+/* mostre */
+
+.mostre-grid
+{
+	width: calc( 100% - 40px );
+	max-width: 980px;
+	height: auto;
+	min-height: 100%;
+	clear: both;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	padding-bottom: 30px;
+}
+
+.mostre-grid .itemContainer
+{
+	width: 100%;
+	clear: both;
+	background: rgba(255,255,255,1.00);
+	position: relative;
+	display: block;
+	overflow: hidden;
+	min-height: 50px;
+	height: auto;
+	transition: all 0.3s ease-in;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 2em;
+}
+
+.mostre-grid .itemContainer .ImgContent
+{
+	width: 100%;
+	height: 100%;
+	max-width: 500px;
+	min-height: 250px;
+	float: left;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.mostre-grid .itemContainer .ImgContent img
+{
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.mostre-grid .itemContainer .testoContainer
+{
+	width: calc(100% - 30px);
+	padding: 1em;
+	margin: 0px;
+	height: auto;
+	float: left;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	transition: all 0.3s ease-in;
+	text-align: center;
+}
+}

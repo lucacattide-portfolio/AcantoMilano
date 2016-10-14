@@ -17,7 +17,7 @@
     
     <!--Inizio Contaniner Popup-->
     
-    <div class="container_popup_verticale">
+    <div class="container_popup_verticale popup2">
     
     	<?php
 		   $paginaId = $_GET["id"];
@@ -63,6 +63,23 @@
                 <!-- single img -->  
                 
                 <header class="header_popup" style="background-image:url('<?php echo $siteurl_base; ?>img/<?php echo $immagine2;  ?>')">
+                
+                	 <!--Inizio Facebook Widget-->
+                    
+                <div class="fb-share-button" data-href="<?php echo "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.acantomilano.it%2F".$paginaUrl;
+                
+                /*"http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].$_SERVER['QUERY_STRING'];*/ ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                
+                    <a class="fb-xfbml-parse-ignore social_share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo "http%3A%2F%2Fwww.acantomilano.it%2F".$paginaUrl; ?>&amp;src=sdkpreparse">
+                    
+                        Condividi
+                        
+                    </a>
+                    
+                </div>
+                
+                <!--Fine Facebook Widget-->  
+                
                 </header>
                 
                 <?php endwhile; ?>
@@ -132,23 +149,7 @@
             <!--Inizio Corpo-->
             
             <div class="corpo_summary" data-mcs-theme="rounded-dark">
-            
-                <!--Inizio Facebook Widget-->
-                    
-                <div class="fb-share-button" data-href="<?php echo "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.acantomilano.it%2F".$paginaUrl;
-                
-                /*"http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].$_SERVER['QUERY_STRING'];*/ ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
-                
-                    <a class="fb-xfbml-parse-ignore social_share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo "http%3A%2F%2Fwww.acantomilano.it%2F".$paginaUrl; ?>&amp;src=sdkpreparse">
-                    
-                        Condividi
-                        
-                    </a>
-                    
-                </div>
-                
-                <!--Fine Facebook Widget-->         
-            
+                      
             	<?php echo $articolo["articolo_testo"]; ?>
 
           </div>

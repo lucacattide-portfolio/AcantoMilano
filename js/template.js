@@ -242,6 +242,11 @@ function transizioni() {
 			$("body").toggleClass("blocca_scroll"); // Blocca lo scroll a menu aperto
 			
 		}
+		
+		// Viaggi - Centratura
+	
+		$("#container_contenuti[rel='visite-guidate'] .griglia-sezione").toggleClass("centra");
+
 
 	});	
 		
@@ -342,7 +347,7 @@ function transizioni() {
 		}
 		
 	});
-	
+		
 }
 
 
@@ -492,56 +497,68 @@ function validaInviaForm() {
 
 function preloader() {
 	
-	$('.second.circle').circleProgress({ // Inizializzazione Plugin
+	if ($("section[rel='home']").length > 0 || $("div[rel='calendario']").length > 0) { // Solo su Home e Calendario inizializza il preloader
+
+		$('.second.circle').fadeIn(); // Nascondi il preloader
+		$('.second.circle strong').fadeIn(); // Nascondi il preloader
 		
-		value: 1,
-		size: 100,
-		fill: { color: "#dfc37a" },
-		thickness: 5,
-		animation: { 
-		
-			duration: 1000, 
-			ease: "circleProgressEase" 
+		$('.second.circle').circleProgress({ // Inizializzazione Plugin
 			
-		}
-		
-	}).on('circle-animation-progress', function(event, progress) { // Durante l'animazione 
-		
-		$(this).find('strong').html(parseInt(100 * progress) + '<i>%</i>'); // Visualizza la percentuale di caricamento
-	
-	}).on('circle-animation-end',function() { // A fine animazione
-		
-		$('.second.circle strong').fadeOut(); // Nascondi il preloader
-		$('.second.circle').fadeOut(500, function() { // Anima l'ingresso dei contenuti
-		
-			$("#container_menu, #container").removeClass("occulta");
-			$("#container, #container_contenuti").addClass("animated fadeIn");
+			value: 1,
+			size: 100,
+			fill: { color: "#dfc37a" },
+			thickness: 5,
+			animation: { 
 			
-		   if (($("#home_carousel").length > 0) && (ingresso === true) && $(window).width() > 1024) { // Se siamo in Home su Desktop e non è stata ancora effettuata l'animazione di ingresso
+				duration: 1000, 
+				ease: "circleProgressEase" 
+				
+			}
+			
+		}).on('circle-animation-progress', function(event, progress) { // Durante l'animazione 
+			
+			$(this).find('strong').html(parseInt(100 * progress) + '<i>%</i>'); // Visualizza la percentuale di caricamento
 		
-			  setTimeout(function() { // Anima ingresso Menu
+		}).on('circle-animation-end',function() { // A fine animazione
+			
+			$('.second.circle strong').fadeOut(); // Nascondi il preloader
+			$('.second.circle').fadeOut(500, function() { // Anima l'ingresso dei contenuti
+			
+				$("#container_menu, #container").removeClass("occulta");
+				$("#container, #container_contenuti").addClass("animated fadeIn");
+				
+			   if (($("#home_carousel").length > 0) && (ingresso === true) && $(window).width() > 1024) { // Se siamo in Home su Desktop e non è stata ancora effettuata l'animazione di ingresso
+			
+				  setTimeout(function() { // Anima ingresso Menu
+					  
+					  $("#pulsante_menu").removeClass("pulsante_attivo"); // Allora anima l'ingresso del menu
+					  $("#freccia_menu").removeClass("freccia_attiva"); // Anima icona
+					  $("#container_menu").removeClass("container_chiuso"); // Nasconde Menu
+					  $("#menu_voci").removeClass("container_voci_chiuso"); // Nasconde Voci
+					  $("#links_outbound").removeClass("container_links_chiuso"); // Nasconde Links Outbound
+					  $(".iva").removeClass("container_links_chiuso"); // Nasconde Links Outbound
+					  $("#separatore_menu").removeClass("separatore_out"); // Nasconde Separatore
+					  $("#container").removeClass("container_full"); // Contenuto tutto schermo
+					  $(".anteprima_news").addClass("anteprima_ridotta"); // Contenuto tutto schermo
+					  $(".container_claim").addClass("claim_ridotto"); // Contenuto tutto schermo
+					  $(".griglia-sezione-esterna").addClass("griglia_centrata"); //Centra la griglia esterna delle sottosezioni 
+					  
+				  }, 500);
 				  
-				  $("#pulsante_menu").removeClass("pulsante_attivo"); // Allora anima l'ingresso del menu
-				  $("#freccia_menu").removeClass("freccia_attiva"); // Anima icona
-				  $("#container_menu").removeClass("container_chiuso"); // Nasconde Menu
-				  $("#menu_voci").removeClass("container_voci_chiuso"); // Nasconde Voci
-				  $("#links_outbound").removeClass("container_links_chiuso"); // Nasconde Links Outbound
-				  $(".iva").removeClass("container_links_chiuso"); // Nasconde Links Outbound
-				  $("#separatore_menu").removeClass("separatore_out"); // Nasconde Separatore
-				  $("#container").removeClass("container_full"); // Contenuto tutto schermo
-				  $(".anteprima_news").addClass("anteprima_ridotta"); // Contenuto tutto schermo
-				  $(".container_claim").addClass("claim_ridotto"); // Contenuto tutto schermo
-				  $(".griglia-sezione-esterna").addClass("griglia_centrata"); //Centra la griglia esterna delle sottosezioni 
+				  ingresso = false; // Disabilita animazione dopo l'esecuzione
 				  
-			  }, 500);
-			  
-			  ingresso = false; // Disabilita animazione dopo l'esecuzione
-			  
-		  } 
+			  } 
+			
+		});
 		
-	});
-	
-	});
+		});
+		
+	} else { // Altrimenti senza preloader
+
+		$("#container_menu, #container").removeClass("occulta");
+		$("#container, #container_contenuti").addClass("animated fadeIn");
+					
+	}
 	
 }
 

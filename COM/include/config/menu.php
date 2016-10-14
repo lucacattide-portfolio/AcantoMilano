@@ -301,9 +301,9 @@
         
         <div class="links dominio"> <!--Versione Inglese-->
         
-        	<a href="www.acantomilano.com" title="Acanto Milano">
+        	<a href="http://www.acantomilano.it" title="Acanto Milano">
             
-            	www.acantomilano.com
+            	www.acantomilano.it
                 
             </a>
         

@@ -87,7 +87,11 @@
               <!--Fine Facebook Widget-->
              
             <!-- <span class="dataMostra"> <?php // echo $articolo3["articolo_sottotitolo"];?> </span>-->
+            <?php if( str_word_count($articolo3["articolo_testo"]) > 80 ): ?>
+            
              <span class="leggi"> Leggi tutto </span>
+             
+           <?php endif; ?>  
           </div>
        </article>
          <?php 
