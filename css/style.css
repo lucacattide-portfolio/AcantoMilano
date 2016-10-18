@@ -779,7 +779,7 @@ a { text-decoration: none; }
 
 @media all and (max-width: 1280px) and (max-height: 700px) {
 
-.container_claim { top: 5%; }
+.container_claim { top: 10%; }
 
 .leggi_anteprima
 {
@@ -787,7 +787,7 @@ a { text-decoration: none; }
 	bottom: 48px;
 }
 
-#links_outbound { bottom: -10px; }
+#links_outbound { bottom: 0; }
 
 .social img
 {
