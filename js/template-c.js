@@ -3,10 +3,17 @@
 $(document).ready(function() {
 	
 	
+	
+	
+
+	
+	
     $(document).on("click", ".numGiorni .box-intestazione a.arrow", function(){
 	 
 	 	var dataRiferimento = $(this).attr("rel");
 	    var dataId = $(this).attr("data-id");
+		
+		
 		
 		
 		$.post('http://www.acantomilano.it/beta/include/ajax-calendario.php', { datarif: ""+ dataRiferimento +"", dataId: ""+ dataId +"" } ).done(function( data ){
@@ -85,6 +92,7 @@ $(document).ready(function() {
 
 
 $(window).on("load resize",function(){
+	
 	 
 	 var heightBox = $(".itemContainer");
 	 

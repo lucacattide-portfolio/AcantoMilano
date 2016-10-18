@@ -395,7 +395,6 @@
 	margin-bottom: 20px;
 }
 
-
 .griglia-sezione .boxBlock
 {
 	display: block;
@@ -435,7 +434,7 @@
 	font-size: 1.2rem;
 	color: #333;
 	padding: 16px 16px;
-	width: calc(100% - 140px);
+	width: calc(100% - 110px);
 	display: block;
 	position: relative;
 	margin: 0px;
@@ -645,11 +644,26 @@
 
 .mostre-grid .itemContainer .testoContainer .dataMostra p { margin: 0 0 1em; }
 
-.mostre-grid .itemContainer .testoContainer.expand p
+.mostre-grid .itemContainer .testoContainer span.big { display: none; }
+
+.mostre-grid .itemContainer .testoContainer span.small { display: block; }
+
+.mostre-grid .itemContainer .testoContainer .fb-share-button
 {
-	height: auto;
-	max-height: 500px;
-	min-height: 0px;
+	clear: none;
+	width: 50%;
+	float: left;
+}
+
+.mostre-grid .itemContainer .testoContainer.expand span.small
+{
+	display: none !important;
+	transition: all 0.8s ease-in;
+}
+
+.mostre-grid .itemContainer .testoContainer.expand span.big
+{
+	display: block !important;
 	transition: all 0.8s ease-in;
 }
 
@@ -657,12 +671,12 @@
 {
 	background: #dfc37a;
 	color: #FFF;
-	padding: 1em 16px;
+	padding: 0.5em 8px;
 	float: right;
 	font-family: "JosefinSans3", sans-serif;
 	font-size: .9rem;
 	cursor: pointer;
-	margin-top: 2em;
+	margin-top: 0em;
 	text-align: center;
 }
 
@@ -900,7 +914,11 @@
 {
 	padding: 0px;
 	margin: 0px;
+	text-transform: lowercase;
+	line-height: 1.1rem;
 }
+
+.sezione-calendario1 .box-calendario .lista-blocco .box-list h2 p:first-letter { text-transform: capitalize; }
 
 .sezione-calendario1 .box-calendario .lista-blocco .box-list .button-box
 {
@@ -944,7 +962,7 @@
 }
 
 @media all and (max-width: 1529px) {
-	
+
 .griglia-sezione .boxBlock
 {
 	max-width: 360px;

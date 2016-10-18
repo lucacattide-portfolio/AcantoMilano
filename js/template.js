@@ -182,11 +182,17 @@ function inizializza() {
 	
 	// MOSTRE READ MORE
 	
-	$(".testoContainer span.leggi").on("click",function(){
+/*$(".testoContainer span.leggi").on("click",function(){
 	
-	 	var LivUp = $(this).parent();
+	 	
+	});*/
+	
+	$(".testoContainer span.leggi").on("click",function(){
 		
-		LivUp.toggleClass("expand");
+	    
+		 var LivUp = $(this).parent();
+		
+		 LivUp.toggleClass("expand");
 	
 	});
 	

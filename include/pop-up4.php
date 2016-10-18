@@ -185,7 +185,8 @@
 							endif;
 							
 						?>
-				   
+				      
+                      <?php if ($countImg2 >=1 ): ?>
 					   <a class="pulsante_pdf deseleziona <?php if ($presente == 0) { echo "pdf_presente"; } ?>" href="<?php if ($presente == 0) { echo "#"; } else { echo $siteurl_base."img/".$immagine3; } ?>" target="_blank"  title="<?php if(!empty($articolo["articolo_titolo"])): echo $articolo["articolo_titolo"]; else: echo $articolo3["articolo_titolo"]; endif;  ?>">
 				   
 						   <div class="pdf_interno deseleziona">
@@ -202,6 +203,7 @@
 						   </div>
 					   
 					   </a>
+                       <?php endif; ?>
                        
                    		<!--Fine PDF-->
 					   
