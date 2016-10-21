@@ -33,7 +33,7 @@
                 
                 <?php 
 				
-					 $sqlArticolo120 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1  ";
+					 $sqlArticolo120 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1 LIMIT 0,1  ";
 					 $rArt120 = $mysqli->query($sqlArticolo120);
 					 $countArticolo120 =  $rArt120->num_rows;
 		 
@@ -78,7 +78,7 @@
         
         <?php
 		
-		 $sqlArticolo20 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_gallery_id = 1 AND articolo_id != 22 AND articolo_visibile = 1  ";
+		 $sqlArticolo20 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_gallery_id = 1 AND articolo_id != 22 AND articolo_visibile = 1 ORDER BY articolo_data_modifica DESC  ";
 		 $rArt20 = $mysqli->query($sqlArticolo20);
 		 $countArticolo20 =  $rArt20->num_rows;
 		 if( $countArticolo20 >= 1 ):
