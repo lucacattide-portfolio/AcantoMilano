@@ -564,7 +564,7 @@
 	width: 25%;
 	height: 100%;
 	max-width: 220px;
-	min-height: 250px;
+	min-height: 100px;
 	float: left;
 	display: block;
 	overflow: hidden;
@@ -637,11 +637,26 @@
 	margin-top: 1em;
 }
 
-.mostre-grid .itemContainer .testoContainer.expand p
+.mostre-grid .itemContainer .testoContainer span.big { display: none; }
+
+.mostre-grid .itemContainer .testoContainer span.small { display: block; }
+
+.mostre-grid .itemContainer .testoContainer .fb-share-button
 {
-	height: auto;
-	max-height: 500px;
-	min-height: 0px;
+	clear: none;
+	width: 50%;
+	float: left;
+}
+
+.mostre-grid .itemContainer .testoContainer.expand span.small
+{
+	display: none !important;
+	transition: all 0.8s ease-in;
+}
+
+.mostre-grid .itemContainer .testoContainer.expand span.big
+{
+	display: block !important;
 	transition: all 0.8s ease-in;
 }
 
@@ -649,13 +664,14 @@
 {
 	background: #dfc37a;
 	color: #FFF;
-	padding: 1em 16px;
+	padding: 0.5em 8px;
 	float: right;
 	font-family: "JosefinSans3", sans-serif;
 	font-size: .9rem;
 	cursor: pointer;
+	margin-top: 1em;
+	text-align: center;
 }
-
 /*  CALENDARIO   *************************************************************************************/
 
 .sezione-calendario1
