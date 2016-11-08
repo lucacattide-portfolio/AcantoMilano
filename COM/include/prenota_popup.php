@@ -71,6 +71,13 @@
            	  <input name="email_prenota" type="email" required id="email_prenota" placeholder="Insert e-mail (es. m.rossi@email.it)" pattern="^[a-z0-9][_.a-z0-9-]+@([a-z0-9][0-9a-z-]+.)+([a-z]{2,4})" title="E-Mail">
             
             </label>
+            
+            <?php
+			
+				if ($paginaId != "78" && $paginaId != "79"):
+				
+			?>
+			
             <label for="oggetto_prenota">
             
             	Object
@@ -78,6 +85,7 @@
            	  <input name="oggetto_prenota" type="text" disabled="disabled" id="oggetto_prenota" placeholder="Insert object" pattern="[a-zA-Zàèìòù' ]+" title="Oggetto" readonly value="<?php $titolo = str_replace("<p>", "", $articolo["articolo_titolo"]); $titolo = str_replace("</p>", "", $titolo); $titolo = str_replace("<br />", "", $titolo); echo $titolo; ?>">
             
             </label>
+
             <?php if( $articolo["articolo_pagina_id"] == "17"):  elseif( $articolo["articolo_pagina_id"] == "10"): else: ?>
             <label for="data_prenota">
             
@@ -93,7 +101,7 @@
            	  <input name="ora_prenota" type="time" disabled="disabled" id="ora_prenota" title="Orario" value="<?php echo date('H:i:s', strtotime($articolo["articolo_data_modifica"])) ?>" readonly>
             
             </label>
-            <?php endif; ?>
+            <?php endif; endif; ?>
             <label for="messaggio_prenota">
             
             	Message

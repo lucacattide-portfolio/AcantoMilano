@@ -585,7 +585,7 @@
 
 .mostre-grid .itemContainer .testoContainer
 {
-	width: calc( 85% - 32px );
+	width: calc( 80% - 32px );
 	padding: 1em;
 	margin: 0px;
 	height: auto;
@@ -945,7 +945,7 @@
 
 @media all and (max-width: 1529px) {
 
-.mostre-grid .itemContainer .testoContainer { width: calc( 80% - 32px ); }
+.mostre-grid .itemContainer .testoContainer { width: calc( 70% - 32px ); }
 
 .evento_correlato
 {

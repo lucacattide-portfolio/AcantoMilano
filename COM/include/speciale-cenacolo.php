@@ -104,8 +104,83 @@
                     Summary
                     
                 </h7>
+                               
+				<center> 
+           
+					<a class="prenota_interno deseleziona prenotazione" href="<?php echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php echo $articolo["articolo_id"]; ?>">
+
+						BOOK NOW
+
+					</a>
                 
-                 <!--<!--Inizio Container-->
+           		</center>  
+                                             
+                <h2 class="titolo_summary_2"> <!--Contenuti-->
+                
+                    <?php echo $articolo["articolo_titolo"]; ?>
+                    
+                </h2>
+                
+                <h3 class="sezione-grid altre-sez">
+                 <center>
+                 <hr><?php echo  $articolo["articolo_sottotitolo"]; ?><hr>
+                 </center>
+                </h3>
+        
+        	</hgroup>
+            
+            <!--Fine Titoli-->
+             
+            <!--Inizio Corpo-->
+            
+            <div class="corpo_summary">
+            
+				<!--Inizio Facebook Widget-->
+                    
+               
+                <!--Fine Facebook Widget-->          
+                  
+            	<?php echo $articolo["articolo_testo"]; ?>
+            
+            </div>
+            
+            
+            <?php 
+			  
+			  $sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1 LIMIT 1,2 ";
+		   $rArt2 = $mysqli->query($sqlArticolo2);
+           $countArticolo2 =  $rArt2->num_rows;
+		   if( $countArticolo2 >= 1 ):
+		      while ($articolo2 = $rArt2->fetch_array()): 
+			
+			
+			?>
+            <div class="boxAcanto">
+              
+              <h2>ac&agrave;nto guides</h2>
+              
+              <?php echo $articolo2["articolo_testo"]; ?>
+            
+            </div>
+            
+            <?php  endwhile; endif; ?>    
+            
+                       <!-- 
+            <center> 
+           
+           		<a class="prenota_interno deseleziona prenotazione" href="<?php //echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php //echo $articolo["articolo_id"]; ?>">
+           
+              		BOOK NOW
+           
+           		</a>
+                
+           </center>-->
+            
+            <!--Fine Corpo-->
+            
+            <!--Inizio Date-->
+            
+            <!--Inizio Container-->
             
             <div class="elenco_date_dettaglio"> 
             
@@ -206,71 +281,6 @@
            
            <!--Fine Date Dettagli--> 
 
-                
-                <h2 class="titolo_summary_2"> <!--Contenuti-->
-                
-                    <?php echo $articolo["articolo_titolo"]; ?>
-                    
-                </h2>
-                
-                <h3 class="sezione-grid altre-sez">
-                 <center>
-                 <hr><?php echo  $articolo["articolo_sottotitolo"]; ?><hr>
-                 </center>
-                </h3>
-        
-        	</hgroup>
-            
-            <!--Fine Titoli-->
-             
-            <!--Inizio Corpo-->
-            
-            <div class="corpo_summary">
-            
-				<!--Inizio Facebook Widget-->
-                    
-               
-                <!--Fine Facebook Widget-->          
-                  
-            	<?php echo $articolo["articolo_testo"]; ?>
-            
-            </div>
-            
-            
-            <?php 
-			  
-			  $sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1 LIMIT 1,2 ";
-		   $rArt2 = $mysqli->query($sqlArticolo2);
-           $countArticolo2 =  $rArt2->num_rows;
-		   if( $countArticolo2 >= 1 ):
-		      while ($articolo2 = $rArt2->fetch_array()): 
-			
-			
-			?>
-            <div class="boxAcanto">
-              
-              <h2>ac&agrave;nto guides</h2>
-              
-              <?php echo $articolo2["articolo_testo"]; ?>
-            
-            </div>
-            
-            <?php  endwhile; endif; ?>    
-            
-                       <!-- 
-            <center> 
-           
-           		<a class="prenota_interno deseleziona prenotazione" href="<?php //echo $siteurl_base."prenota"; ?>" title="Prenota Ora" tabindex="p" rel="<?php //echo $articolo["articolo_id"]; ?>">
-           
-              		BOOK NOW
-           
-           		</a>
-                
-           </center>-->
-            
-            <!--Fine Corpo-->
-            
-            <!--Inizio Date-->
             
             <!--<!--Inizio Container--
             

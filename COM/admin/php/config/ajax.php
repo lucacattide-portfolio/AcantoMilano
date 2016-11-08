@@ -187,12 +187,17 @@ function imgUp($img){
   
   /* AGGIUNGI ARTICOLO DB BACKEND *******************/
   if(isset($_POST["nuovoArticolo"])):
-	 if(empty($_POST["articolo_data_modifica"])): $dateModifica = ""; else: $dateModifica = date("Y-m-d", strtotime($_POST["articolo_data_modifica"]));  endif;
-	 if(isset($_POST["articolo_categoria_id"]) ):  $categoria = $_POST["articolo_categoria_id"];  else:  $categoria = "";  endif;
-	 if(isset($_POST["articolo_img_id"])): $disponibile = $_POST["articolo_img_id"]; else: $disponibile = "0"; endif;
-	 if(isset($_POST["articolo_gallery_id"])): $evidenza = $_POST["articolo_gallery_id"]; else: $evidenza = "2"; endif;
+	 if(empty($_POST["articolo_data_modifica"])): $dateModifica = date("Y-m-d H:i:s"); else: $dateModifica = date("Y-m-d", strtotime($_POST["articolo_data_modifica"]));  endif;
+	  if(isset($_POST["articolo_img_id"])): $disponibile =  $_POST["articolo_img_id"]; else: $disponibile = "0"; endif;
+	  if(isset($_POST["articolo_categoria_id"]) ):  $categoria = $_POST["articolo_categoria_id"];  else:  $categoria = "";  endif;
+	  if(isset($_POST["articolo_gallery_id"])): $evidenza = $_POST["articolo_gallery_id"]; else: $evidenza = "2"; endif;
+	  if(isset($_POST["articolo_titolo"])): $articoloTitolo = $_POST["articolo_titolo"]; else: $articoloTitolo = ""; endif;
+	  if(isset($_POST["articolo_sottotitolo"])): $articoloSottoTitolo = $_POST["articolo_sottotitolo"]; else: $articoloSottoTitolo = ""; endif;
+	  if(isset($_POST["articolo_testo"])): $articoloTesto = $_POST["articolo_testo"]; else: $articoloTesto = ""; endif;
+	  if(isset($_POST["articolo_url"])): $articoloUrl = $_POST["articolo_url"]; else: $articoloUrl = ""; endif;
+	  if(isset($_POST["articolo_visibile"])): $articoloVisibile = $_POST["articolo_visibile"]; else: $articoloVisibile = "2"; endif;
     // query insert nuovo articolo 
-	$sqlArticolo = "INSERT INTO `articolo`(`articolo_id`,`articolo_pagina_id`,`articolo_titolo`,`articolo_sottotitolo`,`articolo_testo`,`articolo_url`,`articolo_img_id`,`articolo_gallery_id`,`articolo_data_creazione`,`articolo_data_modifica`,`articolo_lingua`,`articolo_ordinamento`,`articolo_categoria_id`,`articolo_visibile`) VALUES ( NULL,'".$mysqli->real_escape_string($_POST["articolo_pagina_id"])."','".$mysqli->real_escape_string($_POST["articolo_titolo"])."','".$mysqli->real_escape_string($_POST["articolo_sottotitolo"])."','".$mysqli->real_escape_string($_POST["articolo_testo"])."','".$mysqli->real_escape_string($_POST["articolo_url"])."','".$disponibile."','".$evidenza."','".date("Y-m-d H:i:s")."','".$dateModifica."','','','".$categoria."','".$mysqli->real_escape_string($_POST["articolo_visibile"])."')";
+	$sqlArticolo = "INSERT INTO `articolo`(`articolo_id`,`articolo_pagina_id`,`articolo_titolo`,`articolo_sottotitolo`,`articolo_testo`,`articolo_url`,`articolo_img_id`,`articolo_gallery_id`,`articolo_data_creazione`,`articolo_data_modifica`,`articolo_lingua`,`articolo_ordinamento`,`articolo_categoria_id`,`articolo_visibile`) VALUES ( NULL,'".$mysqli->real_escape_string($_POST["articolo_pagina_id"])."','".$mysqli->real_escape_string($articoloTitolo)."','".$mysqli->real_escape_string($articoloSottoTitolo)."','".$mysqli->real_escape_string($articoloTesto)."','".$mysqli->real_escape_string($articoloUrl)."','".$disponibile."','".$evidenza."','".date("Y-m-d H:i:s")."','".$dateModifica."','','','".$categoria."','".$mysqli->real_escape_string($articoloVisibile)."')";
 	if($mysqli->query($sqlArticolo)):  
 	     $nextId = $mysqli->insert_id;
 		 //UPLOAD IMGS ///////////////////////////////////////////////////
@@ -224,15 +229,23 @@ function imgUp($img){
   /* MODIFICA ARTICOLO DB BACKEND *******************/
   if(isset($_POST["modificaArticolo"])): 
 	  $id = $_POST["articolo_id"];
-	  $dateModifica = date("Y-m-d H:i:s", strtotime($_POST["articolo_data_modifica"]));
+	  if(empty($_POST["articolo_data_modifica"])): $dateModifica = date("Y-m-d H:i:s"); else: $dateModifica = date("Y-m-d H:i:s", strtotime($_POST["articolo_data_modifica"]));  endif;
 	  if(isset($_POST["articolo_img_id"])): $disponibile =  $_POST["articolo_img_id"]; else: $disponibile = "0"; endif;
 	  if(isset($_POST["articolo_categoria_id"]) ):  $categoria = $_POST["articolo_categoria_id"];  else:  $categoria = "";  endif;
 	  if(isset($_POST["articolo_gallery_id"])): $evidenza = $_POST["articolo_gallery_id"]; else: $evidenza = "2"; endif;
-	  $sqlModificaArticolo =" UPDATE `articolo` SET `articolo_titolo`='".$mysqli->real_escape_string($_POST["articolo_titolo"])."',`articolo_sottotitolo`='".$mysqli->real_escape_string($_POST["articolo_sottotitolo"])."',`articolo_testo`='".$mysqli->real_escape_string($_POST["articolo_testo"])."',`articolo_url`='".$mysqli->real_escape_string($_POST["articolo_url"])."',`articolo_img_id`='".$disponibile."',`articolo_gallery_id`='".$evidenza."', `articolo_data_modifica`='".$dateModifica."', `articolo_categoria_id`='".$categoria."',`articolo_visibile`='".$mysqli->real_escape_string($_POST["articolo_visibile"])."' WHERE `articolo_id` = $id ";	
+	  if(isset($_POST["articolo_titolo"])): $articoloTitolo = $_POST["articolo_titolo"]; else: $articoloTitolo = ""; endif;
+	  if(isset($_POST["articolo_sottotitolo"])): $articoloSottoTitolo = $_POST["articolo_sottotitolo"]; else: $articoloSottoTitolo = ""; endif;
+	  if(isset($_POST["articolo_testo"])): $articoloTesto = $_POST["articolo_testo"]; else: $articoloTesto = ""; endif;
+	  if(isset($_POST["articolo_url"])): $articoloUrl = $_POST["articolo_url"]; else: $articoloUrl = ""; endif;
+	  if(isset($_POST["articolo_visibile"])): $articoloVisibile = $_POST["articolo_visibile"]; else: $articoloVisibile = "2"; endif;
+
+	  $sqlModificaArticolo =" UPDATE `articolo` SET `articolo_titolo`='".$mysqli->real_escape_string($articoloTitolo)."',`articolo_sottotitolo`='".$mysqli->real_escape_string($articoloSottoTitolo)."',`articolo_testo`='".$mysqli->real_escape_string($articoloTesto)."',`articolo_url`='".$mysqli->real_escape_string($articoloUrl)."',`articolo_img_id`='".$disponibile."',`articolo_gallery_id`='".$evidenza."', `articolo_data_modifica`='".$dateModifica."', `articolo_categoria_id`='".$categoria."',`articolo_visibile`='".$mysqli->real_escape_string($articoloVisibile)."' WHERE `articolo_id` = $id ";	
       if($mysqli->query($sqlModificaArticolo)):  
 	     $nextId = $id;
 		 //UPLOAD IMGS ///////////////////////////////////////////////////
-		 foreach ($_FILES['file']['tmp_name'] as $key => $val ):
+		 if(!empty($_FILES['file'])):
+		 
+		  foreach ($_FILES['file']['tmp_name'] as $key => $val ):
 			 $target_pathA = "../../../img/";
 			 $temp = explode(".",$_FILES['file']['name'][$key]);
 			 // CHANGE NAME IMG /////////////////////////////////
@@ -247,15 +260,16 @@ function imgUp($img){
 	            $mysqli->query($sql); 
 			 //CLOSE UPLOAD IMG IN FOLDER DEFINED //////////////////////////////////	  
 			 endif;
-		  // CLOSE FOREACH ///////////////////// 
-		  endforeach;
-		  //ELIMINA IMGS ///////////////////////////////////////////////////
-		  if(!empty($_POST['immagine_id'])):
+		   // CLOSE FOREACH ///////////////////// 
+		   endforeach;
+		   //ELIMINA IMGS ///////////////////////////////////////////////////
+		   if(!empty($_POST['immagine_id'])):
 			  foreach ($_POST['immagine_id'] as $key => $val ): 
 			      $sqlElImmagine = "DELETE FROM `immagine` WHERE immagine_id = ".$val."";
 				  $mysqli->query($sqlElImmagine);
    		      endforeach;
-		  //END ELIMINA IMGS ///////////////////////////////////////////////////	  
+		   //END ELIMINA IMGS ///////////////////////////////////////////////////
+		   endif;	  
 		  endif;
 		  //ORDINAMENTO IMGS ///////////////////////////////////////////////////
 		  if(isset($_POST['immagine_ordinamento'])):

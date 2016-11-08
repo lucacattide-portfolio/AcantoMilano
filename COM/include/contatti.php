@@ -69,7 +69,7 @@
        <input name="check" id="check" type="checkbox" required>
        I agree Privacy policy DLgs. 196/03
       </label>
-      <button type="submit">Invia</button>
+      <button type="submit">Send</button>
     </form>
     
     <!--Inizio Credits-->
@@ -85,6 +85,12 @@
                 laboratorio-a
                 
             </a>
+            
+            <span id="iva_mobile">
+            
+            	P. IVA 04396280960
+            
+			</span>
             
         </small>
     

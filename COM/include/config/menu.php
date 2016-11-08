@@ -40,7 +40,7 @@
     	
         <!--Inizio Lingua-->
         
-       	<nav id="menu_lingua">
+       	<nav id="menu_lingua" class="nascondi no_animazione sfuma">
         
         	<h7> <!--Titolo-->
             
@@ -265,13 +265,13 @@
     
     <!--Inizio Links Outbound-->
     
-    <div id="links_outbound" class="<?php if( $_SESSION['vista'] >= 0 ): if( $pag == 1 || $pag == ""   ):  ?>container_links_chiuso<?php  else: endif; endif;?> nascondi no_animazione">
+    <div id="links_outbound" class="<?php if( $_SESSION['vista'] >= 0 ): if( $pag == 1 || $pag == ""   ):  ?>container_links_chiuso<?php  else: endif; endif;?> nascondi no_animazione sfuma">
     
     	<!--Inizio Social-->
     
     	<div class="links social facebook"> <!--Facebook-->
         
-        	<a href="" title="" target="new">
+        	<a href="https://it-it.facebook.com/acantovisiteguidate/" title="Acanto - Facebook" target="new">
             
             	<img src="img/facebook.svg" alt="Segui Acanto Milano su Facebook" />
                 
@@ -280,7 +280,7 @@
         </div>
         <div class="links social trip_advisor"> <!--Trip Advisor-->
         
-        	<a href="" title="" target="new">
+        	<a href="https://www.tripadvisor.it/Attraction_Review-g187849-d10895025-Reviews-Acanto_Milano-Milan_Lombardy.html" title="Acanto - TripAdvisor" target="new">
             
             	<img src="img/tripadvisor.svg" alt="Segui Acanto Milano su TripAdvisor" />
                 
@@ -289,7 +289,7 @@
         </div>
     	<div class="links social instagram"> <!--Instagram-->
         
-        	<a href="" title="" target="new">
+        	<a href="https://www.instagram.com/acantomilano/" title="Acanto - Instagram" target="new">
             
             	<img src="img/instagram.svg" alt="Segui Acanto Milano su Instagram" />
                 

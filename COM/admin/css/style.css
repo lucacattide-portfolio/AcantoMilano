@@ -18952,3 +18952,17 @@ a:active, a:focus { outline: 0; }
 .boxImgMod{
 	margin-bottom:20px;
 }
+
+
+.widget-wrap .topLeftSave{
+	display: block;
+    position: absolute;
+    right: 0;
+    top: -80px;
+    width: 40%;
+}
+
+
+.widget-wrap .checkbox{ font-size:1.2rem; }
+
+.widget-wrap .boxCheck{ padding-left:120px;  float:left; }

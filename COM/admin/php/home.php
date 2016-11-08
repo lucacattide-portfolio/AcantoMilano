@@ -193,9 +193,9 @@
                         Pagine
                         
                     </li>
-                    <li> 
+                    <li class="acc-parent active"> 
                     
-                        <a href="#">
+                        <a href="#" class="acc-parent active">
                     
                             <i class="zmdi zmdi-link"> <!--Icona-->
                             </i>
@@ -208,7 +208,7 @@
                         
                         </a>
                       
-                        <ul>
+                        <ul style="display: block;">
                         
                         	<!--Inizio Inclusione Dati-->
                         
@@ -224,9 +224,9 @@
                             
                             ?>
                             
-                            <li> 
+                            <li > 
                             
-                            	<a href="index.php?pag=crea-pagina&id=<?php echo $rowListPagina["pagina_id"];  ?>">
+                            	<a <?php if( $rowListPagina["pagina_id"] == $_GET["id"] && $pag == "crea-pagina" ): ?>  class="active" <?php endif; ?> href="index.php?pag=crea-pagina&id=<?php echo $rowListPagina["pagina_id"];  ?>">
                                 
                                 	<i class="zmdi zmdi-link">
                                     </i> 
@@ -907,28 +907,39 @@ $(".fileUpload2").on('change', function () {
 	  // SUBMIT FORM
 	  $(document).on("submit", '.formElement', function(e) {
 			e.preventDefault(); 
-			var data = new FormData(this); 
-			$.ajax({
-				url: 'php/config/ajax.php',
-				data: data,
-				cache: false,
-				contentType: false,
-				processData: false,
-				dataType: "html",
-				type: 'POST',
-				success: function(data) {
-				  bootbox.alert(""+data+"", function () {});
-				  $.post("php/config/caricamento.php", {pag: "<?php echo $pag; ?>"}, function(data){
-					$(".insertContentQuery").empty();	
-					$(".insertContentQuery").html(data);
-					$(".dialogWindowMod").removeClass("mWidth"); 
-					$(".dialogWindowMod").fadeOut(1000);	
-				  });
-				  $(".bootbox.modal, .modal-footer button, .modal-body button").on("click",function(){
-					 location.reload();
-				  });
-				}
-		   });
+			var data = new FormData(this);
+			
+			if( $(".formElement .required").val() != "" ){
+			
+				  $.ajax({
+					  url: 'php/config/ajax.php',
+					  data: data,
+					  cache: false,
+					  contentType: false,
+					  processData: false,
+					  dataType: "html",
+					  type: 'POST',
+					  success: function(data) {
+						bootbox.alert(""+data+"", function () {});
+						$.post("php/config/caricamento.php", {pag: "<?php echo $pag; ?>"}, function(data){
+						  $(".insertContentQuery").empty();	
+						  $(".insertContentQuery").html(data);
+						  $(".dialogWindowMod").removeClass("mWidth"); 
+						  $(".dialogWindowMod").fadeOut(1000);	
+						});
+						$(".bootbox.modal, .modal-footer button, .modal-body button").on("click",function(){
+						   location.reload();
+						});
+					  }
+				 });
+				 
+		     }else{
+				 
+				 
+				 $(".formElement .req").css({"border":"1px solid #FAA"});
+				
+			 }		 
+				 
 	   }); 
 	   
 	   //SORTABLE TAB
