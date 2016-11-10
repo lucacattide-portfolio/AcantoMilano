@@ -17,7 +17,7 @@
 
 
 
-               $sqlArticolo5 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) = '".$dateCurrentMonth."' AND articolo_id != 22 AND articolo_visibile = 1  ORDER BY articolo_data_modifica ASC LIMIT 0,1 ";
+               $sqlArticolo5 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND DATE_FORMAT(articolo_data_modifica,'%Y-%m-%d') = '".$dateCurrentMonth."' AND articolo_id != 22 AND articolo_visibile = 1  ORDER BY articolo_data_modifica ASC  ";
 					   $rArt5 = $mysqli->query($sqlArticolo5);
 					   $countArticolo5 =  $rArt5->num_rows;
 					   if( $countArticolo5 >= 1 ):

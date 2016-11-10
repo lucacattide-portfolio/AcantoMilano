@@ -1,5 +1,64 @@
 <div id="container_contenuti" rel="calendario"> 
     
+    <!--Inizio Scarica PDF-->
+    
+    
+    
+    <?php 
+	
+		if( $countArticolo >= 1 ):
+		   while ($articolo = $rArt->fetch_array()): 
+	
+	 	        $sqlImg = "SELECT * FROM `immagine` WHERE immagine_articolo_id = ".$articolo["articolo_id"]." AND immagine_tipo LIKE 'application/pdf' LIMIT 0,1 ";
+				$rImg = $mysqli->query($sqlImg);
+				$countImg =  $rImg->num_rows;
+				
+				if( $countImg >= 1):
+				
+				   while ($immagine = $rImg->fetch_array()):
+					
+	
+	
+	?>
+    
+    
+    <a href="<?php echo $siteurl_bae."img/".$immagine["immagine_label"];  ?>" class="pdf_cal_link" target="_blank" title="Scarica il PDF del Calendario">
+    
+        <aside class="pdf_cal">
+         
+            <h7> <!--Titolo-->
+            
+                Scarica PDF
+                
+            </h7>
+            
+            <div class="pdf_cal_label">
+            
+                <span class="etichetta"> 
+                
+                    Scarica il PDF del Calendario
+                    
+                </span>
+                <span class="icona"> <!--Icona-->
+                </span>
+                        
+            </div>
+        
+        </aside>
+    
+    </a>
+    <?php
+	  
+	  	 			endwhile;
+			   endif;
+			   
+			   
+	         endwhile;
+		  endif;		
+	
+	?>
+    
+    <!--Fine Scarica PDF-->
     
     <?php
 	  $dateCurrentMonth = date('Y-m'); // MESE CORRENTE
@@ -7,6 +66,7 @@
 	  $dateNextMonth = date('Y-m', strtotime('+1 month', strtotime($dateCurrentMonth)));
 	  $datePrevMonth = date('Y-m', strtotime('-1 month', strtotime($dateCurrentMonth)));
 	  $dataNow = date("Y-m-d");
+	  $dataNowMonth = date("Y-m");
 
 
     include("calendario-parte1.php"); ?>
@@ -111,7 +171,11 @@
             
                 <span class="pulsante_box">
                 
-                    <?php echo $articolo20["articolo_url"];  ?>
+                   	<span>
+                    
+                    	<?php echo $articolo20["articolo_url"];  ?>
+					
+               		</span>
                 
                 </span>
             
@@ -132,66 +196,7 @@
     </section>
     
     <!--Fine Correlati-->
-    
-    <!--Inizio Scarica PDF-->
-    
-    
-    
-    <?php 
-	
-		if( $countArticolo >= 1 ):
-		   while ($articolo = $rArt->fetch_array()): 
-	
-	 	        $sqlImg = "SELECT * FROM `immagine` WHERE immagine_articolo_id = ".$articolo["articolo_id"]." AND immagine_tipo LIKE 'application/pdf' LIMIT 0,1 ";
-				$rImg = $mysqli->query($sqlImg);
-				$countImg =  $rImg->num_rows;
-				
-				if( $countImg >= 1):
-				
-				   while ($immagine = $rImg->fetch_array()):
-					
-	
-	
-	?>
-    
-    
-    <a href="<?php echo $siteurl_bae."img/".$immagine["immagine_label"];  ?>" class="pdf_cal_link" target="_blank" title="Scarica il PDF del Calendario">
-    
-        <aside class="pdf_cal">
-         
-            <h7> <!--Titolo-->
-            
-                Scarica PDF
-                
-            </h7>
-            
-            <div class="pdf_cal_label">
-            
-                <span class="etichetta"> 
-                
-                    Scarica il PDF del Calendario
-                    
-                </span>
-                <span class="icona"> <!--Icona-->
-                </span>
-                        
-            </div>
-        
-        </aside>
-    
-    </a>
-    <?php
-	  
-	  	 			endwhile;
-			   endif;
-			   
-			   
-	         endwhile;
-		  endif;		
-	
-	?>
-    
-    <!--Fine Scarica PDF-->
+
     
 </div>
 

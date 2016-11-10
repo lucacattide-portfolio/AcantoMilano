@@ -15,6 +15,20 @@
 	  $datePrevMonth = date('Y-m', strtotime('-1 month', strtotime($dateCurrentMonth)));
 	  $dataNow = date("Y-m-d", strtotime($_POST["datarif"]));
 	  
+	  $sqlArticoloNext = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) >= '".$dateCurrentMonth."' AND articolo_id != 22 AND articolo_visibile = 1 ORDER BY articolo_data_modifica ASC LIMIT 0,1  ";
+	  $rArtNext = $mysqli->query($sqlArticoloNext);
+	  $countArticoloNext =  $rArtNext->num_rows;
+					   if( $countArticoloNext >= 1 ):
+					     while ($articoloNext = $rArtNext->fetch_array()):  
+						   $dataArtNext = date("Y-m-d", strtotime($articoloNext["articolo_data_modifica"]));
+						 endwhile;
+					    
+					   	else:
+						
+						 $dataArtNext = ""; 	 
+						 
+					   endif;
+	  
 	  // MANCA PAGINA ARTICOLO
 
 ?>
@@ -281,7 +295,7 @@
 						  
 							  }else{ ?>
 								  
-								 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+								 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow || $dataArtNext == $dataArt  ): echo ' InData'; endif;   endif; ?>">
 								   <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                  </div>                                                                  
                                         

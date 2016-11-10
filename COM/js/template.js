@@ -86,6 +86,12 @@ function inizializza() {
 		
 	$(window).on("load resize", function() { // Al caricamento o al ridimensionamento
 		
+		setTimeout(function(){
+		
+			$(".container_claim").removeClass("animated fadeIn");
+			
+		}, 3000);
+		
 		if ($(window).width() <= 1024) { // Se siamo su mobile
 		
 			//$("#menu_voci, #links_outbound, #separatore_menu").removeClass("nascondi no_animazione"); // Disattiva la transizione
@@ -259,7 +265,13 @@ function transizioni() {
 		$("#separatore_menu").toggleClass("separatore_out"); // Nasconde Separatore
 		$("#container").toggleClass("container_full"); // Contenuto tutto schermo
 		$(".anteprima_news").toggleClass("anteprima_ridotta"); // Contenuto tutto schermo
-		$(".container_claim").toggleClass("claim_ridotto"); // Contenuto tutto schermo
+
+		setTimeout(function(){
+		
+			$(".container_claim").toggleClass("claim_ridotto"); // Contenuto tutto schermo
+			
+		}, 900);
+		
 		$(".griglia-sezione-esterna").toggleClass("griglia_centrata"); //Centra la griglia esterna delle sottosezioni
 		
 		// Viaggi - Centratura

@@ -7,7 +7,7 @@
      <h2 class="intestazione">
      
          <?php 
-			$sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1  LIMIT 0,1   ";
+			$sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_id = 156 AND articolo_visibile = 1  LIMIT 0,1   ";
 			$rArt2 = $mysqli->query($sqlArticolo2);
 			$countArticolo2 =  $rArt2->num_rows;
 			 if( $countArticolo2 >= 1 ):
@@ -23,7 +23,7 @@
      
      <section class="mostre-grid mCustomScrollbar">
          <?php 
-			$sqlArticolo3 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId."  AND articolo_visibile = 1 AND  articolo_id != 23 ORDER BY articolo_data_modifica DESC    ";
+			$sqlArticolo3 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId."  AND articolo_visibile = 1 AND  articolo_id != 156 ORDER BY articolo_data_modifica DESC";
 			  $rArt3 = $mysqli->query($sqlArticolo3);
 			  $countArticolo3 =  $rArt3->num_rows;
 			  if($countArticolo3  >= 1):
@@ -76,8 +76,8 @@
 			 
 			
 				
-			   $textA = strip_tags($articolo3["articolo_testo"], '<p>');
-			   $text2 = strip_tags($textA, '</p>');
+			    $textA = strip_tags($articolo3["articolo_testo"], '<p>');
+			    $text2 = strip_tags($textA, '</p>');
 			 
 			    $pos=strpos($text2 , ' ', 180);
                 substr($text2 ,0,$pos ); 

@@ -88,29 +88,32 @@ if($pag == "pagina" || $pag == ""):
           <input type="hidden" name="pagina_id" value="<?php echo $rowPagina["pagina_id"]; ?>" />
           <div class="form-content">
           
-           <?php if($_POST["accesso"] >= 2): else: ?>
+          
             <div class="row">
               <!-- URL PAGINA -->
-              <div class="col-md-6 unit">
+              <div <?php if($_POST["accesso"] >= 2): echo "style='display:none;'"; endif; ?> class="col-md-6 unit">
                 <label class="label">URL SEF</label>
                 <div class="input">
                   <label class="icon-left" for="text"> <i class="zmdi zmdi-globe"></i> </label>
-                  <input  name="pagina_url" class="form-control" type="text" placeholder="nome-url-pagina" value="<?php echo $rowPagina["pagina_url"]; ?>" pattern="/[^a-z0-9\s]/ig">
+                 
+                  <input <?php if($_POST["accesso"] >= 2): echo "style='display:none;'"; endif; ?>   name="pagina_url" class="form-control" type="text" placeholder="nome-url-pagina" value="<?php echo $rowPagina["pagina_url"]; ?>" pattern="/[^a-z0-9\s]/ig">
+            
                 </div>
               </div>
               <!-- END URL PAGINA -->  
               
               <!-- URL PAGINA -->
-             <div class="col-md-6 unit">
+             <div <?php if($_POST["accesso"] >= 2): echo "style='display:none;'"; endif; ?> class="col-md-6 unit">
                 <label class="label">Nome file</label>
                 <div class="input">
                   <label class="icon-left" for="text"> <i class="fa fa-terminal"></i> </label>
-                  <input name="pagina_riferimento" class="form-control" type="text" placeholder="pagina.php" value="<?php echo $rowPagina["pagina_riferimento"]; ?>">
+                  <input  <?php if($_POST["accesso"] >= 2): echo "style='display:none;'"; endif; ?>   name="pagina_riferimento" class="form-control" type="text" placeholder="pagina.php" value="<?php echo $rowPagina["pagina_riferimento"]; ?>">
+       
                 </div>
               </div> 
               <!-- END URL PAGINA -->  
             </div> 
-            <?php endif; ?>
+           
             
             <div class="row">
              <div class="col-md-6 unit">
@@ -137,11 +140,11 @@ if($pag == "pagina" || $pag == ""):
                  <textarea name="pagina_meta_description" id="textarea" spellcheck="false" placeholder="Descrizione pagina" class="form-control"><?php echo $rowPagina["pagina_meta_description"]; ?></textarea>
                 </div>
               </div>
-             <?php if($_POST["accesso"] >= 2): else: ?>  <div class="col-md-6 unit">                      
+            <div <?php if($_POST["accesso"] >= 2): echo "style='display:none;'"; endif; ?> class="col-md-6 unit">                      
               <!-- start single select -->
               
-                  <label class="input select">
-                      <select name="pagina_dipendenza_id" class="form-control">
+                  <label  class="input select">
+                      <select <?php if($_POST["accesso"] >= 2): echo "style='display:none;'"; endif; ?>  name="pagina_dipendenza_id" class="form-control">
                           <option <?php if( $rowPagina["pagina_dipendenza_id"] == "0" ): echo "selected"; endif; ?>   value="0">Pagina primaria</option>
                           <option <?php if( $rowPagina["pagina_dipendenza_id"] == "accordion" ): echo "selected"; endif; ?> value="accordion">Pagina primaria - Accordion</option>
                           <option <?php if( $rowPagina["pagina_dipendenza_id"] == "post" ): echo "selected"; endif; ?> value="post">Pagina primaria - Post sottopagine</option>
@@ -168,7 +171,7 @@ if($pag == "pagina" || $pag == ""):
             
               <!-- end single select -->
              </div>
-             <?php endif; ?>
+   
              
              <div class="row col-md-6">
               <div class="Gal col-md-12 unit">

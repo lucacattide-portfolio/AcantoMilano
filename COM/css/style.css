@@ -430,7 +430,15 @@ a { text-decoration: none; }
 
 .anteprima_news { transition: all 1s ease-in-out; }
 
-.container_claim { transition: all 1s ease-in-out; }
+.container_claim
+{
+	transition: all 1s ease-in-out;
+	-webkit-animation-delay: 2.5s;
+	-moz-animation-delay: 2.5s;
+	-ms-animation-delay: 2.5s;
+	-o-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
 
 .elemento_box_slides { transition: all 1s ease-in-out; }
 
@@ -659,7 +667,7 @@ a[data-rel="3"]
 
 .container_claim { width: 38%; }
 
-.claim_ridotto { margin: 0 20% !important; }
+.claim_ridotto { margin: 0 21% !important; }
 
 #home_carousel { height: calc(100% - 236px); }
 
@@ -900,7 +908,7 @@ a[data-rel="3"]
 .claim_ridotto
 {
 	width: 84%;
-	margin: 0 0% !important;
+	margin: 0 -2.5% !important;
 }
 
 .anteprima_ridotta { width: 21% !important; }
@@ -1234,16 +1242,25 @@ body
 }
 
 @media (max-width: 820px) {
+
+.mostre-grid .itemContainer .testoContainer { height: 16em; }
+
 .container_claim { margin: 0 auto 0 28.5%; }
+
 #prenota_form { width: 58%; }
 }
 
 @media all and (max-width: 620px) {
+		.spazio_read { padding-bottom: 4em !important; }
+
+.mostre-grid .itemContainer .testoContainer { height: 11em; }
+
 .container_claim
 {
 	width: 38%;
 	margin: 0 auto 0 26.5%;
 }
+
 .form-contatti { width: 92%; }
 
 #container_contenuti { overflow-x: hidden; }
@@ -1569,6 +1586,10 @@ body { font-size: 12px; }
 
 @media all and (max-width: 480px) {
 	
+
+
+.mostre-grid .itemContainer .testoContainer { height: 9em; }
+
 .container_claim { margin: 0 auto 0 28.5%; }
 
 .titolo-contatti { font-size: 1.5rem; }
@@ -1603,7 +1624,7 @@ body { font-size: 12px; }
 }
 
 @media all and (max-width: 450px) {
-
+	.mostre-grid .itemContainer { padding-bottom: 4em; }
 .mostre-grid .itemContainer .testoContainer { width: calc( 100% - 32px ); }
 
 #prenota_sfondo { padding-bottom: 30em; }
@@ -1712,6 +1733,7 @@ body { font-size: 12px; }
 }
 
 @media all and (max-width: 375px) {
+
 .container_claim { margin: 0 auto 0 16.5%; }
 
 #menu_voci a { font-size: .55rem; }

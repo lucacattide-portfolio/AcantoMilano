@@ -12,7 +12,7 @@
         
        	<!--Inizio Summary-->
 <?php 
-   $sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1 LIMIT 0,1  ";
+   $sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1 AND articolo_id = 56  ";
    $rArt2 = $mysqli->query($sqlArticolo2);
    $countArticolo2 =  $rArt2->num_rows;
    if( $countArticolo2 >= 1 ):
@@ -157,7 +157,7 @@
                     
                     <?php
                              
-                             $sqlArticoloDate = "SELECT * FROM `articolo` WHERE articolo_titolo LIKE '%".$articolo["articolo_titolo"]."%' AND `articolo_pagina_id` = '".$articolo["articolo_pagina_id"]."' AND articolo_visibile = 1 ";
+                             $sqlArticoloDate = "SELECT * FROM `articolo` WHERE articolo_titolo LIKE '%".$articolo["articolo_titolo"]."%' AND `articolo_pagina_id` = '".$articolo["articolo_pagina_id"]."' AND articolo_visibile = 1 AND articolo_id != 56 ";
                              $rArtDate = $mysqli->query($sqlArticoloDate);
                              $countArticoloDate =  $rArtDate->num_rows;
                          

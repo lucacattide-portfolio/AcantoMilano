@@ -22,13 +22,23 @@
             
                  <div class="ajax-data">
                  	<div class="int-date">
+                    
 					 <?php 
-                     
+                      
                       // ciclo dei giorni
-                     
+					  $sqlArticoloCC = "SELECT * FROM `articolo` WHERE articolo_pagina_id = '".$paginaId."' AND DATE_FORMAT(articolo_data_modifica,'%Y-%m-%d') >= '".date('Y-m-d')."' AND articolo_id != 22 AND articolo_visibile = 1   ORDER BY articolo_data_modifica ASC LIMIT 0,1 ";
+					   $rArtCC = $mysqli->query($sqlArticoloCC);
+					   $countArticoloCC =  $rArtCC->num_rows;
+					   if( $countArticoloCC >= 1 ):
+					     while ($articoloCC = $rArtCC->fetch_array()):  
+						   $dataNew = date("Y-m-d", strtotime($articoloCC["articolo_data_modifica"]));
+						 endwhile;
+					   endif;
+                       
                       for( $i = 1; $i <= $giorni; $i++ ){
                        $NomeGiornoAbbreviato = strftime("%a", strtotime("".date("Y")."-".date("m")."-".$i.""));
 					   $GiorniRicerca = date("Y-m-d", strtotime("".date("Y")."-".date("m")."-".$i.""));
+					   
 					   
 				       
 					   $sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) = '".$GiorniRicerca."' AND articolo_id != 22 AND articolo_visibile = 1  ";
@@ -44,7 +54,7 @@
 						  if( $i == 1 ){
 						  
 								 if( $NomeGiornoAbbreviato == "lun" ){ ?>
-									   <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+									   <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if(  $dataNew == $dataArt  ): echo ' InData'; endif;   endif; ?>">
 										 <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                        </div>                                                                 
 									 <?php }elseif( $NomeGiornoAbbreviato == "mar" ){ ?>   
@@ -52,7 +62,7 @@
 										 <div class="box-int">
 										  &nbsp;
 										 </div>
-										 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+										 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataNew == $dataArt ): echo ' InData'; endif;   endif; ?>">
 										   <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                          </div>                                                                
                                                
@@ -64,7 +74,7 @@
 										 <div class="box-int">
 										  &nbsp;
 										 </div>
-										 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+										 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataNew == $dataArt ): echo ' InData'; endif;   endif; ?>">
 										   <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                          </div>                                                                
 										 
@@ -79,7 +89,7 @@
 										 <div class="box-int">
 										  &nbsp;
 										 </div>
-										 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+										 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataNew == $dataArt ): echo ' InData'; endif;   endif; ?>">
 										   <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                          </div>                                                                   
 										  
@@ -97,7 +107,7 @@
 										 <div class="box-int">
 										  &nbsp;
 										 </div>
-										 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+										 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataNew == $dataArt ): echo ' InData'; endif;   endif; ?>">
 										   <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                          </div>                                                                   
 														 
@@ -118,7 +128,7 @@
 										 <div class="box-int">
 										  &nbsp;
 										 </div>
-										 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+										 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataNew == $dataArt ): echo ' InData'; endif;   endif; ?>">
 										   <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                          </div>                                                                  
 										 
@@ -141,7 +151,7 @@
 										 <div class="box-int">
 										  &nbsp;
 										 </div>
-										 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+										 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataNew == $dataArt ): echo ' InData'; endif;   endif; ?>">
 										   <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                          </div>                                                                
 			  
@@ -151,7 +161,7 @@
 							  
 									 if( $NomeGiornoAbbreviato == "lun" ): ?>
 										
-										   <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+										   <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataNew == $dataArt ): echo ' InData'; endif;   endif; ?>">
 											 <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                            </div>                                                                 
 										   <div class="box-int">
@@ -176,7 +186,7 @@
 										 
 									  <?php elseif( $NomeGiornoAbbreviato == "mar" ): ?>   
 									 
-										   <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+										   <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataNew == $dataArt ): echo ' InData'; endif;   endif; ?>">
 											 <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                            </div>                                                               
 										   <div class="box-int">
@@ -198,7 +208,7 @@
 																   
 									  <?php elseif( $NomeGiornoAbbreviato == "mer" ): ?>    
 								 
-										   <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+										   <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataNew == $dataArt ): echo ' InData'; endif;   endif; ?>">
 											 <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                            </div>                                                                
 										   <div class="box-int">
@@ -217,7 +227,7 @@
 										   
 									  <?php elseif( $NomeGiornoAbbreviato == "gio" ): ?>    
 										   
-										   <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+										   <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataNew == $dataArt ): echo ' InData'; endif;   endif; ?>">
 											 <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                            </div>                                                                
 										   <div class="box-int">
@@ -234,7 +244,7 @@
 														   
 									   <?php elseif( $NomeGiornoAbbreviato == "ven" ): ?>    
 										   
-										  <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+										  <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataNew == $dataArt ): echo ' InData'; endif;   endif; ?>">
 										   <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                           </div>                                                                 
 										   <div class="box-int">
@@ -247,7 +257,7 @@
 									   <?php elseif( $NomeGiornoAbbreviato == "sab" ): ?>    
 										  
 										   
-										   <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+										   <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataNew == $dataArt ): echo ' InData'; endif;   endif; ?>">
 											 <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                            </div>                                                                 
 										   <div class="box-int">
@@ -256,7 +266,7 @@
 										   
 									   <?php elseif( $NomeGiornoAbbreviato == "dom" ): ?>    
 										   
-										   <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+										   <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataNew == $dataArt ): echo ' InData'; endif;   endif; ?>">
 											 <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                            </div>     
 													   
@@ -264,7 +274,7 @@
 						  
 							  }else{ ?>
 								  
-								 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataArt == $dataNow ): echo ' InData'; endif;   endif; ?>">
+								 <div class="box-int <?php if( $countArticolo2 >= 1 ): echo 'hover';  if( $dataNew == $dataArt ): echo ' InData'; endif;   endif; ?>">
 								   <?php  if( $countArticolo2 >= 1 ):  echo "<a data-id='$paginaId' rel='$dataArt' >".$i."</a>"; else:  echo $i; endif;  ?>
                                  </div>                                                                  
                                         

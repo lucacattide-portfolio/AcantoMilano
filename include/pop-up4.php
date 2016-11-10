@@ -1,4 +1,11 @@
-<?php include("../admin/php/connessione_sql.php"); // Connessione DB ?>
+<?php include("../admin/php/connessione_sql.php"); // Connessione DB 
+   
+    // Impostazione Timezone e Codifica Caratteri
+	@date_default_timezone_set('Europe/Rome');
+	@setlocale(LC_ALL, 'it_IT');
+	@setlocale(LC_TIME, 'ita', 'it_IT.utf8');
+
+?>
 <h7> <!--Titolo-->
     
     	Popup
@@ -53,7 +60,7 @@
         
         	<!--Inizio Articolo-->
             <?php 
-			  $sqlArticolo3 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1  ";
+			  $sqlArticolo3 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1 ORDER BY articolo_data_modifica ASC  ";
 			  $rArt3 = $mysqli->query($sqlArticolo3);
 			  $countArticolo3 =  $rArt3->num_rows;
 			  if($countArticolo3  >= 1):
@@ -153,7 +160,7 @@
                     
                     <div class="data_evento">
                     
-                    	29 Settbembbre 2016
+                    	<?php  echo utf8_encode( strftime("%d %B %Y", strtotime($articolo3["articolo_data_modifica"])) ); ?>
                     
                     </div>
                     

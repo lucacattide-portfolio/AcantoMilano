@@ -122,7 +122,9 @@
                       <div class="file-button"> Sfoglia
                         <input type="file" class="fileUpload2" rel="<?php echo $rowArticolo["articolo_id"]; ?>" name="file[]" multiple accept=".jpg, .png"/>
                       </div>
-                      <input type="text" placeholder="Misura immagine 1920px X 1080px " readonly id="prepend-small-btn" class="form-control">
+                   
+                     <input type="text" placeholder="Misura immagine 1920px X 1080px " readonly id="prepend-small-btn" class="form-control">
+                     
                     </div>
                   </div>
                   <div class="blah col-md-12 image-holder2 unit" rel="<?php echo $rowArticolo["articolo_id"]; ?>" >
@@ -791,7 +793,11 @@
                       <div class="file-button"> Sfoglia
                         <input type="file" class="fileUpload2" rel="<?php echo $rowArticolo["articolo_id"]; ?>" name="file[]" multiple accept=".jpg, .png"/>
                       </div>
-                      <input type="text" placeholder="Misura immagine 1920px X 1080px " readonly id="prepend-small-btn" class="form-control">
+                       <?php if( $id == 35 || 36 ): ?>
+                      <input type="text" placeholder="Misura immagine 220px X 388px " readonly id="prepend-small-btn" class="form-control">
+                     <?php else: ?>
+                     <input type="text" placeholder="Misura immagine 1920px X 1080px " readonly id="prepend-small-btn" class="form-control">
+                     <?php endif; ?>
                     </div>
                   </div>
                   <div  class="blah col-md-12 image-holder2 unit" rel="<?php echo $rowArticolo["articolo_id"]; ?>" >

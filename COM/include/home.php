@@ -43,7 +43,7 @@
            
             <li>
         
-               <div class="container_claim">
+               <div class="container_claim animated fadeIn">
                
                  <!--Inizio Titoli-->
                

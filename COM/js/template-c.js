@@ -2,6 +2,44 @@
 
 $(document).ready(function() {
 	
+	// Read More - Visibilità
+	
+	$(".mostre-grid .itemContainer").each(function() { // Per ogni articolo
+				
+		if ($('.testoContainer .big', this).prop('scrollHeight') > $('.testoContainer', this).prop('clientHeight')) {// Se il container ha del contenuto in overflowing
+
+			$('.gradiente_testo', this).removeClass("nascondi"); // Aggiungi gradiente
+			
+		} else { 
+		
+			$(".read_more", this).addClass("nascondi");
+
+		}
+		if (($(this).height() < 388 && $(window).height() > 640)) { // Se il container è più piccolo della misura fissata
+
+			$(this).addClass("spazio_read");  // Aumenta spaziatura container
+			//$(".read_more", this).css("display", "none"); // Nasscondi read more
+
+		} else if ((($(this).height() < 388) || ($(".ImgContent", this).height() < 388)) && $(".testoContainer", this).height() < 320 && $(".testoContainer", this).height() < 320 && $(window).height() <= 700) { // Altrimenti Se il container o l'immagine è più piccolo della misura fissata
+			
+			$(this).addClass("spazio_read"); // Aumenta spaziatura container
+			//$(".read_more", this).css("display", "none"); // Nasscondi read more
+
+		} else if ($(this).height() < 388 && $(".testoContainer", this).height() >= 320 && $(window).height() <= 700) { // Altrimenti Se il container o l'immagine è più piccolo della misura fissata
+			
+			$(this).addClass("spazio_read"); // Aumenta spaziatura container
+
+		}
+		
+	});
+	$(".read_more").on("click tap", function() { // Al click del pulsante
+		
+		$(this).fadeOut(); // Nascondilo
+		$(this).siblings(".mostre-grid .itemContainer .testoContainer").addClass("tutto_leggi"); // Allarga box
+		$(this).siblings('.testoContainer').find(".gradiente_testo").addClass("nascondi"); // Rimuovi gradiente
+
+	});
+	
 	
     $(document).on("click", ".numGiorni .box-intestazione a.arrow", function(){
 	 

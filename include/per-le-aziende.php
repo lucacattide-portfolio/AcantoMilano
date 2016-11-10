@@ -40,6 +40,18 @@
 	  endwhile; 
 	 endif; 
 	?>  
+   
+    <!--Inizio Titolo Partners-->
+    
+    <h2 class="titolo_partners">
+    
+		Acànto ha collaborato con:
+  	
+   	</h2>
+   	
+   	<hr class="separazione">
+    
+    <!--Fine Titolo Partners-->
     
   </section>
   <!-- end -->
@@ -66,10 +78,20 @@
 					endwhile;
 				endif;
 		
-		
+		 	if (!empty($articoloAz["articolo_url"])):
+		 
 		?>
         
-         <div data-id="1" class="boxBlock aziende" style="background-image:url(<?php echo $siteurl_base; ?>img/<?php echo $img; ?>)" >
+         <a href="<?php echo $articoloAz["articolo_url"]; ?>" target="new">
+         	
+         	<div data-id="1" class="boxBlock aziende" style="background-image:url(<?php echo $siteurl_base; ?>img/<?php echo $img; ?>)" >
+         	</div>
+         	
+        </a>
+        
+        <?php else: ?> 
+        
+        	 <div data-id="1" class="boxBlock aziende" style="background-image:url(<?php echo $siteurl_base; ?>img/<?php echo $img; ?>)" >
           <!--<a  data-id="1" rel="">
           
              <p>Nome Azienda</p>
@@ -77,8 +99,7 @@
           </a>-->
          </div>
         
-        
-        <?php endwhile;  endif; ?>
+        <?php endif; endwhile;  endif; ?>
         
         
        

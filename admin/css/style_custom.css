@@ -208,6 +208,8 @@ div.tagsinput span.tag a { color: #fff; }
 
 a, a:link, a:visited { color: #1D71B8; }
 
+a.active { color: #1D71B8 !important; }
+
 a:hover, a:focus
 {
 	color: #662483;
@@ -290,18 +292,23 @@ a:hover, a:focus
 	border-color: #662483;
 }
 
-.anteprima { text-align: center; opacity: .7;}
+.anteprima
+{
+	text-align: center;
+	opacity: .7;
+}
 
 /* IMG SORTABLE */
 
-.col-md-6.margin-auto-sortable{
-	max-width:50%;
-	height:130px;
-	margin-bottom:20px;
-	background:rgba(135,200,239,1.00);
-	border-radius:10px;
-	position:relative;
-	display:block;
+.col-md-6.margin-auto-sortable
+{
+	max-width: 50%;
+	height: 130px;
+	margin-bottom: 20px;
+	background: rgba(135,200,239,1.00);
+	border-radius: 10px;
+	position: relative;
+	display: block;
 }
 
 /* Footer */
@@ -325,6 +332,17 @@ a:hover, a:focus
 /* Torna Su */
 
 #scrollTop { bottom: 182px; }
+
+/* Custom Scrollbar - Admin ****************************************************************/
+.slimScrollBar { background: #444 !important; }
+
+.slimScrollRail { background: rgba(255, 255, 255, 1) !important; }
+
+.slimScrollBar, .slimScrollRail
+{
+	width: 8px !important;
+	display: block !important;
+}
 
 /* Inizio Mobile ****************************************************************************/
 

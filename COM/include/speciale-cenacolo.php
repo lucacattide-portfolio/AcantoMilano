@@ -147,7 +147,7 @@
             
             <?php 
 			  
-			  $sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1 LIMIT 1,2 ";
+			  $sqlArticolo2 = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND articolo_visibile = 1 LIMIT 0,1 ";
 		   $rArt2 = $mysqli->query($sqlArticolo2);
            $countArticolo2 =  $rArt2->num_rows;
 		   if( $countArticolo2 >= 1 ):
@@ -404,11 +404,11 @@
                             
                                 if($paginaUrl == "book-your-private-tour") {
                                     
-                                    echo "Go To Some Ideas";
+                                    echo "Some ideas for your tour";
                                     
                                 } else {
                                     
-                                    echo "Go To Private Tours";
+                                    echo "Choose a private tour";
                                     
                                 }
                                 

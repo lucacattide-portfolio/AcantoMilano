@@ -16,9 +16,6 @@
         
     </h7>
     
-    <div class="logo_popup_1"> <!--Logo-->
-    </div>
-    
     <div class="chiudi_popup chiudi"> <!--Chiudi-->
     
     	<span> <!--Icona-->
@@ -33,7 +30,7 @@
     	<?php
 		   $paginaId = $_GET["id"];
 		   $siteurl_base = "http://www.acantomilano.it/beta/";
-		   $sqlArticolo = "SELECT * FROM `articolo` WHERE articolo_id = ".$paginaId." AND articolo_visibile = 1 ";
+		   $sqlArticolo = "SELECT * FROM `articolo` WHERE articolo_id = ".$paginaId." AND articolo_visibile = 1  ";
 		   $rArt = $mysqli->query($sqlArticolo);
 		   $countArticolo =  $rArt->num_rows;
 		
@@ -74,6 +71,10 @@
 				?>
                 
                 <header class="header_popup" style="background-image:url('<?php echo $siteurl_base; ?>img/<?php echo $immagine2;  ?>')">
+                
+					 <div class="logo_popup_1"> <!--Logo-->
+					 </div>
+                
             	</header>
                 
                 <!-- single img --> 
@@ -82,6 +83,9 @@
                 <?php elseif( $countImg > 1):   ?>
                 
                   <header id="popup_slides" class="header_popup">	
+                  
+                  	<div class="logo_popup_1"> <!--Logo-->
+					 </div>
 				  
                    <!--Inizio Container Slideshow-->
     
@@ -227,6 +231,13 @@
             <!--Fine Container-->
             
                   <!--<!--Inizio Container-->
+                  
+                     
+			<?php 
+
+				if ($paginaId != "38" && $paginaId != "39"):
+
+			?>
             
             <div class="elenco_date_dettaglio"> 
             
@@ -236,7 +247,7 @@
                     
                     <?php
                              
-                             $sqlArticoloDate = "SELECT * FROM `articolo` WHERE articolo_titolo LIKE '%".$articolo["articolo_titolo"]."%' AND `articolo_pagina_id` = '".$articolo["articolo_pagina_id"]."' AND articolo_visibile = 1 ";
+                             $sqlArticoloDate = "SELECT * FROM `articolo` WHERE articolo_titolo LIKE '%".$articolo["articolo_titolo"]."%' AND `articolo_pagina_id` = '".$articolo["articolo_pagina_id"]."' AND articolo_visibile = 1 ORDER BY articolo_data_modifica ASC  ";
                              $rArtDate = $mysqli->query($sqlArticoloDate);
                              $countArticoloDate =  $rArtDate->num_rows;
                          
@@ -307,7 +318,7 @@
                         
 						
                         <!--Fine Disponibilità-->
-                    
+	                    
                     </div>	
                     
                       <?php
@@ -321,13 +332,19 @@
                     
                     <!--Fine Dettagli---->
                 
-                 
-                
                 </center>
+
                 <div style="margin-bottom:20px;" class="clear"></div>
+                
             </div>
             
             <!--Fine Date-->
+                               
+			<?php
+
+				endif;
+
+			?>
           
           <div style="clear:both;">
             </div>

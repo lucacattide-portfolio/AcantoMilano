@@ -112,7 +112,7 @@ if($pag == "pagina" || $pag == ""  ):
                 <div class="input prepend-small-btn">
                     <div class="file-button">
                         Sfoglia
-                        <input type="file" id="fileUpload" name="file[]" multiple/>
+                        <input type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg, .pdf"/>
                     </div>
                     <input type="text" placeholder="no file selected" readonly id="prepend-small-btn" class="form-control">
                  </div>
@@ -122,11 +122,11 @@ if($pag == "pagina" || $pag == ""  ):
                
                		<span class="col-md-4">
                     </span>
-                    <h3 class="anteprima col-md-4">
+                    <h5 class="anteprima col-md-4">
                     
                         Anteprima
                         
-                    </h3>
+                    </h5>
                     <span class="col-md-4">
                     </span>
        
@@ -172,6 +172,2356 @@ endif;
 
 /* ARTICOLO *****************************************************/	
 if($pag == "crea-pagina"): 
+
+ /* CONDIZIONI per singole pagine */
+ if( $id == 1):
+ ?>
+ 
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label">Clame logo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_sottotitolo"  spellcheck="false" placeholder="Inserire il sottotitolo" class="form-control"></textarea>
+                </div>
+              </div>
+              <div class="col-md-12 unit">
+                <label class="label">Testo slide</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+              <?php /* if($id == 3): ?>
+               <div class="col-md-12 unit">
+                <label class="label">CATEGORIA</label>
+                <label class="input select">
+                      <select name="articolo_categoria_id" class="form-control">
+                          <?php 
+						    $sqlCat = "SELECT * FROM `categoria`"; 
+  							$rCat = $mysqli->query($sqlCat);
+							$countCat =  $rCat->num_rows;
+							if($countCat >= 1):      
+    	                      while ( $rowCat = $rCat->fetch_array() ):     
+						  ?>
+                          <option value="<?php echo $rowCat["categoria_id"]; ?>"><?php echo $rowCat["categoria_nome"]; ?></option>
+                          <?php
+						     endwhile;
+							endif; 
+						  ?>
+                      </select>
+                      <i></i>
+                  </label>
+              </div>
+			  <?php endif; */ ?>
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+             
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini o documenti*</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg "/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+ 
+ 
+ 
+ 
+ 
+
+<?php
+ elseif( $id == 2 ): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+              
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+              
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+             
+            
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini o documenti*</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+ 
+<?php
+ elseif($id == 4): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+              <div class="col-md-12">
+                      <label class="label"> Metti in evidenza </label>
+                      <div class="col-md-8">
+                        <label class="radio">
+                          <input type="checkbox"  name="articolo_gallery_id" value="1">
+                          <i></i>In evidenza</label>
+                      </div>
+                      <div class="col-md-12">
+                       <hr>
+                      </div>
+              </div>
+              
+               <?php if( $id != 2 || $id != 1 || $id != 3 || $id != 5 || $id != 17 || $id != 31 || $id != 29 || $id != 25 || $id != 26 ): ?>
+              <div class="col-md-12">
+                      <label class="label">Disponibilità posti</label>
+                      <div class="col-md-4">
+                        <label class="radio">
+                          <input type="radio" name="articolo_img_id" value="1" checked>
+                          <i></i>Disponibile</label>
+                      </div>
+                      <div class="col-md-4">
+                        <label class="radio">
+                          <input type="radio" name="articolo_img_id" value="2">
+                          <i></i>Non Disponibile</label>
+                      </div>
+                      <div class="col-md-12">
+                       <hr>
+                      </div>
+                    </div>
+                <?php endif; ?>  
+             
+              <div class="col-md-12 unit">
+                <label class="label">Data Articolo</label>
+                <div class="input-group date addon-datepickers">
+                    <input name="articolo_data_modifica" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                </div>
+              </div>
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini o documenti*</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg, .pdf"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png, .pdf
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+ elseif($id == 6): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+           
+              
+              <div class="col-md-12">
+                      <label class="label">Disponibilità posti</label>
+                      <div class="col-md-4">
+                        <label class="radio">
+                          <input type="radio" name="articolo_img_id" value="1" checked>
+                          <i></i>Disponibile</label>
+                      </div>
+                      <div class="col-md-4">
+                        <label class="radio">
+                          <input type="radio" name="articolo_img_id" value="2">
+                          <i></i>Non Disponibile</label>
+                      </div>
+                      <div class="col-md-12">
+                       <hr>
+                      </div>
+                    </div>
+              
+             
+              <div class="col-md-12 unit">
+                <label class="label">Data Articolo</label>
+                <div class="input-group date addon-datepickers">
+                    <input name="articolo_data_modifica" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                </div>
+              </div>
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini *</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 7): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+           
+              
+              <div class="col-md-12">
+                      <label class="label">Disponibilità posti</label>
+                      <div class="col-md-4">
+                        <label class="radio">
+                          <input type="radio" name="articolo_img_id" value="1" checked>
+                          <i></i>Disponibile</label>
+                      </div>
+                      <div class="col-md-4">
+                        <label class="radio">
+                          <input type="radio" name="articolo_img_id" value="2">
+                          <i></i>Non Disponibile</label>
+                      </div>
+                      <div class="col-md-12">
+                       <hr>
+                      </div>
+                    </div>
+              
+             
+              <div class="col-md-12 unit">
+                <label class="label">Data Articolo</label>
+                <div class="input-group date addon-datepickers">
+                    <input name="articolo_data_modifica" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                </div>
+              </div>
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini *</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 9): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+           
+              
+              <div class="col-md-12">
+                      <label class="label">Disponibilità posti</label>
+                      <div class="col-md-4">
+                        <label class="radio">
+                          <input type="radio" name="articolo_img_id" value="1" checked>
+                          <i></i>Disponibile</label>
+                      </div>
+                      <div class="col-md-4">
+                        <label class="radio">
+                          <input type="radio" name="articolo_img_id" value="2">
+                          <i></i>Non Disponibile</label>
+                      </div>
+                      <div class="col-md-12">
+                       <hr>
+                      </div>
+                    </div>
+              
+             
+              <div class="col-md-12 unit">
+                <label class="label">Data Articolo</label>
+                <div class="input-group date addon-datepickers">
+                    <input name="articolo_data_modifica" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                </div>
+              </div>
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini *</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 8): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+           
+              
+              <div class="col-md-12">
+                      <label class="label">Disponibilità posti</label>
+                      <div class="col-md-4">
+                        <label class="radio">
+                          <input type="radio" name="articolo_img_id" value="1" checked>
+                          <i></i>Disponibile</label>
+                      </div>
+                      <div class="col-md-4">
+                        <label class="radio">
+                          <input type="radio" name="articolo_img_id" value="2">
+                          <i></i>Non Disponibile</label>
+                      </div>
+                      <div class="col-md-12">
+                       <hr>
+                      </div>
+                    </div>
+              
+             
+              <div class="col-md-12 unit">
+                <label class="label">Data Articolo</label>
+                <div class="input-group date addon-datepickers">
+                    <input name="articolo_data_modifica" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                </div>
+              </div>
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini *</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 11): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+        
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini *</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 12): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+        
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini *</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 13): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+        
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini *</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 14): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+        
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini *</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 16): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+              
+              <div class="col-md-12">
+                      <label class="label">Disponibilità posti</label>
+                      <div class="col-md-4">
+                        <label class="radio">
+                          <input type="radio" name="articolo_img_id" value="1" checked>
+                          <i></i>Disponibile</label>
+                      </div>
+                      <div class="col-md-4">
+                        <label class="radio">
+                          <input type="radio" name="articolo_img_id" value="2">
+                          <i></i>Non Disponibile</label>
+                      </div>
+                      <div class="col-md-12">
+                       <hr>
+                      </div>
+                    </div>
+       
+        
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+        
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 19): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+        
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini *</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 20): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+        
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini *</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 21): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+        
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini o documenti*</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg, .pdf"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png, .pdf,
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 22): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+        
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini o documenti*</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg, .pdf"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png, .pdf,
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 23): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+        
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini o documenti*</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg, .pdf"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png, .pdf,
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 24): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+             
+             <div class="row col-md-12">
+               <div class="col-md-12 unit">
+                <label class="label">URL ESTERNO</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="categoria_url" type="text" placeholder="http://www.example.com" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+            </div>
+              
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini*</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+elseif($id == 29): ?>
+ 
+ <div class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">×</button>
+    <h4 class="modal-title">Aggiungi Articolo</h4>
+  </div>
+  <div class="modal-body">
+    <div class="bootbox-body">
+      <div class="col-md-12">
+        <form class="j-forms formElement"  method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="nuovoArticolo" />
+          <input type="hidden" name="articolo_pagina_id" value="<?php echo $id; ?>" />
+          <div class="form-content"> 
+            
+            <!-- start text password -->
+            <div class="row col-md-6">
+              <div class="col-md-12 unit">
+                <label class="label ">Titolo</label>
+                <div class="input req">
+                  <label for="text" class="icon-left"> </label>
+                  <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 unit">
+                <label class="label">Testo</label>
+                <div class="input">
+                  <label for="password" class="icon-left"> </label>
+                  <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
+                </div>
+              </div>
+            
+              <div class="col-md-12 unit">
+                <label class="label">URL SEF</label>
+                <div class="input">
+                  <label for="url" class="icon-left"> <i class="fa fa-globe"></i> </label>
+                  <input name="articolo_url" type="text" placeholder="Inserire l'URL" class="form-control" pattern="/[^a-z0-9\s]/ig">
+                </div>
+              </div>
+       
+        
+              <div class="col-md-12">
+                 <label class="label">Stato di pubblicazione</label>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" name="articolo_visibile" value="1">
+                    <i></i>Pubblica</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio">
+                    <input type="radio" checked="" name="articolo_visibile" value="2">
+                    <i></i>Bozza</label>
+                </div>
+              </div>
+            </div>
+            <!-- end text password --> 
+            
+            <!-- start email url -->
+            <div class="row col-md-6">
+              <div class="Gal col-md-12 unit">
+                <label class="label">Inserisci immagini *</label>
+                <div class="input prepend-small-btn">
+                    <div class="file-button">
+                        Sfoglia
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg"/>
+                    </div>
+                    <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
+                 </div>
+              </div>
+              <div id="image-holder" class="blah col-md-12 unit">
+               <div class="row col-md-12">
+               
+               		<span class="col-md-4">
+                    </span>
+                    <h5 class="anteprima col-md-4">
+                    
+                        Anteprima
+                        
+                    </h5>
+                    <span class="col-md-4">
+                    </span>
+       
+               </div>
+              </div>
+              <div class='col-sm-12 col-md-12 unit'>
+               <small>
+               
+                  * Tipologie ammesse: .jpg, .png
+               
+               </small>
+              </div>
+            </div>
+            <!-- end email url -->
+   
+          
+             <div class="row col-md-12">
+                  <div style="clear:both; margin-top:20px;"></div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit">Crea articolo</button>
+                      <i class="zmdi"></i>
+                      <button class="btn" type="reset">Annulla</button>
+                  </div>
+                </div>
+            
+            
+          </div>
+        </form>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+ else:
+
+/* END CONDIZIONI per singole pagine */
+
+
 ?>
 <div class="modal-content">
   <div class="modal-header">
@@ -191,21 +2541,21 @@ if($pag == "crea-pagina"):
               <div class="col-md-12 unit">
                 <label class="label ">Titolo</label>
                 <div class="input req">
-                  <label for="text" class="icon-left"> <i class="fa fa-edit"></i> </label>
+                  <label for="text" class="icon-left"> </label>
                   <textarea required name="articolo_titolo"  spellcheck="false" placeholder="Inserire il titolo" class="form-control req"></textarea>
                 </div>
               </div>
               <div class="col-md-12 unit">
                 <label class="label">Sottotitolo</label>
                 <div class="input">
-                  <label for="password" class="icon-left"> <i class="fa fa-edit"></i> </label>
+                  <label for="password" class="icon-left"> </label>
                   <textarea name="articolo_sottotitolo"  spellcheck="false" placeholder="Inserire il sottotitolo" class="form-control"></textarea>
                 </div>
               </div>
               <div class="col-md-12 unit">
                 <label class="label">Testo</label>
                 <div class="input">
-                  <label for="password" class="icon-left"> <i class="fa fa-edit"></i> </label>
+                  <label for="password" class="icon-left"> </label>
                   <textarea name="articolo_testo"  spellcheck="false" placeholder="Inserire il testo" class="form-control"></textarea>
                 </div>
               </div>
@@ -299,7 +2649,7 @@ if($pag == "crea-pagina"):
                 <div class="input prepend-small-btn">
                     <div class="file-button">
                         Sfoglia
-                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple/>
+                        <input class="required" required type="file" id="fileUpload" name="file[]" multiple accept=".png, .jpg, .pdf"/>
                     </div>
                     <input type="text" placeholder="Misure immagine 1920px 1080px" readonly id="prepend-small-btn" class="form-control req">
                  </div>
@@ -309,11 +2659,11 @@ if($pag == "crea-pagina"):
                
                		<span class="col-md-4">
                     </span>
-                    <h3 class="anteprima col-md-4">
+                    <h5 class="anteprima col-md-4">
                     
                         Anteprima
                         
-                    </h3>
+                    </h5>
                     <span class="col-md-4">
                     </span>
        
@@ -348,6 +2698,7 @@ if($pag == "crea-pagina"):
   </div>
 </div>
 <?php 
+endif;
 endif;
 /* END ARTICOLO *****************************************************/	
 
@@ -396,7 +2747,7 @@ if($pag == "categorie"):
                 <div class="input prepend-small-btn">
                     <div class="file-button">
                         Sfoglia
-                        <input type="file" id="fileUpload" name="file[]" />
+                        <input type="file" id="fileUpload" name="file[]" accept=".png, .jpg, .pdf"/>
                     </div>
                     <input type="text" placeholder="no file selected" readonly id="prepend-small-btn" class="form-control">
                  </div>
@@ -406,11 +2757,11 @@ if($pag == "categorie"):
                
                		<span class="col-md-4">
                     </span>
-                    <h3 class="anteprima col-md-4">
+                    <h5 class="anteprima col-md-4">
                     
                         Anteprima
                         
-                    </h3>
+                    </h5>
                     <span class="col-md-4">
                     </span>
        

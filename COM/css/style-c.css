@@ -348,8 +348,8 @@
 	clear: both;
 	font-size: 2rem;
 	font-family: "JosefinSans3", sans-serif;
-	text-transform: uppercase;
-	color: #333333;
+	/*	text-transform: uppercase;
+*/	color: #333333;
 	margin: 1em auto 1em;
 }
 
@@ -576,6 +576,8 @@
 	background-position: center;
 }
 
+.mostre-grid .itemContainer:first-child .ImgContent { max-height: 388px; }
+
 .mostre-grid .itemContainer .ImgContent img
 {
 	width: 100%;
@@ -588,12 +590,27 @@
 	width: calc( 80% - 32px );
 	padding: 1em;
 	margin: 0px;
-	height: auto;
+	height: 20em/*auto*/;
 	float: left;
 	display: block;
 	overflow: hidden;
 	position: relative;
 	transition: all 0.3s ease-in;
+}
+
+.mostre-grid .itemContainer .testoContainer.expand, .tutto_leggi { height: auto !important; }
+
+.gradiente_testo
+{
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 15em;
+	bottom: 0;
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1));/* For Firefox 3.6 to 15 */
+	background: linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1)); /* Standard syntax (must be last) */
 }
 
 .mostre-grid .itemContainer .testoContainer p
@@ -604,12 +621,14 @@
 	font-size: 1rem;
 	line-height: 1.4rem;
 	color: #333333;
-	height: 0px;
+	/*height: 0px;
 	max-height: 0px;
-	min-height: 0px;
+	min-height: 0px;*/
 	transition: all 0.5s ease-in;
 }
 
+/*.mostre-grid .itemContainer .testoContainer.expand .leggi { display: none; }
+*/
 .mostre-grid .itemContainer .testoContainer h3 p
 {
 	font-family: "JosefinSans3", sans-serif;
@@ -637,9 +656,9 @@
 	margin-top: 1em;
 }
 
-.mostre-grid .itemContainer .testoContainer span.big { display: none; }
+.mostre-grid .itemContainer .testoContainer span.big { display: block; }
 
-.mostre-grid .itemContainer .testoContainer span.small { display: block; }
+.mostre-grid .itemContainer .testoContainer span.small { display: none; }
 
 .mostre-grid .itemContainer .testoContainer .fb-share-button
 {
@@ -669,9 +688,31 @@
 	font-family: "JosefinSans3", sans-serif;
 	font-size: .9rem;
 	cursor: pointer;
-	margin-top: 1em;
+	margin: 1em 0;
 	text-align: center;
+	position: absolute;
+	bottom: 0;
+	right: 1em;
 }
+
+.read_more
+{
+	color: #FFF;
+	background-color: #8B0000;
+	padding: 0.5em 8px;
+	float: right;
+	font-family: "JosefinSans3", sans-serif;
+	font-size: .9rem;
+	cursor: pointer;
+	margin: 1em 0;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	right: 1em;
+}
+
+.spazio_read { padding-bottom: 2em !important; }
+
 /*  CALENDARIO   *************************************************************************************/
 
 .sezione-calendario1

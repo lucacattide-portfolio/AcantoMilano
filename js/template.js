@@ -1,6 +1,7 @@
 <!--
 
 var ingresso = true; // Dichiarazione ed Inizializzazione Variabile controllo animazione
+var cliccato = false; // Controllo Click Menu
 
 $(document).ready(function() {
     
@@ -85,49 +86,81 @@ function inizializza() {
 		
 	$(window).on("load resize", function() { // Al caricamento o al ridimensionamento
 		
+		setTimeout(function(){
+		
+			$(".container_claim").removeClass("animated fadeIn");
+			
+		}, 3000);
+		
 		if ($(window).width() <= 1024) { // Se siamo su mobile
 		
 			//$("#menu_voci, #links_outbound, #separatore_menu").removeClass("nascondi no_animazione"); // Disattiva la transizione
 			$("#pulsante_menu").addClass("pulsante_attivo"); // Allora anima l'ingresso del menu
 			$("#freccia_menu").addClass("freccia_attiva"); // Anima icona
-			$("#container_menu").addClass("container_chiuso"); // Nasconde Menu
+			$("#container_menu").addClass("container_chiuso no_animazione"); // Nasconde Menu
 			$("#menu_voci").addClass("container_voci_chiuso"); // Nasconde Voci
 			$("#links_outbound").addClass("container_links_chiuso"); // Nasconde Links Outbound
+			$("#links_outbound").removeClass("sfuma"); // Nasconde Links Outbound
+			$(".links.dominio").addClass("nascondi"); // Nasconde Link
+			$("#menu_lingua").removeClass("nascondi sfuma"); // Nasconde Links Outbound
 			$(".iva").addClass("container_links_chiuso"); // Nasconde Links Outbound
 			$("#separatore_menu").addClass("separatore_out"); // Nasconde Separatore
 			$("#container").addClass("container_full"); // Contenuto tutto schermo
 			$(".anteprima_news").removeClass("anteprima_ridotta"); // Contenuto tutto schermo
 			$(".container_claim").removeClass("claim_ridotto"); // Contenuto tutto schermo
+			//$(".elemento_slide").removeClass("slide_ridotta"); // Contenuto tutto schermo
 			$(".griglia-sezione-esterna").removeClass("griglia_centrata"); //Centra la griglia esterna delle 	
 			
-			if ($("#home_slides").length > 0) {
+			if ($("#home_slides").length > 0) { // E Se siamo su Home
 				
 				$("#container").addClass("container_home");
 				$("body").removeClass("blocca_scroll"); // Disabilita lo scroll
 				
-			} else {  
+			} else { // Altrimenti
 			
 				$("#container").removeClass("container_home");
 				$("body").addClass("blocca_scroll"); // Abilita lo scroll
 			
 			}
 			
-		} else {
+		} else { // Altrimenti
 			
-			$("#menu_voci, #links_outbound, #separatore_menu").removeClass("nascondi no_animazione"); // Disattiva la transizione
-		
-		}
-		 
+			$("#menu_voci, #separatore_menu").removeClass("nascondi no_animazione"); // Disattiva la transizione
+			
+			if ($("#home_slides").length > 0) { // Se siamo su Home
+			
+				setTimeout(function() {
+
+					$("#links_outbound").removeClass("container_links_chiuso nascondi no_animazione"); // Nasconde Links Outbound
+					$("#menu_lingua").removeClass("container_links_chiuso nascondi no_animazione"); // Nasconde Links Outbound
+
+				}, 2200);
+				setTimeout(function() {
+
+					$("#links_outbound").removeClass("sfuma"); // Nasconde Links Outbound
+					$("#menu_lingua").removeClass("sfuma"); // Nasconde Links Outbound
+
+				}, 2300);
+				
+			} else {
+				
+				$("#links_outbound").removeClass("container_links_chiuso nascondi no_animazione"); // Nasconde Links Outbound
+				$("#links_outbound").removeClass("sfuma"); // Nasconde Links Outbound
+				$("#menu_lingua").removeClass("container_links_chiuso nascondi no_animazione"); // Nasconde Links Outbound
+				$("#menu_lingua").removeClass("sfuma"); // Nasconde Links Outbound					
+				
+			}
+
+		}	 
 		
 	});
-	
 	
 	// Carousel Home
 	
 	$('#home_slides, #popup_slides').superslides({
 		
 		animation: "fade",
-		play: 3000,
+		play: 5000,
 		pagination: true
 		
 	});
@@ -138,7 +171,7 @@ function inizializza() {
 		
 		animation: "slide",
 		pagination: false,
-		play: 5000
+		play: 4500
 		
 	});
 	
@@ -223,37 +256,92 @@ function transizioni() {
 	// Dichiarazione ed Inizializzazione Variabili
 	
 	var clicks = false; // Controllo Click
-		
+	
 	// Menu Principale
 	
 	// Pulsante apertura
-	
+
 	$("#pulsante_menu").on("click tap", function() { // Al click del pulsante
-		
+					
 		$("#menu_voci, #links_outbound, #separatore_menu").removeClass("nascondi no_animazione"); // Disattiva la transizione
 		$(this).toggleClass("pulsante_attivo"); // "
 		$("#freccia_menu").toggleClass("freccia_attiva"); // Anima icona
-		$("#container_menu").toggleClass("container_chiuso"); // Nasconde Menu
 		$("#menu_voci").toggleClass("container_voci_chiuso"); // Nasconde Voci
-		$("#links_outbound").toggleClass("container_links_chiuso"); // Nasconde Links Outbound
-		$(".iva").toggleClass("container_links_chiuso"); // Nasconde Links Outbound
+		//$("#links_outbound").toggleClass("container_links_chiuso"); // Nasconde Links Outbound
+		//$(".iva").toggleClass("container_links_chiuso"); // Nasconde Links Outbound
 		$("#separatore_menu").toggleClass("separatore_out"); // Nasconde Separatore
 		$("#container").toggleClass("container_full"); // Contenuto tutto schermo
 		$(".anteprima_news").toggleClass("anteprima_ridotta"); // Contenuto tutto schermo
-		$(".container_claim").toggleClass("claim_ridotto"); // Contenuto tutto schermo
+		
+		setTimeout(function(){
+		
+			$(".container_claim").toggleClass("claim_ridotto"); // Contenuto tutto schermo
+			//$(".elemento_slide").toggleClass("slide_ridotta"); // Contenuto tutto schermo
+			
+		}, 900);
+		
 		$(".griglia-sezione-esterna").toggleClass("griglia_centrata"); //Centra la griglia esterna delle sottosezioni
+		
+		// Viaggi - Centratura
+	
+		$("#container_contenuti[rel='visite-guidate'] .griglia-sezione").toggleClass("centra");
 		
 		if (($(window).width() <= 1024) && ($("#home_slides").length > 0)) { // Se siamo su mobile in Home
 			
 			$("body").toggleClass("blocca_scroll"); // Blocca lo scroll a menu aperto
 			
+		} 
+		
+		if ($(window).width() > 1024) {
+
+			$("#menu_lingua").toggleClass("container_links_chiuso nascondi no_animazione"); // Nasconde Links Outbound
+			$("#menu_lingua").toggleClass("sfuma"); // Nasconde Links Outbound
+			$("#links_outbound").toggleClass("sfuma"); // Nasconde Links Outbound
+			$("#container_menu").toggleClass("container_chiuso no_animazione"); // Nasconde Menu
+
+			setTimeout(function() {
+				
+				$("#menu_lingua").toggleClass("sfuma"); // Nasconde Links Outbound
+
+			}, 200);
+		
+		} else if ($(window).width() <= 1024) {
+				  
+			$("#links_outbound").toggleClass("container_links_chiuso"); // Nasconde Links Outbound
+			$("#links_outbound").removeClass("sfuma"); // Nasconde Links Outbound
+			$("#menu_lingua").removeClass("nascondi sfuma"); // Nasconde Links Outbound			
+			
+			if (cliccato === false) { // Se il menu è chiuso
+		
+				$("#container_menu").removeClass("no_animazione"); // Nasconde Menu
+
+				setTimeout(function(){
+
+					$("#container_menu").removeClass("container_chiuso"); // Nasconde Menu	
+
+				}, 500);
+
+				cliccato = true; // Setta come chiuso
+
+			} else { // Altrimenti se è aperto
+
+				setTimeout(function(){
+
+					$("#container_menu").addClass("container_chiuso"); // Nasconde Menu	
+
+				}, 200);
+				setTimeout(function(){
+
+					$("#container_menu").addClass("no_animazione"); // Nasconde Menu
+
+				}, 1000);
+
+				cliccato = false; // Setta come chiuso
+
+			}
+				   
 		}
 		
-		// Viaggi - Centratura
-	
-		$("#container_contenuti[rel='visite-guidate'] .griglia-sezione").toggleClass("centra");
-
-
 	});	
 		
 	// Menu Lingua
@@ -291,6 +379,8 @@ function transizioni() {
 			popup.addClass("animated zoomIn"); // "
 		
 			$("#container_menu").addClass("secondo_piano"); // Porta in secondo piano header
+			
+			disponibile(); // Controllo Disponibilità
 		
 			return false; // Blocca il refresh della pagina
 		
@@ -531,7 +621,7 @@ function preloader() {
 			$('.second.circle').fadeOut(500, function() { // Anima l'ingresso dei contenuti
 			
 				$("#container_menu, #container").removeClass("occulta");
-				$("#container, #container_contenuti").addClass("animated fadeIn");
+				$("#container, #container_contenuti, #home_carousel, #news_preview, .box_preview").addClass("animated fadeIn");
 				
 			   if (($("#home_carousel").length > 0) && (ingresso === true) && $(window).width() > 1024) { // Se siamo in Home su Desktop e non è stata ancora effettuata l'animazione di ingresso
 			
@@ -547,9 +637,10 @@ function preloader() {
 					  $("#container").removeClass("container_full"); // Contenuto tutto schermo
 					  $(".anteprima_news").addClass("anteprima_ridotta"); // Contenuto tutto schermo
 					  $(".container_claim").addClass("claim_ridotto"); // Contenuto tutto schermo
+					  //$(".elemento_slide").addClass("slide_ridotta"); // Contenuto tutto schermo
 					  $(".griglia-sezione-esterna").addClass("griglia_centrata"); //Centra la griglia esterna delle sottosezioni 
 					  
-				  }, 500);
+				  }, 1000);
 				  
 				  ingresso = false; // Disabilita animazione dopo l'esecuzione
 				  
@@ -573,16 +664,20 @@ function preloader() {
 
 function disponibile() {
 	
-	if (($(".dispo_icona").hasClass("disponibile_ico")) && ($(".dispo_label").hasClass("disponibile"))) { // Se l'icona risulta attiva - L'evento è disponibile
-		
-		$(".dispo_label").html("Disponibile"); // Segna come disponibile
-		
-	} else { 
+	$(".disponibilita").each(function() { // Per ogni elemento
 	
-		$(".dispo_icona").removeClass("disponibile_ico"); // Allora rendila attiva
-		$(".dispo_label").html("Esaurito"); // Segna come disponibile
-	
-	}
+		if (($(".dispo_icona", this).hasClass("disponibile_ico")) && ($(".dispo_label", this).hasClass("disponibile"))) { // Se l'icona risulta attiva - L'evento è disponibile
+
+			$(".dispo_label", this).html("Disponibile"); // Segna come disponibile
+
+		} else { 
+
+			$(".dispo_icona", this).removeClass("disponibile_ico"); // Allora rendila attiva
+			$(".dispo_label", this).html("Non disponibile"); // Segna come disponibile
+
+		}
+		
+	});
 	
 }
 	

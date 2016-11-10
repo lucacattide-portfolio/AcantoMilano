@@ -193,9 +193,9 @@
                         Pagine
                         
                     </li>
-                    <li> 
+                    <li class="acc-parent active"> 
                     
-                        <a href="#">
+                        <a href="#" class="acc-parent active">
                     
                             <i class="zmdi zmdi-link"> <!--Icona-->
                             </i>
@@ -208,7 +208,7 @@
                         
                         </a>
                       
-                        <ul>
+                        <ul style="display: block;">
                         
                         	<!--Inizio Inclusione Dati-->
                         
@@ -224,9 +224,9 @@
                             
                             ?>
                             
-                            <li> 
+                            <li > 
                             
-                            	<a href="index.php?pag=crea-pagina&id=<?php echo $rowListPagina["pagina_id"];  ?>">
+                            	<a <?php if( $rowListPagina["pagina_id"] == $_GET["id"] && $pag == "crea-pagina" ): ?>  class="active" <?php endif; ?> href="index.php?pag=crea-pagina&id=<?php echo $rowListPagina["pagina_id"];  ?>">
                                 
                                 	<i class="zmdi zmdi-link">
                                     </i> 

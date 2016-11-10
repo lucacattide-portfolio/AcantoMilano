@@ -97,7 +97,7 @@
     
         <article class="sezione-grid">
           
-          <h2 class="intestazione">FROM TRIP ADVISOR</h2>
+          <h2 class="intestazione">Some says about us:</h2>
         
         </article>
         

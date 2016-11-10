@@ -276,8 +276,20 @@
                         </span>
                         <span class="pdf_label"> <!--Label-->
                         
-                            Scarica il PDF del tour guidato
-                            
+                            <?php 
+							
+								if ($paginaId=="21" || $paginaId=="22" || $paginaId=="23") {
+                           
+									echo "Scarica il PDF del catalogo scuole";	
+										
+								} else {
+									
+                            		echo "Scarica il PDF del tour guidato";
+									
+								}
+							
+							?>
+                       
                         </span>
                    
                    

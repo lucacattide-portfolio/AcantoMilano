@@ -2,7 +2,13 @@
 
 $(document).ready(function() {
 	
+	// Leggi tutto - Mostre
 	
+	$(".leggitutto").on("click tap", function() { // Al click del pulsante
+		
+		$(this).fadeOut(); // Nascondilo
+		
+	});
 	
 	
 

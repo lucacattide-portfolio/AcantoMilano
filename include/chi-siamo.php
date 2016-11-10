@@ -12,8 +12,39 @@
         
        	<!--Inizio Summary-->
 <?php 
+    
+        $sqlArticolo = "SELECT * FROM `articolo` WHERE `articolo_id` = 161 ORDER BY articolo_id ASC LIMIT 0,1 ";
+   		$rArticolo = $mysqli->query($sqlArticolo);
+   		$countArticolo1 =  $rArticolo->num_rows;
+	  
+	  	if($countArticolo1 >= 1):
+		
+			while ( $rowArticolo = $rArticolo->fetch_array()): 	
+		
+		    ?>
+		     
+		
+		  <article class="sezione-grid">
+          
+             <h2 class="intestazione"><?php echo $rowArticolo ["articolo_titolo"]; ?></h2>
+          
+             <div class="testoIntestazione"><?php echo $rowArticolo ["articolo_testo"]; ?></div>
+        
+          </article>
+		    
+		        
+		  
+		    <?php
+		
+		
+		    endwhile;
+		endif;
+		
+		
    if( $countArticolo >= 1 ):
 		while ($articolo = $rArt->fetch_array()): 
+		
+		if( $articolo["articolo_id"] == 161 ): else:
 		
 		$sqlImg = "SELECT * FROM `immagine` WHERE immagine_articolo_id = ".$articolo["articolo_id"]." LIMIT 0,1 ";
 	    $rImg = $mysqli->query($sqlImg);
@@ -50,69 +81,8 @@
          
          
          
-         <?php
-	
-		 /*style="margin: 20px 0;"
-		 ?>
-         
-   <article class="align_bio">
-    
-    		<!--Inizio Immagini-->
-    
-    		<div class="img_bio containers_bio">
-            
-            	<img src="<?php echo $siteurl_base; ?>img/<?php echo $immagine2; ?>" alt="<?php echo $articolo["articolo_titolo"]; ?>" /> <!--Foto-->
-            
-            </div>
-            
-            <!--Fine Immagini-->
-            
-            <!--Inizio Bio-->
-            
-            <div class="container_bio containers_bio">
-        
-                <!--Inizio Titoli-->
-            
-                <hgroup>
-            
-                    <h7> <!--Sezione-->
-                    
-                        Summary
-                        
-                    </h7>
-                    <h2 class="titolo_summary <?php $articolo_out = str_replace("<p>", "", $articolo["articolo_titolo"]);  $articolo_out = str_replace("</p>", "", $articolo_out); echo $articolo_out; ?>"> <!--Contenuti-->
-                    
-                        <?php echo $articolo["articolo_titolo"]; ?>
-                        
-                    </h2>
-            
-                </hgroup>
-                
-                <!--Fine Titoli-->
-                 <?php  $articolo["articolo_sottotitolo"]; ?>
-                <!--Inizio Corpo-->
-                
-                <div class="corpo_summary">
-                
-                    <?php echo $articolo["articolo_testo"]; ?>
-                
-                </div>
-                
-                <!--Fine Corpo-->
-                
-            </div>
-            
-            <!--Fine Bio-->
-            
-            <div style="clear:both;">
-            </div>
-        
-        </article>     
-		  
-	
-    
-    <?php	 
-		 */ 
+        <?php
+
 		 
 		 $i++;
 		 endwhile;
@@ -133,46 +103,8 @@
         
         
         <?php
-		
-		/*
-   ?>   
-        <article>
-        
-        	<!--Inizio Titoli-->
-        
-        	<hgroup>
-        
-                <h7> <!--Sezione-->
-                
-                    Summary
-                    
-                </h7>
-                <h2 class="titolo_summary accento-su-arte"> <!--Contenuti-->
-                
-                    <?php echo $articolo["articolo_titolo"]; ?>
-                    
-                </h2>
-        
-        	</hgroup>
-            
-            <!--Fine Titoli-->
-             <?php  $articolo["articolo_sottotitolo"]; ?>
-            <!--Inizio Corpo-->
-            
-            <div class="corpo_summary">
-            
-            	<?php echo $articolo["articolo_testo"]; ?>
-            
-            </div>
-            
-            <!--Fine Corpo-->
-            
-             <div style="clear:both;">
-            </div>
-        
-        </article>
-<?php 
-    */
+
+    endif; 
    endif; 
   endwhile;
  endif; 

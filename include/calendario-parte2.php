@@ -1,5 +1,4 @@
-
-	<section id="calendario_dettagli">
+ <section id="calendario_dettagli">
     
     	<h7> <!--Titolo-->
         
@@ -14,7 +13,7 @@
         	<h2 id="titolo_dettagli"> <!--Titolo-->
             
             	<?php echo utf8_encode( strftime("%B %Y", strtotime($dateCurrentMonth)) );  ?> <hr />
-            
+                
             </h2>
         
         </div>
@@ -29,15 +28,28 @@
            <?php
 		    $dateCurrentMonth = date('Y-m', strtotime(strtotime($dateCurrentMonth)));
 		     
-			 $sqlArticoloAB = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND date(articolo_data_modifica) >= '".$dateCurrentMonth."' AND articolo_id != 22 AND articolo_visibile = 1 GROUP BY articolo_titolo  ";
+			 $sqlArticoloAB = "SELECT * FROM `articolo` WHERE articolo_pagina_id = ".$paginaId." AND (articolo_data_modifica BETWEEN '".$dataNowMonth."-1' AND '".$dateNextMonth."-1') AND articolo_id != 22 AND articolo_visibile = 1 GROUP BY DATE_FORMAT(articolo_data_modifica,'%Y-%m-%d') ORDER BY articolo_data_modifica ASC ";
 			 $rArtAB = $mysqli->query($sqlArticoloAB);
 			 $countArticoloAB =  $rArtAB->num_rows;
 			 if( $countArticoloAB >= 1 ):
 			   while ($articoloAB = $rArtAB->fetch_array()):  
+			   
+			   
+			 $sqlArticoloInt = "SELECT * FROM `articolo` WHERE articolo_pagina_id = '".$paginaId."' AND DATE_FORMAT(articolo_data_modifica,'%Y-%m-%d') = '".date('Y-m-d', strtotime($articoloAB["articolo_data_modifica"]))."' AND articolo_id != 22 AND articolo_visibile = 1   ORDER BY articolo_data_modifica ASC ";
+			 $rArtInt = $mysqli->query($sqlArticoloInt);
+			 $countArticoloInt =  $rArtInt->num_rows;
+			   if( $countArticoloInt > 1 ):
+			   $i = 1;
+			    else:
+			   $i = 0;
+			   endif;
+			 
+			   while ($articoloInt = $rArtInt->fetch_array()):  
+			   
 	
 		   ?>
 
-            <div class="container_evento">
+           <div class="container_evento">
             
             	<!--Inizio Riga-->
                 
@@ -49,25 +61,26 @@
               
                           <!--Inizio Data-->
                           
-                          <div class="data_evento_dettaglio">
-                          
+                          <div class="<?php if( $i == 1 || $i == 0  ): echo "data_evento_dettaglio"; else:  echo "data_evento_dettaglio2";  endif; ?>">
+                          <?php if( $i == 1 || $i == 0  ):  ?>
                               <span class="giorno_evento_dettaglio"> <!--Giorno-->
-                              
-                                 <?php echo date("d", strtotime($articoloAB["articolo_data_modifica"])); ?>
+                               
+                                 <?php echo date("d", strtotime($articoloInt["articolo_data_modifica"])); ?>
                                   
                               </span>
                               <span class="mese_evento_dettaglio"> <!--Mese-->
                               
-                                 <?php echo utf8_encode( strftime("%b", strtotime($articoloAB["articolo_data_modifica"]))); ?>
+                                 <?php echo utf8_encode( strftime("%b", strtotime($articoloInt["articolo_data_modifica"]))); ?>
                                   
                               </span>
                               <span class="anno_evento_dettaglio"> <!--Anno-->
                               
-                                 <?php echo date("Y", strtotime($articoloAB["articolo_data_modifica"])); ?>
+                                 <?php echo date("Y", strtotime($articoloInt["articolo_data_modifica"])); ?>
                                   
                               </span>
-                          
+                          <?php endif; ?>
                           </div>
+                          
                           
                           <!--Fine Data-->
                   
@@ -88,7 +101,7 @@
                           <!--Inizio Immagine-->
                            <?php 
 						    
-							$sqlImg = "SELECT * FROM `immagine` WHERE immagine_articolo_id = ".$articoloAB["articolo_id"]." AND immagine_tipo NOT LIKE 'application/pdf' LIMIT 0,1 ";
+							$sqlImg = "SELECT * FROM `immagine` WHERE immagine_articolo_id = ".$articoloInt["articolo_id"]." AND immagine_tipo NOT LIKE 'application/pdf' LIMIT 0,1 ";
 							$rImg = $mysqli->query($sqlImg);
 							$countImg =  $rImg->num_rows;
 							
@@ -119,7 +132,7 @@
                           
                           <div class="titolo_evento_dettaglio">
                                   
-                             <?php echo $articoloAB["articolo_titolo"]; ?>
+                             <?php echo $articoloInt["articolo_titolo"]; ?>
                                       
                           </div>
                           
@@ -147,7 +160,7 @@
                           
                           <span class="ora_evento_dettaglio">
                           
-                           <?php echo date("H:i", strtotime($articoloAB["articolo_data_modifica"])); ?>
+                           <?php echo date("H:i", strtotime($articoloInt["articolo_data_modifica"])); ?>
                           
                           </span>
                       
@@ -169,9 +182,9 @@
                       
                           <div class="disponibilita">
                               
-                              <span class="dispo_icona <?php if ($articoloAB["articolo_img_id"] == 1): echo "disponibile_ico"; endif; ?>"> <!--Icona-->
+                              <span class="dispo_icona <?php if ($articoloInt["articolo_img_id"] == 1): echo "disponibile_ico"; endif; ?>"> <!--Icona-->
                               </span>
-                              <span class="dispo_label <?php if ($articoloAB["articolo_img_id"] == 1): echo "disponibile"; endif; ?>"> <!--Etichetta-->
+                              <span class="dispo_label <?php if ($articoloInt["articolo_img_id"] == 1): echo "disponibile"; endif; ?>"> <!--Etichetta-->
                               
                                   Esaurito
                               
@@ -196,7 +209,7 @@
                       <div class="prenotazione_evento_dettaglio cal">
                          
                          
-                          <a class="prenota_interno leggi-tutto deseleziona" href="<?php echo $siteurl_base; ?>include/pop-up3.php" rel="<?php echo $articoloAB["articolo_id"]; ?>" data-id="" title="Prenota Ora" tabindex="p">
+                          <a class="prenota_interno leggi-tutto deseleziona" href="<?php echo $siteurl_base; ?>include/pop-up3.php" rel="<?php echo $articoloInt["articolo_id"]; ?>" data-id="" title="Prenota Ora" tabindex="p">
                  
                               Penota Ora
                  
@@ -213,14 +226,12 @@
                 </div>
                 
                 <!--Fine Riga-->
-                
-                  <div  class="clear">
-                </div>
                             
             </div>
             
             <?php 
-			
+			           $i++;
+			       endwhile;
 			    endwhile;
 			 endif;
 		   
