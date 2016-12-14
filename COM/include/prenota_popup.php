@@ -82,7 +82,7 @@
             
             	Object
             
-           	  <input name="oggetto_prenota" type="text" disabled="disabled" id="oggetto_prenota" placeholder="Insert object" pattern="[a-zA-Zàèìòù' ]+" title="Oggetto" readonly value="<?php $titolo = str_replace("<p>", "", $articolo["articolo_titolo"]); $titolo = str_replace("</p>", "", $titolo); $titolo = str_replace("<br />", "", $titolo); echo $titolo; ?>">
+           	  <input name="oggetto_prenota" type="text" disabled="disabled" id="oggetto_prenota" placeholder="Insert object" pattern="[a-zA-Zàèìòù' ]+" title="Oggetto" readonly value="<?php $titolo = str_replace("<p>", "", $articolo["articolo_titolo"]); $titolo = str_replace("</p>", "", $titolo); $titolo = str_replace("<br />", "", $titolo); echo strip_tags($titolo); ?>">
             
             </label>
 

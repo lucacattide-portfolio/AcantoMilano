@@ -740,6 +740,19 @@ $(".fileUpload2").on('change', function () {
 	
 	  
 // EVENTI ///////////////////////////////////////////////////////////////////   
+	
+	
+	  $(document).on("click", ".toggleBTN", function(e){
+		  
+		  console.log("cliccato");
+		  
+		  var Par = $(this).attr("rel"); 
+		  
+		   console.log(Par);
+		 
+		 $(".widget-content[rel="+Par+"]").fadeToggle(500);
+		 
+	  });
 
 	  /* VARIABILE PASSAGGIO VALORI FORM DI MODIFICA */
 	  $(document).on("click", 'a.modifica', function(e){

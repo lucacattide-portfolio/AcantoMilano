@@ -165,7 +165,7 @@
 		
 		?>
     
-    	<a href="<?php echo $siteurl_base; ?>include/pop-up3.php" rel="<?php echo $articolo20["articolo_id"]; ?>" title="<?php $etichetta = str_replace("<p>", "", $articolo20["articolo_titolo"]); $etichetta = str_replace("</p>", "", $etichetta); echo $etichetta; ?>">
+    	<a href="<?php echo $siteurl_base; ?>include/pop-up3.php" rel="<?php echo $articolo20["articolo_id"]; ?>" title="<?php $etichetta = str_replace("<p>", "", $articolo20["articolo_titolo"]); $etichetta = str_replace("</p>", "", $etichetta); echo strip_tags($etichetta); ?>">
         
             <div class="evento_correlato" style="background-image:url(<?php echo $siteurl_base;  ?>img/<?php echo $immagine2; ?>)">
             

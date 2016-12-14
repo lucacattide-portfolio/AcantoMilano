@@ -60,7 +60,7 @@
 		 // ARTICOLO CON IMMAGINE
 		 ?>
          
-         <article class="contenuto-globale sezione-grid <?php $articolo_out = str_replace("<p>", "", $articolo["articolo_titolo"]);  $articolo_out = str_replace("</p>", "", $articolo_out); echo $articolo_out; ?>">
+         <article class="contenuto-globale sezione-grid <?php $articolo_out = str_replace("<p>", "", $articolo["articolo_titolo"]);  $articolo_out = str_replace("</p>", "", $articolo_out); echo strip_tags($articolo_out); ?>">
           
              <div class="image" style="background-image:url(<?php echo $siteurl_base;  ?>img/<?php echo $immagine2; ?>)">
              </div>

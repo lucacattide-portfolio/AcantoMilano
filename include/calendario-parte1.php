@@ -4,8 +4,10 @@
          <section class="box-calendario numGiorni">
            <h2 class="box-intestazione"> 
              <a class="arrow" data-id="<?php echo $paginaId; ?>" rel="<?php echo $datePrevMonth; ?>"></a> 
-			  <?php echo utf8_encode( strftime("%B %Y", strtotime($dateCurrentMonth)) ); ?> 
-             <a class="arrow" data-id="<?php echo $paginaId; ?>" rel="<?php echo $dateNextMonth; ?>"></a> 
+             <p class="data_cal_estesa"> 
+             <?php echo utf8_encode( strftime("%B %Y", strtotime($dateCurrentMonth)) ); ?> 
+             </p>
+             <a class="arrow arrow_dx" data-id="<?php echo $paginaId; ?>" rel="<?php echo $dateNextMonth; ?>"></a> 
            </h2>
            <section class="calendario-counter">
                

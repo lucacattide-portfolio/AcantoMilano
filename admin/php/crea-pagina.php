@@ -666,7 +666,7 @@
 	  
 	  		endwhile;
 		endif;
-		elseif( $id == 4):
+		elseif( $id == 4 ):
 	
 	?>
     <?php
@@ -846,9 +846,40 @@
 	?>
     
     <?php 
-	   
-	    $sqlArticolo2 = "SELECT * FROM `articolo` WHERE `articolo_pagina_id` = '".$_GET["id"]."' ORDER BY articolo_data_modifica DESC LIMIT 1,$countArticolo";
-   		$rArticolo2 = $mysqli->query($sqlArticolo2);
+	     
+	    if(isset($_GET["data"])): 
+	  
+	  	 	$dateCurrentMonth = date('Y-m', strtotime($_GET["data"]) );
+	        $dateNextMonth = date('Y-m', strtotime('+1 month', strtotime($dateCurrentMonth)));
+	        $datePrevMonth = date('Y-m', strtotime('-1 month', strtotime($dateCurrentMonth)));
+	
+	    else:  
+	    	
+	  		$dateCurrentMonth = date('Y-m');
+	        $dateNextMonth = date('Y-m', strtotime('+1 month', strtotime($dateCurrentMonth)));
+	        $datePrevMonth = date('Y-m', strtotime('-1 month', strtotime($dateCurrentMonth)));
+	
+	  
+	    endif;
+	  
+	    ?>
+	     
+	    <a href="index.php?pag=crea-pagina&id=4&data=<?php echo $datePrevMonth; ?>"> &lt; mese precedente</a> | &nbsp;&nbsp; <?php echo utf8_encode( strftime("%B %Y", strtotime($dateCurrentMonth)) ); ?>  &nbsp;&nbsp; |  <a href="index.php?pag=crea-pagina&id=4&data=<?php echo $dateNextMonth; ?>"> mese successivo &gt; </a>  &nbsp;&nbsp;&nbsp;&nbsp; | <a href="index.php?pag=crea-pagina&id=4&ev">Date in Evidenza</a> | &nbsp;&nbsp;&nbsp;&nbsp; | <a href="index.php?pag=crea-pagina&id=4&all">Visualizza tutte le Date</a> | 
+	    
+	    <hr>
+	     
+	    <?php
+	    if(isset($_GET["all"])):
+	        /* TUTTI */
+	  		$sqlArticolo2 = "SELECT * FROM `articolo` WHERE `articolo_pagina_id` = '".$_GET["id"]."' AND articolo_id != 22  ORDER BY articolo_data_modifica DESC ";
+	    elseif(isset($_GET["ev"])):
+	  		/* DATE IN EVIDENZA */
+	        $sqlArticolo2 = "SELECT * FROM `articolo` WHERE `articolo_pagina_id` = '".$_GET["id"]."' AND articolo_id != 22 AND articolo_gallery_id = 1 ORDER BY articolo_data_modifica DESC ";
+	    else:
+	  		/* DATE DEL MESE */
+	        $sqlArticolo2 = "SELECT * FROM `articolo` WHERE `articolo_pagina_id` = '".$_GET["id"]."' AND date(articolo_data_modifica) >= '".$dateCurrentMonth."' AND date(articolo_data_modifica) <= '".$dateNextMonth."'  AND articolo_id != 22  ORDER BY articolo_data_modifica DESC ";
+   		endif;
+	    $rArticolo2 = $mysqli->query($sqlArticolo2);
    		$countArticolo2 =  $rArticolo2->num_rows;
 	  
 	  	if($countArticolo2 >= 1):
@@ -860,11 +891,12 @@
         <div class="pull-left">
           <h3>Titolo: <?php $titolo = str_replace("<p>", "", $rowArticolo['articolo_titolo']); $titolo = str_replace("</p>", "", $titolo); echo $titolo; ?></h3>
           <p style="color:rgba(129,129,129,1.00);">Data Evento: <strong style="color:#1D71B8;"><?php echo date("d-m-Y | H:i:s", strtotime($rowArticolo["articolo_data_modifica"])); ?></strong></p>
+          <div class="toggleBTN btn btn-info" rel="<?php echo $rowArticolo["articolo_id"];  ?>"> Visualizza / Nascondi | Contenuto </div>
         </div>
       </div>
       <div class="widget-container">
-        <div class="widget-content">
-          <div class="row">
+        <div class="widget-content" rel="<?php echo $rowArticolo["articolo_id"];  ?>" style="display: none">
+          <div class="row" >
             <div class="col-md-12">
               <form novalidate class="j-forms formElement" method="post" enctype="multipart/form-data" novalidate>
               <input type="hidden" name="modificaArticolo" >

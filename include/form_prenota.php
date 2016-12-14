@@ -71,11 +71,11 @@
 		// Definizione corpo del messaggio
 
         $email_corpo .= "Nome: ".@strip_tags(clean_stringa($nome))."\n";
-		$email_corpo .= "Cognome: ".@strip_tags(clean_stringa($cognome))."\n";
+		    $email_corpo .= "Cognome: ".@strip_tags(clean_stringa($cognome))."\n";
         $email_corpo .= "E-Mail: ".@strip_tags(clean_stringa($email))."\n";
-		$email_corpo .= "Oggetto: ".@strip_tags(clean_stringa($oggetto))."\n";
-		$email_corpo .= "Data: ".$data."\n";
-		$email_corpo .= "Orario: ".$ora."\n";
+		    $email_corpo .= "Oggetto: ".@strip_tags(clean_stringa($oggetto))."\n";
+		    $email_corpo .= "Data: ".$data."\n";
+		    $email_corpo .= "Orario: ".$ora."\n";
         $email_corpo .= "Messaggio: ".@strip_tags(clean_stringa($messaggio))."\n";
 		
 		// Definizione Headers

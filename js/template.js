@@ -529,19 +529,25 @@ function contenutiAjax(urlPagina,id) {
 // Funzione Validazione Form
 
 function validaInviaForm() {
-    
-    $("#invia_prenota").on("click tap", function(e) { // All'invio del form
 
-        e.preventDefault(); // Disabilita funzione di default dell'elemento
+  $(document).on("click tap", "#invia_prenota", function(e) { // All'invio del form
+
+      e.preventDefault(); // Disabilita funzione di default dell'elemento
     
         var campi = []; // Dichiarazione Vettore campi form
             
         if ($("#prenota_form input[required], #prenota_form textarea[required]").val().length === 0) { // Se i campi richiesti risultano ancora vuoti
+          
+            if ($("#accettazione_prenota").prop("checked") === false) {
+              
+              $("#accettazione_prenota").addClass("invalido");
+            
+            }
 
             $("#prenota_form input[required], #prenota_form textarea[required]").filter(function() { // Allora per ogni campo richiesto
                 
                 $(this).siblings().addClass("richiesto_invalido"); // All'etichetta corrispondente segnala l'errore
-                
+
                 return !this.value; // Restituisci i campi non compilati
                 
             }).addClass("invalido"); // Al campo corrispondente segnala l'errore
@@ -561,8 +567,8 @@ function validaInviaForm() {
                 email: campi[2],
                 oggetto: campi[3],
                 data: campi[4],
-				ora: campi[5],
-				messaggio: campi[6]
+				        ora: campi[5],
+				        messaggio: campi[6]
                 
             }, function(data) { // A chiamata avenuta 
 	
@@ -575,8 +581,8 @@ function validaInviaForm() {
                 }, 3000); 
                 
 	            $('#prenota_form')[0].reset(); // Resetta i campi del form
-				$(".richiesto").removeClass("richiesto_invalido"); // "
-				$("#prenota_form input[required], #prenota_form textarea[required]").removeClass("invalido"); // "
+              $(".richiesto").removeClass("richiesto_invalido"); // "
+              $("#prenota_form input[required], #prenota_form textarea[required]").removeClass("invalido"); // "
                                     
             });
             

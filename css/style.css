@@ -1348,7 +1348,7 @@ body
 }
 
 @media all and (max-width: 980px) {
-  
+
 #container_contenuti[rel="mostre"] { overflow: hidden; }
 
 /*#container_contenuti[rel="visite-guidate"] .griglia-sezione*/ .griglia_viaggi
