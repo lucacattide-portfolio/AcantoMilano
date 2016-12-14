@@ -169,6 +169,8 @@
         
             <div class="evento_correlato" style="background-image:url(<?php echo $siteurl_base;  ?>img/<?php echo $immagine2; ?>)">
             
+                <?php if(!empty($articolo20["articolo_url"]) || $articolo20["articolo_url"] == " " ):  ?>
+                
                 <span class="pulsante_box">
                 
                    	<span>
@@ -178,6 +180,8 @@
                		</span>
                 
                 </span>
+                
+              <?php endif; ?>  
             
             </div>
         

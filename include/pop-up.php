@@ -78,7 +78,7 @@
         
                 <div class="img_bio containers_bio">
                 
-                    <img src="<?php echo $siteurl_base."img/".$img; ?>" alt="<?php $imgPop = str_replace("<p>", "", $articolo3["articolo_titolo"]); $imgPop = str_replace("</p>", "", $imgPop); echo $imgPop; ?> " /> <!--Foto-->
+                    <img src="<?php echo $siteurl_base."img/".$img; ?>" alt="<?php $imgPop = str_replace("<p>", "", $articolo3["articolo_titolo"]); $imgPop = str_replace("</p>", "", $imgPop); echo strip_tags($imgPop); ?> " /> <!--Foto-->
                 
                 </div>
                 

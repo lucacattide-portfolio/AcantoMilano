@@ -41,13 +41,13 @@ function ChiudiPopUp(){
 	$(".chiudi").on("click tap", function() { // Al click sul pulsante
 	
 		$(this).parent().removeClass("animated zoomIn"); // Chiudi la popup
-		$(this).parent().addClass("animated zoomOut"); // "
+		$(this).parent().addClass("animated fadeOut"); // "
 		
 		setTimeout(function() {
 
 			$(".popup_verticale").addClass("secondo_piano"); // Rendi la voce attiva
 		
-		}, 500);
+		}, 100);
 		
 		$("#container_menu").removeClass("secondo_piano"); // Porta in primo piano header
 		

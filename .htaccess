@@ -1,10 +1,7 @@
 RewriteEngine On 
 
 RewriteRule ^home/?$ index.php?pag=1 [L]
-RewriteRule ^chi-siamo/?$ index.php?pag=2&box=2 [L]
-RewriteRule ^carlotta/?$ index.php?pag=2&art=17 [L]
-RewriteRule ^emanuela/?$ index.php?pag=2&art=18 [L]
-RewriteRule ^accento-sull-arte/?$ index.php?pag=2&art=161 [L]
+RewriteRule ^chi-siamo/?$ index.php?pag=2 [L]
 RewriteRule ^visite-guidate/?$ index.php?pag=3 [L]
 RewriteRule ^calendario/?$ index.php?pag=4 [L]
 RewriteRule ^news.php/?$ index.php?pag=5&box=5 [L]
